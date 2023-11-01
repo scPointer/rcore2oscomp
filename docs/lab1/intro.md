@@ -18,12 +18,7 @@ riscv64-linux-musl-gcc --version
 
 在往年的实验中，有些同学会有这样一种感受：整个 rCore-Tutorial 是一个完整的项目，从内核到测例到文件系统都是用 Rust 连接的，修改任何一部分都需要做额外的兼容。就像下面这样：
 
-```mermaid
-graph LR;
-    subgraph Rust
-    /user下的用户程序--编译后放进-->easy-fs--加载到-->rCore-Tutorial;
-    end
-```
+![](./pics/g1.png)
 
 但其实这中间都是二进制接口，只是被实验仓库里完善的脚本掩盖了。我们可以任意更换这其中的每个部分，而不需要做另外的适配：
 
