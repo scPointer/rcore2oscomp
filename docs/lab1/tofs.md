@@ -20,7 +20,7 @@ graph LR;
 
 首先，我们来找找 `easy-fs-fuse` 是什么时候被调用的。
 
-当在 `os` 文件夹下运行 `make run`时，文件系统镜像会自动生成。观察 `os/Makefile`文件，你可以发现 `run` 命令依赖于 `build`，`build` 命令依赖于 `fs-img`，这就是我们要找的命令了。
+当在 `os` 文件夹下运行 `make run`时，文件系统镜像会自动生成。观察 `os/Makefile`文件，可以发现 `run` 命令依赖于 `build`，`build` 命令依赖于 `fs-img`，这就是我们要找的命令了。
 
 ```makefile
 fs-img: $(APPS)
@@ -104,7 +104,7 @@ for dir_entry in read_dir(src_path).unwrap().into_iter() {
   > 
   > 可以，但比较麻烦。我们之所以一定要执着地去除后缀名，是因为可执行程序一般默认是无后缀的。如内核启动时首先会去找 `initproc`，这个用户程序又会去找 `user_shell`，而每一章的 `usertest` 也会去找每一个对应章节的测例。如果所有这些地方都考虑后缀，代码改起来就会很麻烦。不过，过渡到只是用 C 语言用户程序的初赛时，可以考虑把去后缀这一步删掉。
 
-你还可以把这段修改下面的
+还可以把这段修改下面的几行代码
 
 ```rust
     for app in root_inode.ls() {
@@ -127,6 +127,6 @@ fs-img: $(APPS)
     @cd ../easy-fs-fuse && cargo run --release -- -s ../testcases/build/ -t ../os/target/
 ```
 
-现在你可以同时打包 Rust 和 C 的用户程序了！
+现在我们可以同时打包 Rust 和 C 的用户程序了！
 
 再次在`os` 目录执行 `fs-img CHAPTER=8 BASE=2`，就可以唤出 `usershell` 了，现在你可以尝试运行本实验所使用的两个 C 语言用户程序了。

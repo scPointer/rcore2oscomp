@@ -32,7 +32,7 @@ Disassembly of section .text:
 ......
 ```
 
-这是一个 elf 格式的可执行文件。如果你看过 rCore-Tutorial 指导书的附录 B，就应该对这个形式有印象。这个测例的可执行文件与整个 OS 的可执行文件并没有什么不同。虽然我们用 Rust 编译了它，并且用 `rust-objdump `区查看它的反汇编，但到这一步这个文件已经和 Rust 无关了。我们可以尝试改用前面安装的交叉编译工具链，运行 `riscv64-linux-musl-objdump -ld ch6_file0.elf > debug.S`，可以在文件中看到这样的输出
+这是一个 elf 格式的可执行文件。如果你看过 rCore-Tutorial 指导书的附录 B 的话可能会对这个形式有印象。这个测例的可执行文件与整个 OS 的可执行文件并没有什么不同。虽然我们用 Rust 编译了它，并且用 `rust-objdump `区查看它的反汇编，但到这一步这个文件已经和 Rust 无关了。我们可以尝试改用前面安装的交叉编译工具链，运行 `riscv64-linux-musl-objdump -ld ch6_file0.elf > debug.S`，可以在文件中看到这样的输出
 
 ```asm6502
 ch6_file0.elf:     file format elf64-littleriscv
