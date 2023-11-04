@@ -1,6 +1,6 @@
 ## 测例库介绍
 
-从[这里](https://github.com/LearningOS/2023a-stage3-lab1)可以获取到本次实验需要使用的用户程序。你需要把 `testcases` 目录放到当前实验（也就是 `2023a-rcore-` 开头的这个项目）的根目录下，在 `testcases` 目录下运行 `make build` 即可在 `testcases/build/` 下获得 `42` `hello`两个二进制文件。
+从[这里](https://github.com/LearningOS/2023a-stage3-proj2/tree/lab1)可以获取到本次实验需要使用的用户程序。你需要把 `lab1` 分支下的 `testcases` 目录放到当前实验（也就是 `2023a-rcore-` 开头的这个项目）的根目录下，在 `testcases` 目录下运行 `make build` 即可在 `testcases/build/` 下获得 `42` `hello`两个二进制文件。
 
 #### 测例里都有什么
 
