@@ -28,6 +28,12 @@ int main() {
 
 这一章的文档可能在某种程度上更像一个“debug 记录”。指导书里会把难处理的地方都讲一遍，最后留一个比较简单的小实验作为作业。你**可以直接跳到最后一节去完成实验内容，但我们更希望大家可以跟着指导书走一遍调试过程**，学习途中的调试思路。
 
+在实验中你可以学到：
+- 若干种常用调试方法：全局搜素、LOG输出、反汇编、GDB调试
+- 如何引入其他内核的代码来完成实验
+- 阅读标准 `Linux syscall` 规范，并按照它实现 `syscall` 的方法
+- `rCore-Tutorial` 和 `Linux syscall` 规范的区别
+
 ## 在实验之后
 
 你可以以本实验为基础，完成比赛决赛第一阶段要求的 `libc-test`，测例见[这里](https://github.com/oscomp/testsuits-for-oskernel/tree/libc-test/libc-test)。这个测例集分两个部分，分别是静态链接的测例（`gcc` 编译加 `-static`选项）和动态链接的测例。
