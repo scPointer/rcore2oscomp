@@ -2,6 +2,8 @@
 
 建议至少做完 rCore-Tutorial ch6 再做这个实验。
 
+实验需要使用你在 `rCore-Tutorial` 实验中的仓库，但**不依赖于**你在 `rCore-Tutorial` 中完成的任何作业代码。你可以用自己的 `rCore-Tutorial ch8` 分支来做这个实验中的代码修改，也可以用没有修改过的 `ch7` 分支。
+
 ## 实验准备
 
 本实验需要用到交叉编译的工具链：`https://musl.cc/riscv64-linux-musl-cross.tgz`。下载解压后将里面的 `bin` 目录放到你的 `PATH` 中，然后尝试使用以下命令

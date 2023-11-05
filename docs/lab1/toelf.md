@@ -61,7 +61,9 @@ clean:
 
 ### 检查二进制文件的内容
 
-接下来在 `user/build/elf/` 下运行 `rust-objdump --arch-name=riscv64 -ld ch6_file0.elf > debug.S`，可以在文件中看到像这样的输出
+这一部分简要介绍编译生成的二进制文件的内容，更详细的信息可以参照 `rCore-Tutorial` 指导书的附录 B。
+
+在 `user/build/elf/` 下运行 `rust-objdump --arch-name=riscv64 -ld ch6_file0.elf > debug.S`，可以在文件中看到像这样的输出
 
 ```asm6502
 ch6_file0.elf:    file format elf64-littleriscv
