@@ -1,0 +1,652 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>规范：TID 定义问题 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-label/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="exercise.html" />
+    
+    
+    <link rel="prev" href="syscall.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    实验简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab1</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../lab1/intro.html">
+            
+                <a href="../lab1/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../lab1/toelf.html">
+            
+                <a href="../lab1/toelf.html">
+            
+                    
+                    编译到二进制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../lab1/clib.html">
+            
+                <a href="../lab1/clib.html">
+            
+                    
+                    测例库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lab1/tofs.html">
+            
+                <a href="../lab1/tofs.html">
+            
+                    
+                    打包进文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../lab1/exercise.html">
+            
+                <a href="../lab1/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab2</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="pos.html">
+            
+                <a href="pos.html">
+            
+                    
+                    三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="usecode.html">
+            
+                <a href="usecode.html">
+            
+                    
+                    引入外部代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="gdb.html">
+            
+                <a href="gdb.html">
+            
+                    
+                    GDB 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="syscall.html">
+            
+                <a href="syscall.html">
+            
+                    
+                    通过 Manual Page 添加 Syscall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6" data-path="tid.html">
+            
+                <a href="tid.html">
+            
+                    
+                    规范：TID 定义问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >规范：TID 定义问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89C4;&#x8303;&#xFF1A;tid-&#x5B9A;&#x4E49;&#x95EE;&#x9898;">&#x89C4;&#x8303;&#xFF1A;TID &#x5B9A;&#x4E49;&#x95EE;&#x9898;</h1>
+<p><code>rCore-Tutorial</code> &#x7684;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;&#x53D7;&#x5230; <code>zircon</code> &#x5F71;&#x54CD;&#xFF0C;&#x4E14;&#x4E3A;&#x4E86;&#x6559;&#x5B66;&#x7B80;&#x5316;&#x4E86;&#x8BB8;&#x591A;&#x6A21;&#x5757;&#x7684;&#x8BBE;&#x8BA1;&#x3002;&#x4F46;&#x5728;&#x652F;&#x6301;&#x5B9E;&#x9645;&#x7684; <code>Linux</code> &#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6539;&#x6389;&#x8FD9;&#x4E9B;&#x8BBE;&#x8BA1;&#x3002;</p>
+<p>&#x672C;&#x8282;&#x4ECB;&#x7ECD;<code>rCore-Tutorial</code> &#x7684; <code>tid</code> &#x4E0E;&#x6807;&#x51C6; <code>tid</code> &#x6709;&#x4F55;&#x4E0D;&#x540C;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x6709;&#x66F4;&#x591A;&#x8FD9;&#x6837;&#x7684;&#x5C0F;&#x8282;&#x8BF4;&#x660E;<code>rCore-Tutorial</code>&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x89C4;&#x8303;&#x95EE;&#x9898;&#x3002;</p>
+<h5 id="posix-syscall-&#x7684;&#x5B9A;&#x4E49;">POSIX syscall &#x7684;&#x5B9A;&#x4E49;</h5>
+<p>&#x5728; <code>Linux</code> &#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x6709;<strong>&#x5168;&#x5C40;&#x552F;&#x4E00;</strong>&#x7684;&#x7EBF;&#x7A0B;ID&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>tid</code>&#xFF0C;&#x4E14;<strong>&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x521D;&#x59CB;&#x7EBF;&#x7A0B;&#x7684; <code>tid</code> &#x7B49;&#x540C;&#x4E8E;&#x8FDB;&#x7A0B;&#x7684; <code>pid</code></strong>&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7EBF;&#x7A0B;</th>
+<th>pid</th>
+<th>tid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>b</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>c</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>d</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>e</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD9;&#x91CC; <code>a,c,d</code> &#x662F;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x91CC;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;<code>b</code> <code>e</code> &#x5206;&#x522B;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x8FDB;&#x7A0B;&#x3002;&#x518D;&#x4E3E;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<ul>
+<li><p>&#x5982;&#x679C;&#x5F80; <code>a,c,d</code> &#x91CC;&#x518D;&#x52A0;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B; <code>f</code>&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x662F; <code>pid=1,tid=6</code>&#xFF0C;&#x5F53;&#x7136;&#x5176;&#x4ED6;&#x5927;&#x4E8E; 6 &#x7684; <code>tid</code> &#x4E5F;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x8FDB;&#x7A0B; <code>d</code> &#x9000;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B; <code>d2</code>&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x80FD;&#x662F; <code>pid=4,tid=4</code>&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x5176;&#x4ED6;&#x7684; <code>pid=x,tid=x(x&gt;=6)</code>&#x3002;&#x603B;&#x4E4B;&#xFF0C;<code>tid</code>&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x3002;</p>
+</li>
+</ul>
+<h5 id="rcore-tutorial">rCore-Tutorial</h5>
+<p>&#x800C;&#x76F8;&#x5BF9;&#x7684;&#xFF0C;&#x5728; <code>rCore-Tutorial</code> &#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x5185;&#x90E8;&#x7684;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;ID&#x72EC;&#x7ACB;&#x6392;&#x5E8F;&#xFF0C;&#x4E14;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x521D;&#x59CB;&#x7EBF;&#x7A0B;&#x7684; <code>tid</code> &#x4E3A; 0&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7EBF;&#x7A0B;</th>
+<th>pid</th>
+<th>tid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>c</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>d</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>e</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>f</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD9;&#x91CC; <code>a,f</code> &#x662F;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5185;&#x7684;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;<code>b,c,e</code> &#x662F;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5185;&#x7684;&#x4E09;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;<code>d</code> &#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x3002;</p>
+<h5 id="&#x5B9E;&#x73B0;&#x5EFA;&#x8BAE;">&#x5B9E;&#x73B0;&#x5EFA;&#x8BAE;</h5>
+<blockquote>
+<p>&#x5728;&#x901A;&#x8FC7;&#x6BD4;&#x8D5B;&#x6D4B;&#x4F8B;&#x65F6;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539; <code>tid</code> &#x5B9E;&#x73B0;&#x4EE5;&#x9002;&#x5E94;&#x5B9E;&#x9645; Linux &#x5E94;&#x7528;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4F46;&#x5728;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;<strong>&#x4E0D;&#x9700;&#x8981;</strong>&#x6539;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x4FEE;&#x6539; <code>tid</code> &#x7684;&#x5B9E;&#x73B0;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x628A; <code>tid</code> &#x6539;&#x6210;&#x539F;&#x6765;&#x90A3;&#x4E2A;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684; <code>pid</code>&#xFF0C;&#x4E5F;&#x5373;</p>
+<ul>
+<li><p>&#x6BCF;&#x6B21;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x65F6;&#xFF0C;&#x4E3A;&#x5B83;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5168;&#x5C40;ID&#x4F5C;&#x4E3A; <code>tid</code>&#x3002;&#x7136;&#x540E;&#x4EE4;&#x5B83;&#x7684; <code>pid</code> &#x7684;&#x503C;&#x4E3A; <code>tid</code>&#x3002;</p>
+</li>
+<li><p>&#x6BCF;&#x6B21;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x4E5F;&#x4E3A;&#x5B83;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5168;&#x5C40;ID&#x4F5C;&#x4E3A; <code>tid</code>&#x3002;&#x7136;&#x540E;&#x4EE4;&#x5B83;&#x7684; <code>pid</code> &#x7684;&#x503C;&#x4E3A;&#x751F;&#x6210;&#x5B83;&#x7684;&#x7EBF;&#x7A0B;&#x7684; <code>pid</code>&#xFF08;&#x8FD9;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x4FE9;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x91CC;&#xFF09;</p>
+</li>
+</ul>
+<h5 id="&#x6269;&#x5C55;&#x9605;&#x8BFB;&#xFF1A;waittid">&#x6269;&#x5C55;&#x9605;&#x8BFB;&#xFF1A;waittid</h5>
+<p>&#x5982;&#x679C;&#x8BA4;&#x771F;&#x770B; <code>syscall</code>&#x5217;&#x8868;&#x548C; <a href="https://man7.org/linux/man-pages/man2/waitpid.2.html" target="_blank"><code>sys_wait</code> &#x7684;&#x6587;&#x6863;</a>&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x91CC;&#x6CA1;&#x6709; <code>waittid</code>&#xFF0C;&#x53EA;&#x6709; <code>wait,waitpid,waitid</code>&#xFF08;&#x6CE8;&#x610F; <code>waitid=wait+id</code>&#xFF09;&#x3002;&#x90A3;&#x4E48; <code>Linux</code> &#x5E94;&#x7528;&#x5982;&#x4F55;&#x5B9E;&#x73B0; <code>rCore-Tutorial</code> &#x7684; <code>waittid</code> &#x5462;&#xFF1F;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x5728;&#x5176;&#x4ED6;&#x9879;&#x76EE;&#x4E2D;&#x89C1;&#x8FC7;&#x5B83;&#x7684;&#x5F62;&#x5F0F;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pthread_join</span><span class="hljs-params">(pthread_t, <span class="hljs-keyword">void</span> **)</span></span>;
+</code></pre>
+<p>&#x5728; <code>musl</code> &#x6E90;&#x7801;&#x4E2D;&#xFF0C;<code>pthread_join</code> &#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528; <code>src/thread/pthread_join.c/__pthread_timedjoin_np</code>&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5206;&#x6790;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7B49;&#x5F85;&#x4E00;&#x6B21;&#x7EBF;&#x7A0B;&#x9000;&#x51FA;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> __pthread_timedjoin_np(<span class="hljs-keyword">pthread_t</span> t, <span class="hljs-keyword">void</span> **res, <span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> timespec *at)
+{
+    <span class="hljs-keyword">int</span> state, cs, r = <span class="hljs-number">0</span>;
+    __pthread_testcancel();
+    __pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &amp;cs);
+    <span class="hljs-keyword">if</span> (cs == PTHREAD_CANCEL_ENABLE) __pthread_setcancelstate(cs, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">while</span> ((state = t-&gt;detach_state) &amp;&amp; r != ETIMEDOUT &amp;&amp; r != EINVAL) {
+        <span class="hljs-keyword">if</span> (state &gt;= DT_DETACHED) a_crash();
+        r = __timedwait_cp(&amp;t-&gt;detach_state, state, CLOCK_REALTIME, at, <span class="hljs-number">1</span>);
+    }
+    __pthread_setcancelstate(cs, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (r == ETIMEDOUT || r == EINVAL) <span class="hljs-keyword">return</span> r;
+    __tl_sync(t);
+    <span class="hljs-keyword">if</span> (res) *res = t-&gt;result;
+    <span class="hljs-keyword">if</span> (t-&gt;map_base) __munmap(t-&gt;map_base, t-&gt;map_size);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF0C;</p>
+<ul>
+<li>&#x4E24;&#x6B21; <code>__pthread_setcancelstate</code> &#x5206;&#x522B;&#x8868;&#x793A;&#x5173;&#x95ED;/&#x6253;&#x5F00;&#x53D6;&#x6D88;&#x8BF7;&#x6C42;&#x3002;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>pthread_cancel</code> &#x51FD;&#x6570;&#x53BB;&#x8BD5;&#x56FE;&#x7EC8;&#x6B62;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x7684;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x54CD;&#x5E94;&#x3002;&#x5728; <code>__pthread_timedjoin_np</code> &#x91CC;&#x7684;&#x8FD9;&#x4E24;&#x53E5; <code>__pthread_setcancelstate</code> &#x4E2D;&#x95F4;&#x7684;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x662F;&#x4E0D;&#x4F1A;&#x54CD;&#x5E94;&#x53D6;&#x6D88;&#x8BF7;&#x6C42;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7C7B;&#x6BD4;&#x5185;&#x6838;&#x4E2D;&#x201C;&#x5173;&#x95ED;&#x5F02;&#x5E38;&#x4E2D;&#x65AD;&#x201D;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li><code>__timedwait_cp</code> &#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <code>sys_futex</code> &#x5728;&#x67D0;&#x4E2A;&#x5185;&#x5B58;&#x5730;&#x5740;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x7406;&#x89E3;&#x4E3A;&#x7C7B;&#x4F3C; <code>rCore-Tutorial ch8</code> &#x4E2D;&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x4E00;&#x8282;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+<li>&#x5F53;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6240;&#x7B49;&#x5F85;&#x7684;&#x90A3;&#x4E2A;&#x7EBF;&#x7A0B;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x4FEE;&#x6539;&#x8868;&#x793A;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#x7684;&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E9B;&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x7684;&#x5730;&#x5740;&#x548C;&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x201C;&#x8DF3;&#x8FC7;&#x5B9E;&#x73B0;&#x201D;&#x7684; <code>sys_set_tid_address</code> &#x7684;&#x53C2;&#x6570;&#x6709;&#x5173;&#x3002;</li>
+<li>&#x8FD9;&#x4F1A;&#x5524;&#x9192;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x7684;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F7F;&#x5B83;&#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x7ED3;&#x679C; <code>r</code> &#x5E76;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="syscall.html" class="navigation navigation-prev " aria-label="Previous page: 通过 Manual Page 添加 Syscall">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="exercise.html" class="navigation navigation-next " aria-label="Next page: 练习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"规范：TID 定义问题","level":"3.6","depth":1,"next":{"title":"练习","level":"3.7","depth":1,"path":"docs/lab2/exercise.md","ref":"docs/lab2/exercise.md","articles":[]},"previous":{"title":"通过 Manual Page 添加 Syscall","level":"3.5","depth":1,"path":"docs/lab2/syscall.md","ref":"docs/lab2/syscall.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/lab2/tid.md","mtime":"2023-11-05T09:44:42.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-05T09:45:28.134Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

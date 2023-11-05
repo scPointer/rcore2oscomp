@@ -1,0 +1,730 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>三种调试方法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-label/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="usecode.html" />
+    
+    
+    <link rel="prev" href="intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    实验简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab1</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../lab1/intro.html">
+            
+                <a href="../lab1/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../lab1/toelf.html">
+            
+                <a href="../lab1/toelf.html">
+            
+                    
+                    编译到二进制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../lab1/clib.html">
+            
+                <a href="../lab1/clib.html">
+            
+                    
+                    测例库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lab1/tofs.html">
+            
+                <a href="../lab1/tofs.html">
+            
+                    
+                    打包进文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../lab1/exercise.html">
+            
+                <a href="../lab1/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab2</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="pos.html">
+            
+                <a href="pos.html">
+            
+                    
+                    三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="usecode.html">
+            
+                <a href="usecode.html">
+            
+                    
+                    引入外部代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="gdb.html">
+            
+                <a href="gdb.html">
+            
+                    
+                    GDB 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="syscall.html">
+            
+                <a href="syscall.html">
+            
+                    
+                    通过 Manual Page 添加 Syscall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="tid.html">
+            
+                <a href="tid.html">
+            
+                    
+                    规范：TID 定义问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >三种调试方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5BFB;&#x627E;&#x62A5;&#x9519;&#x4F4D;&#x7F6E;">&#x5BFB;&#x627E;&#x62A5;&#x9519;&#x4F4D;&#x7F6E;</h1>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x5C0F;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5C1D;&#x8BD5;&#x5206;&#x6790; <code>hellostd</code> &#x6D4B;&#x4F8B;&#x7684;&#x62A5;&#x9519;&#x60C5;&#x51B5;&#xFF0C;&#x5E76;&#x4ECB;&#x7ECD;&#x4E09;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x5185;&#x6838;&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#x3002;&#x5DE7;&#x5408;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x6070;&#x597D;&#x4F1A;&#x7528;&#x5230;&#x6BCF;&#x4E00;&#x9879;&#x6280;&#x5DE7;&#xFF0C;&#x56E0;&#x6B64;&#x4F60;&#x53EF;&#x4EE5;&#x8DDF;&#x7740;&#x6307;&#x5BFC;&#x4E66;&#x8D70;&#x4E00;&#x904D;&#x6574;&#x4E2A;&#x6D41;&#x7A0B;&#x4EE5;&#x719F;&#x6089;&#x5B83;&#x4EEC;&#xFF0C;&#x800C;&#x4E0D;&#x53EA;&#x662F;&#x67AF;&#x71E5;&#x5730;&#x542C;&#x8BFE;&#x770B;&#x6587;&#x6863;&#x3002;</p>
+<h3 id="&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x5168;&#x5C40;&#x641C;&#x7D22;&#x8F93;&#x51FA;">&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x5168;&#x5C40;&#x641C;&#x7D22;&#x8F93;&#x51FA;</h3>
+<p>&#x6309;&#x7167;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x5B9E;&#x9A8C;&#x51C6;&#x5907;&#x4E0B;&#x8F7D;&#x597D;&#x6D4B;&#x4F8B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5C1D;&#x8BD5;&#x5728;&#x76EE;&#x524D;&#x7684;&#x5185;&#x6838;&#x4E2D;&#x8FD0;&#x884C; <code>hellostd</code> &#x8FD9;&#x4E2A;&#x6D4B;&#x4F8B;&#x3002;&#x5728; <code>os/</code> &#x76EE;&#x5F55;&#x4E0B; <code>make run</code>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5F39;&#x51FA;&#x7684;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165; <code>hellostd</code>&#xFF0C;&#x5927;&#x6982;&#x7387;&#x4F1A;&#x5F97;&#x5230;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x4E00;&#x884C;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-bash">Rust user shell
+&gt;&gt; hellostd
+Shell: Process 2 exited with code -11
+</code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F; <code>exited with code -4</code> &#x800C;&#x4E0D;&#x662F; <code>-11</code>&#xFF0C;&#x8BF4;&#x660E;&#x4F60;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x78B0;&#x5DE7;&#x201C;&#x8DF3;&#x8FC7;&#x201D;&#x4E86;&#x8FD9;&#x4E00;&#x4E2A; bug&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x9605;&#x89C8;&#x4E00;&#x4E0B;&#x672C;&#x8282;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x4E0B;&#x4E00;&#x8282;&#x518D;&#x8DDF;&#x7740;&#x505A;</p>
+</blockquote>
+<p>&#x663E;&#x7136;&#xFF0C;&#x8FD9;&#x4E2A;&#x6D4B;&#x4F8B;&#x8FD0;&#x884C;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x662F;&#x5728;&#x54EA;&#x91CC;&#x5931;&#x8D25;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x5168;&#x5C40;&#x641C;&#x7D22;&#x4E00;&#x4E0B;&#x8FD9;&#x4E00;&#x884C;&#x662F;&#x5728;&#x54EA;&#x91CC;&#x8F93;&#x51FA;&#x7684;&#x3002;&#x9996;&#x5148;&#xFF0C;<code>2</code> &#x548C; <code>-11</code> &#x770B;&#x4E0A;&#x53BB;&#x4E0D;&#x50CF;&#x662F;&#x76F4;&#x63A5;&#x5199;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x627E;&#x7684;&#x5E94;&#x8BE5;&#x662F; <code>Shell: Process</code> &#x548C; <code>exited with code</code> &#x8FD9;&#x4E24;&#x6BB5;&#x6587;&#x672C;&#xFF0C;&#x4E14;&#x5B83;&#x4EEC;&#x4E2D;&#x95F4;&#x9694;&#x7740;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x628A;&#x8981;&#x641C;&#x7D22;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x5199;&#x6210; <code>Shell: Process .* exited with code</code></p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x4E0D;&#x8981;&#x60F3;&#x5F53;&#x7136;&#x8BA4;&#x4E3A;&#x4E2D;&#x95F4;&#x8981;&#x641C;&#x7684;&#x90E8;&#x5206;&#x662F; <code>[0-9]</code> &#x7684;&#x6570;&#x5B57;&#x3002;&#x5B83;&#x4EEC;&#x5E94;&#x8BE5;&#x662F;&#x4EFB;&#x610F;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x8981;&#x641C;&#x7D22;&#x7684;&#x662F;&#x201C;&#x4EE3;&#x7801;&#x201D;&#x800C;&#x4E0D;&#x662F;&#x540C;&#x6837;&#x683C;&#x5F0F;&#x7684;&#x201C;&#x8F93;&#x51FA;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x53EF;&#x80FD;&#x6211;&#x4EEC;&#x8981;&#x627E;&#x7684;&#x5185;&#x5BB9;&#x7C7B;&#x4F3C;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#x5F62;&#x5F0F;&#x4E4B;&#x4E00;&#xFF1A;</p>
+<pre><code>println!(&quot;Shell: Process {} exited with code {}&quot;, id, code);
+println!(&quot;Shell: Process {id} exited with code {code}&quot;);
+printf(&quot;Shell: Process %d exited with code %d&quot;, id, code);
+</code></pre><p>&#x5B83;&#x4EEC;&#x4E2D;&#x95F4;&#x5BF9;&#x5E94; <code>2</code> &#x548C; <code>-11</code> &#x7684;&#x90E8;&#x5206;&#x90FD;&#x4E0D;&#x662F;&#x6570;&#x5B57;&#x3002;</p>
+</blockquote>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x641C;&#x7D22;&#x53EF;&#x80FD;&#x7684;&#x8F93;&#x51FA;&#x4F4D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-bash">grep -rn <span class="hljs-string">&quot;Shell: Process .* exited with code&quot;</span> ./src
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF0C;<code>-r</code> &#x8868;&#x793A;&#x9012;&#x5F52;&#x641C;&#x7D22;&#x4E0B;&#x9762;&#x7684;&#x76EE;&#x5F55;&#xFF0C;<code>-n</code> &#x8868;&#x793A;&#x627E;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#x8F93;&#x51FA;&#x5BF9;&#x5E94;&#x884C;&#x53F7;&#x3002;&#x800C; <code>./src</code> &#x662F;&#x6211;&#x4EEC;&#x8981;&#x641C;&#x7D22;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x56E0;&#x4E3A;&#x73B0;&#x5728;&#x5728; <code>os/</code> &#x4E0B;&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x9645;&#x641C;&#x7D22;&#x7684;&#x662F; <code>os/src/</code> &#x4E0B;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5185;&#x6838;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x4E0D;&#x51FA;&#x610F;&#x5916;&#x7684;&#x8BDD;&#xFF0C;&#x4E0A;&#x9762;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x4E0D;&#x4F1A;&#x7ED9;&#x51FA;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#xFF0C;&#x8FD9;&#x8BF4;&#x660E;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x91CC;&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x8FD9;&#x4E00;&#x884C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7528;&#x6237;&#x6D4B;&#x4F8B;&#x7684;&#x4EE3;&#x7801;&#x76EE;&#x5F55;&#x518D;&#x8BD5;&#x4E00;&#x6B21;&#xFF1A;</p>
+<pre><code class="lang-bash">grep -rn <span class="hljs-string">&quot;Shell: Process .* exited with code&quot;</span> ../user/src
+</code></pre>
+<p>&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x627E;&#x5230;&#x4E86;&#x8F93;&#x51FA;&#x7684;&#x5177;&#x4F53;&#x4F4D;&#x7F6E;&#xFF0C;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x4E2A; user_shell&#xFF0C;&#x5373;&#x7EC8;&#x7AEF;&#x7A0B;&#x5E8F;&#x3002;&#x5177;&#x4F53;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x5206;&#x652F;&#x3002;</p>
+<pre><code class="lang-bash">../user/src/bin/ch8b_user_shell.rs:193:                            //println!(<span class="hljs-string">&quot;Shell: Process {} exited with code {}&quot;</span>, pid, <span class="hljs-built_in">exit</span>_code);
+../user/src/bin/ch7b_user_shell.rs:107:                        println!(<span class="hljs-string">&quot;Shell: Process {} exited with code {}&quot;</span>, pid, <span class="hljs-built_in">exit</span>_code);
+../user/src/bin/ch6b_user_shell.rs:43:                        println!(<span class="hljs-string">&quot;Shell: Process {} exited with code {}&quot;</span>, pid, <span class="hljs-built_in">exit</span>_code);
+../user/src/bin/ch5b_user_shell.rs:43:                        println!(<span class="hljs-string">&quot;Shell: Process {} exited with code {}&quot;</span>, pid, <span class="hljs-built_in">exit</span>_code);
+</code></pre>
+<h4 id="vscode-&#x7684;&#x5168;&#x5C40;&#x641C;&#x7D22;">VSCODE &#x7684;&#x5168;&#x5C40;&#x641C;&#x7D22;</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x4F7F;&#x7528;&#x5E26; GUI &#x7684; IDE &#x7F16;&#x7A0B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x4E0D;&#x7528;&#x8BB0;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x4F8B;&#x5982; VSCODE &#x5C31;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x5668;&#x3002;</p>
+<p><img src="pics/vscode.png" alt=""></p>
+<p>&#x4EE5; VSCODE &#x4E3A;&#x4F8B;&#xFF0C;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7A97;&#x53E3;&#x5DE6;&#x4FA7;&#x627E;&#x5230;&#x641C;&#x7D22;&#x529F;&#x80FD;&#xFF08;&#x6807;&#x70B9;<code>1</code>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x6846;&#x5185;&#x8F93;&#x5165;&#x8981;&#x641C;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B;&#x6B63;&#x5219;&#x5339;&#x914D;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x53F3;&#x4FA7;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5F00;&#x5173;&#xFF08;&#x6807;&#x70B9;<code>2</code>&#xFF09;&#x3002;&#x987A;&#x4FBF;&#x4E00;&#x63D0;&#xFF0C;&#x524D;&#x4E24;&#x4E2A;&#x5F00;&#x5173;&#x5206;&#x522B;&#x662F;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x548C;&#x5168;&#x8BCD;&#x5339;&#x914D;&#xFF08;&#x5373;&#x4E0D;&#x5141;&#x8BB8;&#x5339;&#x914D;&#x534A;&#x4E2A;&#x8BCD;&#xFF0C;&#x4E24;&#x8FB9;&#x5FC5;&#x987B;&#x662F;&#x7A7A;&#x683C;&#x6216;&#x7B26;&#x53F7;&#xFF09;</li>
+<li>&#x8FD9;&#x4E2A;&#x641C;&#x7D22;&#x7684;&#x8303;&#x56F4;&#x9ED8;&#x8BA4;&#x662F;&#x8FD9;&#x4E2A;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x679C;&#x60F3;&#x5728;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x641C;&#x7D22;&#xFF0C;&#x6216;&#x8005;&#x53BB;&#x9664;&#x67D0;&#x4E9B;&#x76EE;&#x5F55;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x70B9;&#x5F00;&#x53F3;&#x4E0B;&#x89D2;&#x7684;&#x6309;&#x94AE;&#xFF08;&#x6807;&#x70B9;<code>3</code>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x8DF3;&#x8F6C;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7FFB;&#x627E;&#x76EE;&#x5F55;&#x53BB;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x522B;&#x5FD8;&#x4E86;-log-&#x8F93;&#x51FA;">&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x522B;&#x5FD8;&#x4E86; LOG &#x8F93;&#x51FA;</h3>
+<p>&#x627E;&#x5230;&#x4E86;&#x8F93;&#x51FA;&#x4F4D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B; <code>user_shell</code> &#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x544A;&#x8BC9;&#x6211;&#x4EEC; <code>Shell: Process 2 exited with code -11</code>&#x3002;&#x5148;&#x9605;&#x89C8;&#x4E00;&#x4E0B; <code>ch7b_user_shell.rs</code> &#x5728;&#x8FD9;&#x6761;&#x8F93;&#x51FA;&#x9644;&#x8FD1;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">if</span> pid == <span class="hljs-number">0</span> {
+    <span class="hljs-comment">// input redirection</span>
+    <span class="hljs-keyword">if</span> !input.is_empty() {
+        <span class="hljs-keyword">let</span> input_fd = open(input.as_str(), OpenFlags::RDONLY);
+        <span class="hljs-keyword">if</span> input_fd == -<span class="hljs-number">1</span> {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Error when opening file {}&quot;</span>, input);
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">4</span>;
+        }
+        <span class="hljs-keyword">let</span> input_fd = input_fd <span class="hljs-keyword">as</span> usize;
+        close(<span class="hljs-number">0</span>);
+        <span class="hljs-built_in">assert_eq!</span>(dup(input_fd), <span class="hljs-number">0</span>);
+        close(input_fd);
+    }
+    <span class="hljs-comment">// output redirection</span>
+    <span class="hljs-keyword">if</span> !output.is_empty() {
+        <span class="hljs-keyword">let</span> output_fd =
+            open(output.as_str(), OpenFlags::CREATE | OpenFlags::WRONLY);
+        <span class="hljs-keyword">if</span> output_fd == -<span class="hljs-number">1</span> {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Error when opening file {}&quot;</span>, output);
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">4</span>;
+        }
+        <span class="hljs-keyword">let</span> output_fd = output_fd <span class="hljs-keyword">as</span> usize;
+        close(<span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert_eq!</span>(dup(output_fd), <span class="hljs-number">1</span>);
+        close(output_fd);
+    }
+    <span class="hljs-comment">// child process</span>
+    <span class="hljs-keyword">if</span> exec(args_copy[<span class="hljs-number">0</span>].as_str(), args_addr.as_slice()) == -<span class="hljs-number">1</span> {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Error when executing!&quot;</span>);
+        <span class="hljs-keyword">return</span> -<span class="hljs-number">4</span>;
+    }
+    <span class="hljs-built_in">unreachable!</span>();
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> exit_code: <span class="hljs-keyword">i32</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> exit_pid = waitpid(pid <span class="hljs-keyword">as</span> usize, &amp;<span class="hljs-keyword">mut</span> exit_code);
+    <span class="hljs-built_in">assert_eq!</span>(pid, exit_pid);
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Shell: Process {} exited with code {}&quot;</span>, pid, exit_code);
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x5931;&#x8D25;&#x5E76;&#x4E0D;&#x662F;&#x56E0;&#x4E3A;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x5931;&#x8D25;&#x6216;&#x8005; <code>exec</code> &#x51FD;&#x6570;&#x5931;&#x8D25;&#xFF0C;&#x800C;&#x662F; <code>user_shell</code> &#x5728; <code>waitpid</code> &#x7B49;&#x5F85;&#x5B83;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F97;&#x77E5;&#x4E86;&#x7A0B;&#x5E8F;&#x8FD4;&#x56DE; <code>-11</code> &#x7684;&#x6D88;&#x606F;&#x3002;&#x8FD9;&#x8BF4;&#x660E;&#x5B83;&#x5F88;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6B63;&#x5E38;&#x8FDB;&#x5165;&#x7528;&#x6237;&#x6001;&#x4E86;&#xFF0C;&#x662F;&#x8FD0;&#x884C;&#x9014;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;<code>-11</code> &#x662F;&#x54EA;&#x6765;&#x7684;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x662F;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x81EA;&#x5DF1; <code>exit</code> &#x65F6;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570; <code>-11</code>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x5F97;&#x53E6;&#x627E;&#x529E;&#x6CD5;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5728;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x4E2D;&#x641C;&#x7D22; <code>-11</code> &#x5C31;&#x80FD;&#x627E;&#x5230;&#x5B83;&#x7684;&#x6765;&#x6E90;&#xFF1A;</p>
+<pre><code class="lang-bash">grep -rn <span class="hljs-string">&quot;\-11&quot;</span> ./src
+./src/task/context.rs:11:    /// s0-11 register, callee saved
+./src/task/signal.rs:33:            Some((-11, <span class="hljs-string">&quot;Segmentation Fault, SIGSEGV=11&quot;</span>))
+</code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x53CD;&#x659C;&#x6760; <code>\</code>&#xFF0C;<code>grep</code> &#x4F1A;&#x628A; <code>-</code> &#x7406;&#x89E3;&#x6210;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x91CC;&#x7684;&#x8D1F;&#x53F7;&#x3002;&#x800C;&#x52A0;&#x4E86;&#x53CD;&#x659C;&#x6760;&#x4EE5;&#x540E;&#xFF0C; <code>\-</code> &#x624D;&#x8868;&#x793A;&#x6211;&#x4EEC;&#x771F;&#x7684;&#x60F3;&#x641C;&#x7D22;&#x8FD9;&#x4E2A;&#x8D1F;&#x53F7;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x8BD5;&#x4E00;&#x8BD5;&#x53BB;&#x6389;&#x53CD;&#x659C;&#x6760; <code>\</code> &#x4F1A;&#x641C;&#x51FA;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6709;&#x641C;&#x7D22; GUI &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FD8;&#x662F;&#x7528; GUI &#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x3002;</p>
+</blockquote>
+<p>&#x6765;&#x81EA; <code>signal.rs</code> &#x7684;&#x4EE3;&#x7801;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#xFF0C;<code>-11</code> &#x53EF;&#x80FD;&#x6765;&#x81EA;&#x4E00;&#x4E2A;&#x6BB5;&#x9519;&#x8BEF;&#xFF0C;&#x7EE7;&#x7EED;&#x641C;&#x7D22; <code>SIGSEGV</code> &#x5C31;&#x80FD;&#x627E;&#x5230;&#x89E6;&#x53D1;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-comment">/// at os/src/trap/mod.rs</span>
+<span class="hljs-meta">#[no_mangle]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">trap_handler</span></span>() -&gt; ! {
+    set_kernel_trap_entry();
+    <span class="hljs-keyword">let</span> scause = scause::read();
+    <span class="hljs-keyword">let</span> stval = stval::read();
+    <span class="hljs-comment">// trace!(&quot;into {:?}&quot;, scause.cause());</span>
+    <span class="hljs-keyword">match</span> scause.cause() {
+        Trap::Exception(Exception::UserEnvCall) =&gt; {
+            <span class="hljs-comment">// jump to next instruction anyway</span>
+            <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> cx = current_trap_cx();
+            cx.sepc += <span class="hljs-number">4</span>;
+            <span class="hljs-comment">// get system call return value</span>
+            <span class="hljs-keyword">let</span> result = syscall(cx.x[<span class="hljs-number">17</span>], [cx.x[<span class="hljs-number">10</span>], cx.x[<span class="hljs-number">11</span>], cx.x[<span class="hljs-number">12</span>], cx.x[<span class="hljs-number">13</span>]]);
+            <span class="hljs-comment">// cx is changed during sys_exec, so we have to call it again</span>
+            cx = current_trap_cx();
+            cx.x[<span class="hljs-number">10</span>] = result <span class="hljs-keyword">as</span> usize;
+        }
+        Trap::Exception(Exception::StoreFault)
+        | Trap::Exception(Exception::StorePageFault)
+        | Trap::Exception(Exception::InstructionFault)
+        | Trap::Exception(Exception::InstructionPageFault)
+        | Trap::Exception(Exception::LoadFault)
+        | Trap::Exception(Exception::LoadPageFault) =&gt; {
+            error!(
+                <span class="hljs-string">&quot;[kernel] trap_handler: {:?} in application, bad addr = {:#x}, bad instruction = {:#x}, kernel killed it.&quot;</span>,
+                scause.cause(),
+                stval,
+                current_trap_cx().sepc,
+            );
+            current_add_signal(SignalFlags::SIGSEGV);
+        }
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6D4B;&#x4F8B;&#x662F;&#x4E0D;&#x662F;&#x89E6;&#x53D1;&#x4E86; <code>Exception::LoadPageFault</code>&#xFF1F;&#x6CE8;&#x610F;&#x5230; <code>SISEGV</code> &#x524D;&#x6709; <code>error</code> &#x8F93;&#x51FA;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>make run LOG=ERROR</code> &#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6240;&#x6709; <code>ERROR</code> &#x7EA7;&#x522B;&#x4EE5;&#x4E0A;&#x7684;&#x5185;&#x6838;&#x8F93;&#x51FA;&#x4E86;&#x3002;&#x5176;&#x5B9E;&#x5728; <code>rCore-Tutorial ch3</code> &#x7684;&#x95EE;&#x7B54;&#x4F5C;&#x4E1A;&#x4E2D;&#x5C31;&#x63D0;&#x5230;&#x8FC7; <code>LOG</code> &#x529F;&#x80FD;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x751A;&#x81F3;&#x4E8E;&#x5728; <code>ch1</code> &#x548C; <code>ch2</code> &#x4E2D;&#x8FD8;&#x5C1D;&#x8BD5;&#x4E86;&#x4F7F;&#x7528; <code>log</code> &#x8F93;&#x51FA;&#x4E94;&#x989C;&#x516D;&#x8272;&#x7684;&#x8C03;&#x8BD5;&#x8BED;&#x53E5;&#xFF0C;&#x4E0D;&#x8FC7;&#x53EF;&#x80FD;&#x5927;&#x90E8;&#x5206;&#x540C;&#x5B66;&#x5DF2;&#x7ECF;&#x5FD8;&#x4E86;&#x8FD8;&#x6709;&#x8FD9;&#x4E00;&#x5C42;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5728; <code>os/</code> &#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C; <code>make run LOG=ERROR</code>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5F39;&#x51FA;&#x7684;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165; <code>hellostd</code>&#xFF0C;&#x4F60;&#x4F1A;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x8F93;&#x51FA;</p>
+<pre><code class="lang-bash">&gt;&gt; hellostd
+[ERROR] [kernel] <span class="hljs-built_in">trap</span>_handler: Exception(LoadPageFault) <span class="hljs-keyword">in</span> application, bad addr = 0xb000, bad instruction = 0x572, kernel killed it.
+Shell: Process 2 exited with code -11
+</code></pre>
+<p>&#x867D;&#x7136;&#x62A5;&#x9519;&#x7684;&#x5730;&#x5740;&#x53EF;&#x80FD;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF08;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF09;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x7EC8;&#x4E8E;&#x53EF;&#x4EE5;&#x786E;&#x8BA4;&#xFF0C;&#x6D4B;&#x4F8B; <code>hellostd</code> &#x8FD0;&#x884C;&#x5931;&#x8D25;&#x5C31;&#x662F;&#x7531;&#x4E8E;&#x89E6;&#x53D1; <code>LoadPageFault</code> &#x8BBF;&#x95EE;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<h4 id="log-&#x8F93;&#x51FA;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">LOG &#x8F93;&#x51FA;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h4>
+<p>&#x603B;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5728;&#x6BCF;&#x6B21;&#x51FA; bug &#x65F6;&#x9996;&#x5148;&#x6253;&#x5F00; LOG &#x8F93;&#x51FA;&#x518D;&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>make run LOG=ERROR</code> &#x6216;&#x8005;&#x66F4;&#x4F4E;&#x7684; LOG &#x7B49;&#x7EA7;&#xFF0C;&#x6BD4;&#x5982; <code>make run LOG=TRACE</code>&#x3002;&#x4F46;&#x4F7F;&#x7528; LOG &#x4E5F;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF1A;</p>
+<ul>
+<li>LOG &#x53EA;&#x4F1A;&#x8F93;&#x51FA;&#x6211;&#x4EEC;&#x9884;&#x5148;&#x57CB;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x7684; <code>error!</code> <code>warn!</code> <code>trace!</code> &#x7B49;&#x7B49;&#x8FD9;&#x4E9B;&#x8BED;&#x53E5;&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x53EA;&#x80FD;&#x68C0;&#x67E5;&#x5230;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x53EF;&#x80FD;&#x4F1A;&#x51FA; bug &#x7684;&#x70B9;&#x3002;&#x4F46;&#x95EE;&#x9898;&#x4E5F;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x9884;&#x6599;&#x5230;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6240;&#x4EE5;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E2D;&#x5F88;&#x53EF;&#x80FD;&#x8FD8;&#x9700;&#x8981;&#x65B0;&#x52A0; LOG &#x8BED;&#x53E5;&#x3002;</li>
+<li>&#x5728;&#x8FD0;&#x884C;&#x7279;&#x5B9A;&#x6D4B;&#x4F8B;&#x65F6;&#xFF0C;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x7684;&#x9891;&#x7387;&#x8FC7;&#x9AD8;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x63D2;&#x5165; LOG &#x8BED;&#x53E5;&#x65F6;&#x8981;&#x518D;&#x4E09;&#x8003;&#x8651;&#x3002;&#x6BD4;&#x5982; <code>user_shell</code> &#x4E2D;&#x6BCF;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21; <code>sys_read</code>&#xFF0C;&#x518D;&#x6BD4;&#x5982;&#x6709;&#x4E9B;&#x5E94;&#x7528;&#x4F1A;&#x53CD;&#x590D;&#x8C03;&#x7528; <code>sys_clock_get_time</code> &#x6765;&#x66F4;&#x65B0;&#x81EA;&#x8EAB;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E9B;&#x5730;&#x65B9;&#x63D2;&#x5165; LOG&#xFF0C;&#x8F93;&#x51FA;&#x5C4F;&#x5E55;&#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x88AB;&#x5927;&#x91CF;&#x7684;&#x8C03;&#x8BD5;&#x8F93;&#x51FA;&#x6DF9;&#x6CA1;&#x3002;</li>
+<li>LOG &#x81EA;&#x5DF1;&#x4E5F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x62A5;&#x9519;&#xFF01;</li>
+<li><ul>
+<li>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF0C;LOG &#x6216;&#x8005; <code>println!</code> &#x5C1D;&#x8BD5;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x65E0;&#x6548;&#x5730;&#x5740;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x67E5;&#x5230;&#x67D0;&#x4E2A;&#x53D8;&#x91CF; <code>x</code> &#x7684;&#x503C;&#x53EF;&#x80FD;&#x4E0D;&#x5BF9;&#xFF0C;&#x60F3;&#x7528; LOG &#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x8BED;&#x53E5;&#x672C;&#x8EAB;&#x53EF;&#x80FD;&#x4F1A;&#x89E6;&#x53D1; <code>LoadPageFault</code>&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5185;&#x6838;&#x4ECE;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x62FF;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x9488;(&#x6BD4;&#x5982; <code>*const u8</code>)&#xFF0C;&#x7136;&#x540E;&#x6CA1;&#x6709;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6240;&#x6307;&#x7684;&#x5730;&#x5740;&#x662F;&#x5426;&#x65E0;&#x6548;&#xFF0C;&#x5C31;&#x628A;&#x5B83;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x4E86;&#x53D8;&#x91CF;&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x7528; <code>:p</code> &#x6765;&#x8F93;&#x51FA;&#x5B83;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x4F8B;&#x5982; <code>error!(&quot;{:p}&quot;, &amp;x)</code>&#x3002;</li>
+</ul>
+</li>
+<li><ul>
+<li>&#x53E6;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF0C;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x5220;&#x9664; LOG &#x8BED;&#x53E5;&#x5F71;&#x54CD;&#x4E86;&#x8FD0;&#x884C;&#x6D4B;&#x4F8B;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x662F;&#x7531;&#x4E8E;&#x5185;&#x6838;&#x6808;&#x6EA2;&#x51FA;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x4E0B;&#x6B21;&#x9047;&#x5230;&#x201C;&#x52A0;&#x4E86; print&#x7ED3;&#x679C;&#x5C45;&#x7136;&#x53D8;&#x4E86;&#x201D;&#x7684;&#x60C5;&#x51B5;&#x8BF7;&#x5148;&#x68C0;&#x67E5;&#x5806;&#x6808;&#x662F;&#x5426;&#x591F;&#x7528;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x53CD;&#x6C47;&#x7F16;">&#x8C03;&#x8BD5;&#x6280;&#x5DE7;&#xFF1A;&#x53CD;&#x6C47;&#x7F16;</h3>
+<p>&#x4E0A;&#x9762;&#x7684;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#xFF0C;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x5728; <code>0x572</code> &#x8BBF;&#x95EE;&#x4E86;&#x4E00;&#x4E2A;&#x5730;&#x5740; <code>0xb000</code>&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x5BF9;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x6CA1;&#x6709;&#x8BFB;&#x53D6;&#x6743;&#x9650;&#xFF08;&#x4E8B;&#x5B9E;&#x4E0A;&#x8FD9;&#x4E00;&#x9875;&#x5728;&#x7528;&#x6237;&#x9875;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x6620;&#x5C04;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8BB0;&#x5F97;&#x9875;&#x8868;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x56DE;&#x53BB;&#x770B; <code>rCore-Tutorial ch4</code>&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E0A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x4E2D;&#x68C0;&#x67E5;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53BB;&#x770B;&#x770B; <code>hellostd</code> &#x91CC; <code>0x572</code> &#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x3002;&#x6211;&#x4EEC;&#x5728; <code>testcases/</code> &#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C; <code>riscv64-linux-musl-objdump build/hellostd -ld &gt; hellostd.S</code></p>
+<pre><code class="lang-asm6502">
+build/hellostd:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000508 &lt;exit&gt;:
+exit():
+     508:    1101                    addi    sp,sp,-32
+     50a:    e42a                    sd    a0,8(sp)
+     50c:    ec06                    sd    ra,24(sp)
+     50e:    436000ef              jal    ra,944 &lt;_fini&gt;
+     512:    434000ef              jal    ra,946 &lt;__libc_exit_fini&gt;
+     516:    00007317              auipc    t1,0x7
+     51a:    c6233303              ld    t1,-926(t1) # 7178 &lt;_GLOBAL_OFFSET_TABLE_+0x60&gt;
+     51e:    9302                    jalr    t1
+     520:    6522                    ld    a0,8(sp)
+     522:    523010ef              jal    ra,2244 &lt;_Exit&gt;
+
+0000000000000526 &lt;_start&gt;:
+_start():
+     526:    00007197              auipc    gp,0x7
+     52a:    2da18193              addi    gp,gp,730 # 7800 &lt;__global_pointer$&gt;
+     52e:    850a                    mv    a0,sp
+     530:    00007597              auipc    a1,0x7
+     534:    96058593              addi    a1,a1,-1696 # 6e90 &lt;_DYNAMIC&gt;
+     538:    ff017113              andi    sp,sp,-16
+     53c:    a015                    j    560 &lt;_start_c&gt;
+
+000000000000053e &lt;__dls2&gt;:
+__dls2():
+     53e:    00858613              addi    a2,a1,8
+     542:    418c                    lw    a1,0(a1)
+     544:    4781                    li    a5,0
+     546:    00007717              auipc    a4,0x7
+     54a:    c4273703              ld    a4,-958(a4) # 7188 &lt;_GLOBAL_OFFSET_TABLE_+0x70&gt;
+     54e:    00007697              auipc    a3,0x7
+     552:    bf26b683              ld    a3,-1038(a3) # 7140 &lt;_GLOBAL_OFFSET_TABLE_+0x28&gt;
+     556:    00007517              auipc    a0,0x7
+     55a:    c1a53503              ld    a0,-998(a0) # 7170 &lt;_GLOBAL_OFFSET_TABLE_+0x58&gt;
+     55e:    ae4d                    j    910 &lt;__libc_start_main&gt;
+
+0000000000000560 &lt;_start_c&gt;:
+_start_c():
+     560:    6118                    ld    a4,0(a0)
+     562:    df010113              addi    sp,sp,-528
+     566:    862a                    mv    a2,a0
+     568:    2705                    addiw    a4,a4,1
+     56a:    00371793              slli    a5,a4,0x3
+     56e:    00f606b3              add    a3,a2,a5
+     572:    6694                    ld    a3,8(a3)
+     574:    0705                    addi    a4,a4,1
+     576:    faf5                    bnez    a3,56a &lt;_start_c+0xa&gt;
+</code></pre>
+<p>&#x7528;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5BF9;&#x6BD4;&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x4E2D;&#x770B;&#x5230;&#x7684; Rust &#x6D4B;&#x4F8B;&#x7684;&#x53CD;&#x6C47;&#x7F16;&#x4EE5;&#x53CA;&#x76EE;&#x524D;&#x5185;&#x6838;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x7684; <code>42</code> <code>hello</code> &#x4E24;&#x4E2A;&#x6D4B;&#x4F8B;&#x7684;&#x53CD;&#x6C47;&#x7F16;&#xFF0C;&#x518D;&#x7ED3;&#x5408;&#x62A5;&#x9519;&#x65F6;&#x5C1D;&#x8BD5;&#x8BBF;&#x95EE;&#x7684;  <code>0xb000</code> &#x662F;&#x7528;&#x6237;&#x6808;&#x9876;&#xFF0C;&#x53EF;&#x4EE5;&#x731C;&#x5230; <code>0x572</code> &#x7684;&#x4F4D;&#x7F6E;&#x5927;&#x6982;&#x662F;&#x5728;&#x7528;&#x6237;&#x6808;&#x4E0A;&#x8BFB;&#x53D6;&#x4FE1;&#x606F;&#x4F46;&#x8BFB;&#x201C;&#x8D8A;&#x754C;&#x201D;&#x4E86;&#x3002;&#x8FD9;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x7684;&#x7528;&#x6237;&#x6808;&#x5B9E;&#x73B0;&#x53EF;&#x80FD;&#x8FD8;&#x6709;&#x95EE;&#x9898;&#x3002;</p>
+<blockquote>
+<p>&#x662F;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x523B;&#x610F;&#x6A21;&#x7CCA;&#x4E86;&#x8FD9;&#x4E00;&#x6BB5;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x7684;&#x8FC7;&#x7A0B;&#xFF01;</p>
+<p>&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x53CD;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x4E2D;&#x770B;&#x51FA;&#x95EE;&#x9898;&#x6240;&#x5728;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x884C;&#x5F97;&#x901A;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x201C;&#x7528;&#x6237;&#x6808;&#x6709;&#x95EE;&#x9898;&#x201D;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x77E5;&#x8BC6;&#x9E3F;&#x6C9F;&#x201D;&#xFF0C;&#x5F88;&#x96BE;&#x76F4;&#x63A5;&#x7528; debug &#x6280;&#x5DE7;&#x89E3;&#x51B3;&#x3002;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5927;&#x91CF;&#x67E5;&#x9605;&#x8D44;&#x6599;&#x3001;&#x8BE2;&#x95EE;&#x4ED6;&#x4EBA;&#x3001;&#x7FFB;&#x627E;&#x5F80;&#x5C4A;&#x80FD;&#x901A;&#x8FC7;&#x6D4B;&#x4F8B;&#x7684;&#x5185;&#x6838;&#x4EE3;&#x7801;&#xFF0C;&#x624D;&#x80FD;&#x77E5;&#x9053;&#x5177;&#x4F53;&#x51FA;&#x9519;&#x7684;&#x539F;&#x56E0;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x4E00;&#x6B21;&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x63A5;&#x5047;&#x8BBE;&#x8DF3;&#x8FC7;&#x4E86;&#x67E5;&#x8BE2;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F4;&#x63A5;&#x770B;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;bug&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page: 实验概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="usecode.html" class="navigation navigation-next " aria-label="Next page: 引入外部代码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"三种调试方法","level":"3.2","depth":1,"next":{"title":"引入外部代码","level":"3.3","depth":1,"path":"docs/lab2/usecode.md","ref":"docs/lab2/usecode.md","articles":[]},"previous":{"title":"实验概述","level":"3.1","depth":1,"path":"docs/lab2/intro.md","ref":"docs/lab2/intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/lab2/pos.md","mtime":"2023-11-05T09:44:42.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-05T09:45:28.134Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
