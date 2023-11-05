@@ -4,7 +4,7 @@
 
 本节介绍`rCore-Tutorial` 的 `tid` 与标准 `tid` 有何不同，之后会有更多这样的小节说明`rCore-Tutorial`其他模块中的规范问题。
 
-##### POSIX syscall 的定义
+### POSIX syscall 的定义
 
 在 `Linux` 中，每个线程有**全局唯一**的线程ID，也就是 `tid`，且**每个进程的初始线程的 `tid` 等同于进程的 `pid`**。举个例子来说，可能是这样：
 
@@ -22,7 +22,7 @@
 
 - 如果进程 `d` 退出，然后其他进程再创建一个进程 `d2`，那么它可能是 `pid=4,tid=4`，也可能是其他的 `pid=x,tid=x(x>=6)`。总之，`tid`不能重复。
 
-##### rCore-Tutorial
+### rCore-Tutorial
 
 而相对的，在 `rCore-Tutorial` 中，每个进程内部的每个线程的ID独立排序，且每个进程的初始线程的 `tid` 为 0。也就是像下面这样
 
@@ -37,7 +37,7 @@
 
 这里 `a,f` 是同一个进程内的两个线程，`b,c,e` 是同一个进程内的三个线程，`d` 是一个独立进程。
 
-##### 实现建议
+### 实现建议
 
 > 在通过比赛测例时，你需要修改 `tid` 实现以适应实际 Linux 应用的需求。但在本次实验中**不需要**改下面的实现。
 
@@ -47,7 +47,7 @@
 
 - 每次生成一个线程时，也为它分配一个全局ID作为 `tid`。然后令它的 `pid` 的值为生成它的线程的 `pid`（这表示它们俩在同一个进程里）
 
-##### 扩展阅读：waittid
+### 扩展阅读：waittid
 
 如果认真看 `syscall`列表和 [`sys_wait` 的文档](https://man7.org/linux/man-pages/man2/waitpid.2.html)，你可能会注意到这里没有 `waittid`，只有 `wait,waitpid,waitid`（注意 `waitid=wait+id`）。那么 `Linux` 应用如何实现 `rCore-Tutorial` 的 `waittid` 呢？你可能已经在其他项目中见过它的形式了：
 

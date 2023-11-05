@@ -11,7 +11,7 @@
 
 坏消息是，它仍然没有运行成功；好消息是，这实际上已经是最后一步了！只要我们按照 `rCore-Tutorial` 那样填补上缺失的 `syscall`，就可以成功运行这个测例。不过，这时候就不是指导书来定义这些 `syscall` 了，而是需要查看通用的 `syscall` 标准。
 
-##### Syscall 定义
+### Syscall 定义
 
 通常来说，`syscall` 定义可以在 `man7.org` 查到，比如[这是一个 `sys_clone` 的定义](https://man7.org/linux/man-pages/man2/clone.2.html)，里面包含了你可能需要知道的绝大部分东西，包括
 
@@ -65,7 +65,7 @@ DESCRIPTION
 - 其他需要说明的问题，比如存在的版本冲突、历史版本问题、额外的说明、代码示例等等
 - 一些链接，可以点到相关的其他 `syscall`
 
-##### 如何搜索到Syscall定义
+### 如何搜索到Syscall定义
 
 一般来说，如果你知道 `syscall` 的名字。总是可以用搜索引擎找到上面的页面的。
 
@@ -74,7 +74,7 @@ DESCRIPTION
 - 可以用网上整理好的博客，比如[这一篇](https://jborza.com/post/2021-05-11-riscv-linux-syscalls/)，在网页里搜索 `96` 就能找到我们想要的 `sys_set_tid_address`。
 - 可以通过源代码查询。例如我们在[最初的实验](../lab1/intro.md#实验准备) 中下载的交叉编译工具链使用的 `musl-libc`。可以在[这里](https://git.musl-libc.org/cgit/musl) 下载到 `musl` 库的源代码，然后在目录下的 `arch/riscv64/bits/syscall.h.in` 中找到 `syscall` 对应的名字。
 
-##### 回到主线
+### 回到主线
 
 至少在参加比赛这个阶段，当我们要实现一个 `syscall` 时**不需要**实现定义里的所有内容。定义中 90% 的部分可能只会有不到 1% 的应用程序会使用。因此，我们只希望支持最基本的功能，让用户程序成功运行就行，更详细的定义可以以后需要时再加。
 
