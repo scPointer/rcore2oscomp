@@ -1,5 +1,7 @@
 # 从 rCore-Tutorial 到实际应用
 
+在[这里](https://scpointer.github.io/rcore2oscomp/)可以看到本项目的在线文档。
+
 本教程是 rCore-Tutorial 的后续教程，希望能帮助大家从 rCore-Tutorial 以及其他 Rust 内核出发，构建一个可运行原生 Linux 应用、拥有更强大功能的内核。如果你是希望参加[全国大学生计算机系统能力大赛操作系统设计赛](https://os.educg.net/#/)的同学，可以通过本教程学习如何构建自己的内核；如果你是其他 Rust 开发者，也可以通过本教程扩展 [rCore-Tutorial](https://rcore-os.cn/rCore-Tutorial-Book-v3/)，用学到的知识为开源社区做贡献。
 
 本教程的各个实验间**不是连续的**。我们会选择内核开发中的一些小切片，以它们为例设计代码量适中的实验，引导大家在OS比赛中的开发。如果说 `rCore-Tutorial` 是十层居民楼的毛坯房，需要大家通过 5 个实验去“装修”，那么本教程就像是一个个更高楼房的地基，指引大家从这里开始建造摩天大楼。
