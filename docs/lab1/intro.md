@@ -1,6 +1,8 @@
 # 运行裸机 C 程序
 
-建议至少做完 rCore-Tutorial ch6 再做这个实验。
+建议先阅读 `rCore-Tutorial ch6` 及之前的内容再做这个实验。
+
+> rCore-Tutorial 有许多版本的指导书，[详细的在这里](https://rcore-os.cn/rCore-Tutorial-Book-v3/)，如果你没有太多时间，也可以阅读[简略版本的指导书](http://learningos.cn/rCore-Tutorial-Guide-2023A/)。
 
 实验需要使用你在 `rCore-Tutorial` 实验中的仓库，但**不依赖于**你在 `rCore-Tutorial` 中完成的任何作业代码。你可以用自己的 `rCore-Tutorial ch8` 分支来做这个实验中的代码修改，也可以用没有修改过的 `ch7` 分支。
 
@@ -18,7 +20,7 @@ riscv64-linux-musl-gcc --version
 
 ## 实验概述
 
-在往年的 rCore-Tutorial 实验中，有些同学会有这样一种感受：整个 rCore-Tutorial 是一个完整的项目，从内核到测例到文件系统都是用 Rust 连接的，修改任何一部分都需要做额外的兼容。就像下面这样：
+在往年的 `rCore-Tutorial` 实验中，有些同学会有这样一种感受：整个 `rCore-Tutorial` 是一个完整的项目，从内核到测例到文件系统都是用 Rust 连接的，修改任何一部分都需要做额外的兼容。就像下面这样：
 
 ![](./pics/g1.png)
 
@@ -26,7 +28,7 @@ riscv64-linux-musl-gcc --version
 
 ![](./pics/g2.png)
 
-在本章中，我们将回顾用户程序的编译与加载流程，然后使用一个极简的 C 用户程序库代替 rCore-Tutorial 原有的 `/user` 测例，并修改上面这套编译、打包、加载的流程中的各个 Makefile，让原本只支持 rCore-Tutorial 自带的 Rust 测例的内核运行一个从 C 语言编译的应用程序。
+在本章中，我们将回顾用户程序的编译与加载流程，然后使用一个极简的 C 用户程序库代替 `rCore-Tutorial ` 原有的 `/user` 测例，并修改上面这套编译、打包、加载的流程中的各个 Makefile，让原本只支持 rCore-Tutorial 自带的 Rust 测例的内核运行一个从 C 语言编译的应用程序。
 
 ## 在实验之后
 
@@ -34,7 +36,7 @@ riscv64-linux-musl-gcc --version
 
 ###### 尝试通过比赛初赛测例库
 
-[比赛初赛测例库](https://github.com/oscomp/testsuits-for-oskernel/tree/master/riscv-syscalls-testing) 可以直接访问，通过它也就通过了初赛。这个测例库比当前实验里要稍微复杂一些，但功能上相比 rCore-Tutorial 不会有太大变化。注意比赛的 syscall 规范和 rCore-Tutorial 的会有细微差别。
+[比赛初赛测例库](https://github.com/oscomp/testsuits-for-oskernel/tree/master/riscv-syscalls-testing) 可以直接访问，通过它也就通过了初赛。这个测例库比当前实验里要稍微复杂一些，但功能上相比 `rCore-Tutorial` 不会有太大变化。注意比赛的 syscall 规范和 `rCore-Tutorial` 的会有细微差别。
 
 ###### 更换一个 FAT32 类型的文件系统
 
