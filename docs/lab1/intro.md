@@ -2,9 +2,13 @@
 
 建议先阅读 `rCore-Tutorial ch6` 及之前的内容再做这个实验。
 
-> rCore-Tutorial 有许多版本的指导书，[详细的在这里](https://rcore-os.cn/rCore-Tutorial-Book-v3/)，如果你没有太多时间，也可以阅读[简略版本的指导书](http://learningos.cn/rCore-Tutorial-Guide-2023A/)。
+> `rCore-Tutorial` 有许多版本的指导书，[详细的在这里](https://rcore-os.cn/rCore-Tutorial-Book-v3/)，如果你没有太多时间，也可以阅读[简略版本的指导书](http://learningos.cn/rCore-Tutorial-Guide-2023A/)。
 
 实验需要使用你在 `rCore-Tutorial` 实验中的仓库，但**不依赖于**你在 `rCore-Tutorial` 中完成的任何作业代码。你可以用自己的 `rCore-Tutorial ch8` 分支来做这个实验中的代码修改，也可以用没有修改过的 `ch7` 分支。
+
+> 如果你还没有自己的 `rCore-Tutorial` 仓库，可以选择以下两种方式之一
+> 1. 通过邀请链接创建仓库： `https://classroom.github.com/a/AFBsVzHi`
+> 2. 进入这个仓库：`https://github.com/LearningOS/rCore-Tutorial-Code-2023A/`，在右上角点击绿色按钮 `Use this template`，然后点击 `Create a new repository`，这相当于 `fork` 了这个仓库到你的用户名下。
 
 ## 实验准备
 
