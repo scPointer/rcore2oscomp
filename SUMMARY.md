@@ -7,7 +7,7 @@
 * [测例库介绍](docs/lab1/clib.md)
 * [打包进文件系统](docs/lab1/tofs.md)
 * [练习](docs/lab1/exercise.md)
-*[扩展阅读：RISC-V 架构与内核启动](docs/lab1/boot.md)
+* [扩展阅读：RISC-V 架构与内核启动](docs/lab1/boot.md)
 
 ## Lab2
 
