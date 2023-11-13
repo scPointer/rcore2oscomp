@@ -1,6 +1,6 @@
 ## 扩展阅读：RISC-V 架构与内核启动
 
-其实 [`rCore-Tutorial` 指导书第一章](http://learningos.cn/rCore-Tutorial-Guide-2023A/chapter1/4mini-rt-baremetal.html) 已经对 `rCore-Tutorial` 的内核启动过程做了大致描述，我们仅在此简要描述流程，并且补充必要的内容。[全国大学生计算机系统能力大赛操作系统设计赛](https://os.educg.net/#/) 内核赛道要求采用 `RISC-V` 架构，所以我们在这里会简单解释 `RISC-V` 的内容。如果你希望开发 `x86_64` 或者 `arm` 的内核，可以参考支持这项架构的内核。例如[Arceos](https://github.com/rcore-os/arceos/) 是一个支持上述这些架构的内核，感兴趣的同学可以去看看它的启动过程。
+其实 [`rCore-Tutorial` 指导书第一章](http://learningos.cn/rCore-Tutorial-Guide-2023A/chapter1/4mini-rt-baremetal.html) 已经对 `rCore-Tutorial` 的内核启动过程做了大致描述，我们仅在此简要描述流程，并且补充必要的内容。[全国大学生计算机系统能力大赛操作系统设计赛](https://os.educg.net/#/) 内核赛道要求采用 `RISC-V` 架构，所以我们在这里会简单解释 `RISC-V` 的内容。如果你希望开发 `x86_64` 或者 `arm` 的内核，可以参考支持这项架构的内核。例如 [Arceos](https://github.com/rcore-os/arceos/) 是一个支持上述这些架构的内核，感兴趣的同学可以去看看它的启动过程。
 
 ### RISC-V 特权级
 
@@ -12,7 +12,7 @@
 
 高权限的模式可以访问低权限模式的一切信息，并控制地权限模式的执行流程。系统启动流程也是从高权限模式开始，初始化完成后再启动低特权级的模式。
 
-有虚拟化的情况下，还会有类似 S 态的 `hypervisor` 模式（HS 态），和 S 态权限一致，但它可以作为一个虚拟的 M 态，在上面支持多个操作系统，是一种“虚拟机”。在 HS 态之上的虚拟操作系统运行在 VS 态，在这样的操作系统上运行的用户程序运行在 VU 态。本课程不涉及虚拟化的知识，如果同学对这一部分内容感兴趣，可以在 [`LearnOS`` 课程首页](https://github.com/LearningOS/) 寻找 `RVM` 相关内容学习，例如 [`RVM-Tutorial`](https://github.com/LearningOS/RVM-Tutorial)
+有虚拟化的情况下，还会有类似 S 态的 `hypervisor` 模式（HS 态），和 S 态权限一致，但它可以作为一个虚拟的 M 态，在上面支持多个操作系统，是一种“虚拟机”。在 HS 态之上的虚拟操作系统运行在 VS 态，在这样的操作系统上运行的用户程序运行在 VU 态。本课程不涉及虚拟化的知识，如果同学对这一部分内容感兴趣，可以在 [`LearnOS` 课程首页](https://github.com/LearningOS/) 寻找 `RVM` 相关内容学习，例如 [`RVM-Tutorial`](https://github.com/LearningOS/RVM-Tutorial)
 
 每台 RISC-V 机器并不一定需要具有所有的特权级。例如在嵌入式设备上只需要 M 态，所有的程序都直接运行在 M 态。我们这个课程讲的是操作系统，在运行时通常包含 M/S/U 三个特权级。
 
