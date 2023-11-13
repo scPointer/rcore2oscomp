@@ -29,13 +29,65 @@ qemu-system-riscv64 \
             -bios $(BOOTLOADER) \
             -device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA)
 ```
+
 - 其中 `-bios` 制定了一个 BootLoader，它是运行在 M 态的程序，负责初始化以及启动内核，默认加载到内存中 `0x80000000` 这个地址。默认情况下， `Qemu` 会使用 `OpenSBI` 启动，但 `rCore-Tutorial` 在这里指定了使用 [`RustSBI`](https://github.com/rustsbi/rustsbi-qemu/) 启动（ `$(BOOTLOADER)` 这个常量的值见 `os/Makefile` 开头处），它是首个使用 Rust 编写的 SBI 实现。
 - `-device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA)` 指定了内核加载的位置是 `KERNEL_ENTRY_PA`，即 `0x80200000`，内核镜像会被放置在内存的这个位置。
 
 ### 启动过程
 
-在内核启动前，经历了以下步骤：
+在内核启动时，经历了以下步骤：
 
 1. CPU 从物理地址 `0x1000` 开始执行一段硬件（在我们的实验中是 `Qemu` 模拟出的）上的引导代码，此时 CPU 位于 M 态。
-2. CPU 跳转到 `0x80000000` 执行 `RustSBI` 的初始化代码，此时 CPU 位于 M 态。之后通过 `mret` 跳转到 `0x80200000` 执行内核的第一条代码，
 
+2. CPU 跳转到 `0x80000000` 执行 `RustSBI` 的初始化代码，此时 CPU 位于 M 态。之后通过 `mret` 跳转到 `0x80200000` 执行内核的第一条代码，同时 CPU 切换到 S 态。
+   
+   1. 其实内核中也有一条类似的指令，就是 `os/src/trap/trap.S` 中的 `sret`，它会在跳转的同时从 S 态切换到 U 态。
+   2. `0x80200000` 这个地址是直接编码在 `SBI` 里的，不需要 `Qemu` 告诉它内核在哪。
+
+3. 内核的第一条代码是位于 `os/src/entry.asm` 中的 `_start` 符号所在的位置。这个文件包含以下内容
+   
+   ```asm6502
+       .section .text.entry
+       .globl _start
+   _start:
+       la sp, boot_stack_top
+       call rust_main
+   
+       .section .bss.stack
+       .globl boot_stack_lower_bound
+   boot_stack_lower_bound:
+       .space 4096 * 16
+       .globl boot_stack_top
+   boot_stack_top:
+   ```
+   
+    它在 `.bss` 段预留了 `16*4K` 的空间作为启动栈。内核启动后，首先通过 `la sp, boot_stack_top` 将这个启动栈的位置写入 `sp` 寄存器，然后通过 `call rust_main` 跳转到 `os/src/main.rs:rust_main` 执行。这是因为高级语言里函数调用需要使用栈帧，所以需要在最开始的汇编代码中初始化 `sp`。
+
+4. 随后就是 Rust 代码控制的启动流程了：
+
+```rust
+pub fn rust_main() -> ! {
+    clear_bss();
+    println!("[kernel] Hello, world!");
+    logging::init();
+    mm::init();
+    mm::remap_test();
+    trap::init();
+    trap::enable_timer_interrupt();
+    timer::set_next_trigger();
+    fs::list_apps();
+    task::add_initproc();
+    task::run_tasks();
+    panic!("Unreachable in rust_main!");
+}
+```
+
+这些函数实际上包含了以下启动的步骤：
+
+1. `clear_bss` 把 `.bss` 段清零，这里通常存放的是全局变量。
+2. `logging::init()` 初始化了日志，之后就可以使用 `error!` `info!` 等进行输出了，而不只是 `println!`
+3. `mm::init()` 初始化了内核堆、页帧分配器和内核页表。内核堆初始化后，可以使用 `Vec` 等动态大小的结构；页帧分配器初始化后，可以给页表分配页面；内核页表初始化后，可以给内核各段限制权限了，例如代码段 `.text` 是只读的，但在此之前可以任意修改内核中任意地址处的值。
+4. `trap::init()` 初始化了异常中断处理过程。如果在此之前发生异常、中断，会直接由 M 态处理，通常会直接导致内核退出。
+5. `trap::enable_timer_interrupt()` 和 `timer::set_next_trigger()` 开启了时钟中断，此后每隔一段时间，异常中断处理模块 `os/src/trap/` 就会收到一次时钟中断。不过目前的 `rCore-Tutorial` 在内核态时会屏蔽中断，因此只有通过 `sret` 进入用户态后它才会触发。
+6. `fs::list_apps()` `task::add_initproc()` 访问文件系统并将用户程序加载到内核
+7. `task::run_tasks()` 开始进入第一个用户程序并执行
