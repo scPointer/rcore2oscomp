@@ -1,0 +1,814 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>定位 ls 命令存在的问题 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-label/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="strace.html" />
+    
+    
+    <link rel="prev" href="justrun.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    实验简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab1</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../lab1/intro.html">
+            
+                <a href="../lab1/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../lab1/toelf.html">
+            
+                <a href="../lab1/toelf.html">
+            
+                    
+                    编译到二进制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../lab1/clib.html">
+            
+                <a href="../lab1/clib.html">
+            
+                    
+                    测例库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lab1/tofs.html">
+            
+                <a href="../lab1/tofs.html">
+            
+                    
+                    打包进文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../lab1/boot.html">
+            
+                <a href="../lab1/boot.html">
+            
+                    
+                    扩展阅读：RISC-V 架构与内核启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lab1/exercise.html">
+            
+                <a href="../lab1/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab2</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../lab2/intro.html">
+            
+                <a href="../lab2/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../lab2/pos.html">
+            
+                <a href="../lab2/pos.html">
+            
+                    
+                    三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../lab2/usecode.html">
+            
+                <a href="../lab2/usecode.html">
+            
+                    
+                    引入外部代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../lab2/gdb.html">
+            
+                <a href="../lab2/gdb.html">
+            
+                    
+                    GDB 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../lab2/syscall.html">
+            
+                <a href="../lab2/syscall.html">
+            
+                    
+                    通过 Manual Page 添加 Syscall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../lab2/tid.html">
+            
+                <a href="../lab2/tid.html">
+            
+                    
+                    规范：TID 定义问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../lab2/exercise.html">
+            
+                <a href="../lab2/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab3</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="before.html">
+            
+                <a href="before.html">
+            
+                    
+                    部分往届内核及运行指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    探索 cargo 的缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="justrun.html">
+            
+                <a href="justrun.html">
+            
+                    
+                    如何使用往届内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.5" data-path="ls.html">
+            
+                <a href="ls.html">
+            
+                    
+                    定位 ls 命令存在的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="strace.html">
+            
+                <a href="strace.html">
+            
+                    
+                    strace 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="lsdebug.html">
+            
+                <a href="lsdebug.html">
+            
+                    
+                    使用 strace 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="hint.html">
+            
+                <a href="hint.html">
+            
+                    
+                    实验提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >定位 ls 命令存在的问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B9A;&#x4F4D;-ls-&#x547D;&#x4EE4;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;">&#x5B9A;&#x4F4D; <code>ls</code> &#x547D;&#x4EE4;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;</h1>
+<p>&#x505A;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#x51C6;&#x5907;&#xFF0C;&#x6211;&#x4EEC;&#x7EC8;&#x4E8E;&#x53EF;&#x4EE5;&#x5F15;&#x51FA;&#x672C;&#x7AE0;&#x8282;&#x7684;&#x5B9E;&#x9A8C;&#x4E86;&#x3002;&#x76EE;&#x524D;&#x5728; <code>467c73f</code> &#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684; <code>Starry</code> &#x4E2D;&#xFF0C;&#x4F7F;&#x7528; <code>busybox ls</code> &#x548C; <code>busybox mv</code> &#x64CD;&#x4F5C;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;&#x7C7B;&#x4F3C;&#x524D;&#x4E24;&#x7AE0;&#x5B9E;&#x9A8C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5E26;&#x7740;&#x5927;&#x5BB6;&#x4FEE;&#x6B63; <code>busybox ls</code> &#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7136;&#x540E;&#x5C06; <code>busybox mv</code> &#x7559;&#x4F5C;&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;&#x3002;</p>
+<blockquote>
+<p>&#x672C;&#x7AE0;&#x8282;&#x6D89;&#x53CA;&#x7684; <code>ls</code> &#x548C; <code>mv</code> &#x662F;&#x4E24;&#x4E2A; Linux &#x547D;&#x4EE4;</p>
+<p><code>ls</code> &#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x672C;&#x673A;&#x7684;&#x7EC8;&#x7AEF;&#x5C1D;&#x8BD5; <code>ls</code> &#x7136;&#x540E;&#x6309;&#x56DE;&#x8F66;&#x3002;
+<code>mv</code> &#x8868;&#x793A;&#x79FB;&#x52A8;&#x6587;&#x4EF6;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x526A;&#x5207;&#x7C98;&#x8D34;+&#x91CD;&#x547D;&#x540D;&#x201D;&#x3002;&#x4F8B;&#x5982; <code>mv ./a/b ../c/d</code> &#x8868;&#x793A;&#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684; <code>a</code> &#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>b</code> &#x6587;&#x4EF6;&#x526A;&#x5207;&#xFF0C;&#x7136;&#x540E;&#x7C98;&#x8D34;&#x5230;&#x5230;&#x4E0A;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;&#x7684; <code>c</code> &#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x547D;&#x540D;&#x4E3A; <code>d</code> &#x6587;&#x4EF6;&#x3002;</p>
+</blockquote>
+<h2 id="busybox-&#x7B80;&#x4ECB;">busybox &#x7B80;&#x4ECB;</h2>
+<p><code>busybox</code> &#x662F;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x65E2;&#x5305;&#x542B; Shell &#x547D;&#x4EE4;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4E5F;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; Linux &#x547D;&#x4EE4;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x6267;&#x884C; <code>busybox</code> &#x7136;&#x540E;&#x56DE;&#x8F66;&#xFF0C;&#x68C0;&#x67E5;&#x5B83;&#x7684;&#x7248;&#x672C;&#x3002;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x672C;&#x673A;&#x8FD8;&#x6CA1;&#x6709;&#x5B89;&#x88C5; <code>busybox</code>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;&#x6307;&#x4EE4;&#x5B89;&#x88C5;</p>
+<pre><code class="lang-bash">sudo apt install busybox-static
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x662F; <code>apt</code> &#x5305;&#x7BA1;&#x7406;&#x5668;&#x65F6;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x672C;&#x673A;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5305;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x6210;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<p><code>static</code> &#x8868;&#x793A;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x7684;&#x7248;&#x672C;&#x3002;&#x5982;&#x679C;&#x4F60;&#x76F4;&#x63A5;&#x5B89;&#x88C5; <code>sudo apt install busybox</code> &#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x90A3;&#x6837;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x7684;&#x7248;&#x672C;&#x3002;&#x5728;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x6CA1;&#x6709;&#x5927;&#x7684;&#x533A;&#x522B;&#x3002;&#x4F46;&#x540E;&#x7EED;&#x7684;&#x5B9E;&#x9A8C;&#x4F1A;&#x4F7F;&#x7528; <code>strace</code> &#x6765;&#x8C03;&#x8BD5;&#x5B83;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x9759;&#x6001;&#x7684;&#x7248;&#x672C;&#x7684;&#x8F93;&#x51FA;&#x4F1A;&#x7B80;&#x6D01;&#x4E00;&#x4E9B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;<strong>&#x63A8;&#x8350;&#x5B89;&#x88C5;&#x9759;&#x6001;&#x7248;&#x672C;</strong>&#x3002;</p>
+<h5 id="&#x5DE5;&#x5177;&#x5305;">&#x5DE5;&#x5177;&#x5305;</h5>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x6267;&#x884C;&#x50CF; <code>ls</code> <code>mv</code> &#x8FD9;&#x6837;&#x7684;&#x6307;&#x4EE4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9E;&#x9645;&#x5728;&#x6267;&#x884C;&#x4EC0;&#x4E48;&#xFF1F;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x5728;&#x672C;&#x673A;&#x4E0A;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">where</span> ls
+</code></pre>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x8F93;&#x51FA;&#x91CC;&#x4F1A;&#x6709;&#x4E00;&#x9879; <code>/bin/ls</code>&#x3002;&#x6211;&#x4EEC;&#x7528; <code>file /bin/ls</code> &#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x5B83;&#x771F;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;&#x800C; <code>busybox</code> &#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x90FD;&#x5305;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x8FD0;&#x884C; <code>busybox ls</code> &#x7684;&#x8F93;&#x51FA;&#x76F8;&#x5F53;&#x4E8E;&#x8FD0;&#x884C; <code>ls</code> &#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8FD0;&#x884C; <code>busybox mv</code> &#x7684;&#x8F93;&#x51FA;&#x76F8;&#x5F53;&#x4E8E;&#x8FD0;&#x884C; <code>mv</code> &#x7684;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x539F;&#x672C;&#x7684; <code>ls</code> &#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F46; <code>busybox ls</code>&#xFF0C;&#x8868;&#x793A;&#x8FD0;&#x884C; <code>busybox</code> &#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;<code>ls</code> &#x53EA;&#x662F;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5373; <code>argv[0]=&quot;busybox&quot;,argv[1]=&quot;ls&quot;</code>&#x3002;</p>
+<h5 id="shell-&#x5B9E;&#x73B0;">Shell &#x5B9E;&#x73B0;</h5>
+<p>&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x7EC8;&#x7AEF;&#xFF0C;&#x7136;&#x540E;&#x6572; <code>busybox sh</code> &#x6309;&#x56DE;&#x8F66;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x7531; <code>busybox</code> &#x63D0;&#x4F9B;&#x7684;&#x7EC8;&#x7AEF;&#x3002;&#x8FD9;&#x4E2A;&#x7EC8;&#x7AEF;&#x53EF;&#x80FD;&#x6BD4;&#x672C;&#x6765; Linux &#x81EA;&#x5E26;&#x7684; <code>bash</code> &#xFF08;<code>Ubuntu</code> &#x4E0B;&#x5219;&#x662F; <code>dash</code>&#xFF09;&#x7B80;&#x964B;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x4E5F;&#x5DF2;&#x7ECF;&#x6BD4; <code>rCore-Tutorial</code> &#x91CC;&#x7528; Rust &#x5199;&#x7684;&#x90A3;&#x4E2A; <code>usershell</code> &#x5F3A;&#x5927;&#x592A;&#x591A;&#x4E86;&#x3002;&#x4F60;&#x5728; <code>bash</code> &#x4E0B;&#x80FD;&#x505A;&#x7684;&#x5927;&#x90E8;&#x5206;&#x64CD;&#x4F5C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; <code>busybox sh</code> &#x4E0B;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A; <code>busybox</code> &#x7EC8;&#x7AEF;&#x5173;&#x6389;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06;&#x5728; <code>Starry</code> &#x4E2D;&#x4F7F;&#x7528; <code>busybox</code>&#x3002;</p>
+<h2 id="&#x5B9A;&#x4F4D;&#x95EE;&#x9898;">&#x5B9A;&#x4F4D;&#x95EE;&#x9898;</h2>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4FEE;&#x6539; <code>Starry</code> &#x542F;&#x52A8;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x201C;&#x6D4B;&#x4F8B;&#x201D;&#x4E3A; <code>busybox sh</code>&#x3002;&#x56E0;&#x4E3A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x91CC;&#x5305;&#x542B; <code>testcases/sdcard/</code>&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x786E;&#x5B9E;&#x6709; busybox&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E48;&#x8FD0;&#x884C;&#x662F;&#x6CA1;&#x95EE;&#x9898;&#x7684;&#x3002;&#x4E5F;&#x5373;&#x4FEE;&#x6539; <code>ulib/axstarry/syscall_entry/src/test.rs</code> &#x7684;<code>SDCARD_TESTCASES</code> &#x4E3A;</p>
+<blockquote>
+<p>&#x9000;&#x4E00;&#x4E07;&#x6B65;&#x8BB2;&#xFF0C;&#x5C31;&#x7B97;&#x955C;&#x50CF;&#x91CC;&#x6CA1;&#x6709; <code>busybox</code>&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D; <code>busybox</code> &#x6E90;&#x7801;&#x7136;&#x540E;&#x7528; <code>riscv64-linux-musl-gcc</code> &#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x51FA;&#x6765;&#xFF0C;&#x653E;&#x5230;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x5BF9;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#x91CC;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">const</span> SDCARD_TESTCASES: &amp;[&amp;<span class="hljs-keyword">str</span>] = &amp;[
+    <span class="hljs-string">&quot;busybox sh&quot;</span>,
+];
+</code></pre>
+<p>&#x7136;&#x540E;&#x8BB0;&#x5F97;<strong>&#x628A;&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x7684; <code>syscall</code> &#x8C03;&#x8BD5;&#x8F93;&#x51FA;&#x548C; <code>use axlog::error;</code> &#x6CE8;&#x91CA;&#x6389;</strong>&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x4F1A;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684; <code>syscall</code>&#xFF0C;&#x7EC8;&#x7AEF;&#x4F1A;&#x88AB;&#x8F93;&#x51FA;&#x585E;&#x6EE1;&#x3002;</p>
+<p>&#x7136;&#x540E; <code>make run</code> &#x540E;&#x5C1D;&#x8BD5;&#x4F9D;&#x6B21;&#x8FD0;&#x884C;&#xFF08;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x540D;&#x662F;&#x968F;&#x610F;&#x53D6;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6362;&#x4E00;&#x4E2A;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-bash">busybox ls
+busybox touch 123
+busybox ls
+busybox mkdir aaa
+busybox ls
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230; <code>ls</code> &#x6BCF;&#x6B21;&#x7684;&#x8F93;&#x51FA;&#x90FD;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x3002;&#x770B;&#x4E0A;&#x53BB;&#x597D;&#x50CF; <code>touch</code> &#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x548C; <code>mkdir</code> &#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#x90FD;&#x5931;&#x8D25;&#x4E86;&#x3002;&#x4F46;&#x518D;&#x6267;&#x884C;&#x51E0;&#x6761;&#x547D;&#x4EE4;&#x5462;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;xxx&quot;</span>&gt;&gt;123
+busybox ls
+busybox cat 123
+<span class="hljs-built_in">cd</span> aaa
+busybox <span class="hljs-built_in">pwd</span>
+<span class="hljs-built_in">cd</span> ..
+busybox ls
+</code></pre>
+<p>&#x8FD9;&#x6BB5;&#x547D;&#x4EE4;&#x5C1D;&#x8BD5;&#x7528; <code>echo</code> &#x5411;&#x6587;&#x4EF6; <code>123</code> &#x4E2D;&#x5199;&#x5165;&#x51E0;&#x4E2A;&#x5B57;&#x7B26; <code>xxx</code>&#xFF0C;&#x7136;&#x540E;&#x7528; <code>cat</code> &#x547D;&#x4EE4;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x6B63;&#x786E;&#x8BFB;&#x53D6;&#x7684;&#x3002;&#x53C8;&#x5C1D;&#x8BD5;&#x8FDB;&#x5165; <code>aaa</code> &#x76EE;&#x5F55;&#x5E76;&#x7528; <code>pwd</code> &#x6253;&#x5370;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x53D1;&#x73B0; <code>aaa</code> &#x76EE;&#x5F55;&#x4E5F;&#x662F;&#x5B58;&#x5728;&#x7684;&#x3002;&#x770B;&#x6765;&#x4E4B;&#x524D;&#x7684; <code>touch</code> <code>mkdir</code> &#x5E94;&#x8BE5;&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x95EE;&#x9898;&#x7684;&#x662F; <code>ls</code>&#x3002;</p>
+<blockquote>
+<p>&#x5927;&#x90E8;&#x5206;&#x547D;&#x4EE4;&#x90FD;&#x6709;&#x524D;&#x7F00; <code>busybox</code> &#x4F46;&#x4E0D;&#x662F;&#x5168;&#x90E8;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; <code>Starry</code> &#x9ED8;&#x8BA4;&#x628A;&#x4E00;&#x90E8;&#x5206;&#x547D;&#x4EE4;&#x8F6F;&#x94FE;&#x63A5;&#x5230;&#x4E86; <code>busybox</code>&#xFF0C;&#x800C;&#x4E14;&#x5728;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#x5C1D;&#x8BD5;&#x628A;&#x5B83;&#x4EA4;&#x7ED9; <code>/busybox</code> &#xFF08;&#x4E5F;&#x662F; <code>/sh</code>&#xFF09;&#x89E3;&#x6790;&#x3002;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x662F;&#x5728; <code>ulib/axstarry_syscall_entry/src/test.rs</code> &#x7684; <code>fs_init</code> &#x51FD;&#x6570;&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x518D;&#x4ED4;&#x7EC6;&#x5BF9;&#x6BD4; <code>busybox ls</code> &#x7684;&#x8F93;&#x51FA;&#x548C; <code>testcases/sdcard/</code> &#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x5176;&#x4E2D;&#x5C11;&#x4E86;&#x51E0;&#x9879;&#x3002; <code>testcases/sdcard/</code>  &#x4E2D;&#x6309;&#x5B57;&#x5178;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x6700;&#x540E;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x5728; <code>busybox ls</code> &#x7684;&#x8F93;&#x51FA;&#x91CC;&#x662F;&#x6CA1;&#x6709;&#x7684;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x7C7B;&#x4F3C;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x786E;&#x8BA4;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x786E;&#x5B9E;&#x5B58;&#x5728;&#x3002; &#x5982;&#x679C;&#x4E0D;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x800C;&#x662F;&#x6362;&#x4E2A;&#x6587;&#x4EF6;&#x5C11;&#x7684;&#x76EE;&#x5F55;&#xFF0C;<code>ls</code> &#x7684;&#x884C;&#x4E3A;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6240;&#x6709;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x6240;&#x4EE5; <code>busybox ls</code> &#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x5B83;&#x53EA;&#x8F93;&#x51FA;&#x4E86;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x5168;&#x90E8;&#x6587;&#x4EF6;&#x3002;</p>
+<h5 id="&#x53EA;&#x83B7;&#x53D6;-busybox-ls-&#x7684;&#x8F93;&#x51FA;">&#x53EA;&#x83B7;&#x53D6; <code>busybox ls</code> &#x7684;&#x8F93;&#x51FA;</h5>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5355;&#x72EC;&#x5206;&#x6790; <code>busybox ls</code> &#x7684; <code>syscall</code> &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6765;&#x81EA;&#x7EC8;&#x7AEF; <code>busybox sh</code> &#x7684; <code>syscall</code> &#x5E72;&#x6270;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x4E00;&#x6B21;&#x4FEE;&#x6539; <code>axstarry_syscall_entry/src/test.rs</code> &#x7684;<code>SDCARD_TESTCASES</code> &#x4E3A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">const</span> SDCARD_TESTCASES: &amp;[&amp;<span class="hljs-keyword">str</span>] = &amp;[
+    <span class="hljs-string">&quot;busybox ls&quot;</span>,
+];
+</code></pre>
+<p>&#x7136;&#x540E;&#x6062;&#x590D;&#x4E4B;&#x524D;&#x6CE8;&#x91CA;&#x6389;&#x7684; <code>use axlog::error;</code> &#x548C; <code>error!</code> &#x8F93;&#x51FA;&#xFF0C;&#x628A; <code>error!</code> &#x6362;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5199;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-comment">/// axstarry_syscall_entry/src/syscall.rs</span>
+<span class="hljs-keyword">use</span> syscall_utils::deal_result;
+
+<span class="hljs-keyword">use</span> axlog::error;
+
+<span class="hljs-meta">#[no_mangle]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">syscall</span></span>(syscall_id: usize, args: [usize; <span class="hljs-number">6</span>]) -&gt; isize {
+    <span class="hljs-meta">#[cfg(feature = <span class="hljs-meta-string">&quot;futex&quot;</span>)]</span>
+    syscall_task::check_dead_wait();
+    <span class="hljs-keyword">let</span> ans = <span class="hljs-keyword">loop</span> {
+        <span class="hljs-meta">#[cfg(feature = <span class="hljs-meta-string">&quot;syscall_net&quot;</span>)]</span>
+        {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Ok</span>(net_syscall_id) = syscall_net::NetSyscallId::try_from(syscall_id) {
+                error!(<span class="hljs-string">&quot;[syscall] id = {:#?}, args = {:?}, entry&quot;</span>, net_syscall_id, args);
+                <span class="hljs-keyword">break</span> syscall_net::net_syscall(net_syscall_id, args);
+            }
+        }
+
+        <span class="hljs-meta">#[cfg(feature = <span class="hljs-meta-string">&quot;syscall_mem&quot;</span>)]</span>
+        {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Ok</span>(mem_syscall_id) = syscall_mem::MemSyscallId::try_from(syscall_id) {
+                error!(<span class="hljs-string">&quot;[syscall] id = {:#?}, args = {:?}, entry&quot;</span>, mem_syscall_id, args);
+                <span class="hljs-keyword">break</span> syscall_mem::mem_syscall(mem_syscall_id, args);
+            }
+        }
+
+        <span class="hljs-meta">#[cfg(feature = <span class="hljs-meta-string">&quot;syscall_fs&quot;</span>)]</span>
+        {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Ok</span>(fs_syscall_id) = syscall_fs::FsSyscallId::try_from(syscall_id) {
+                error!(<span class="hljs-string">&quot;[syscall] id = {:#?}, args = {:?}, entry&quot;</span>, fs_syscall_id, args);
+                <span class="hljs-keyword">break</span> syscall_fs::fs_syscall(fs_syscall_id, args);
+            }
+        }
+
+        <span class="hljs-comment">// #[cfg(feature = &quot;syscall_task&quot;)]</span>
+
+        {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Ok</span>(task_syscall_id) = syscall_task::TaskSyscallId::try_from(syscall_id) {
+                error!(<span class="hljs-string">&quot;[syscall] id = {:#?}, args = {:?}, entry&quot;</span>, task_syscall_id, args);
+                <span class="hljs-keyword">break</span> syscall_task::task_syscall(task_syscall_id, args);
+            }
+        }
+
+        <span class="hljs-built_in">panic!</span>(<span class="hljs-string">&quot;unknown syscall id: {}&quot;</span>, syscall_id);
+    };
+
+    <span class="hljs-keyword">let</span> ans = deal_result(ans);
+    error!(<span class="hljs-string">&quot;[syscall] id = {}, args = {:?}, return {}&quot;</span>, syscall_id, args, ans);
+    ans
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x6CE8;&#x610F;&#x5230;&#x51FD;&#x6570;&#x5F00;&#x5934;&#x7684; <code>error!</code> &#x79FB;&#x52A8;&#x5230;&#x4E86; <code>match</code> &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14; <code>syscall_id</code> &#x7684;&#x8F93;&#x51FA;&#x4ECE; <code>{}</code> &#x6362;&#x6210;&#x4E86; <code>{:#?}</code>&#xFF0C;&#x8FD9;&#x8868;&#x793A;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x679A;&#x4E3E;&#x4F53;&#xFF08;&#x5373; <code>enum</code>&#xFF09;&#x5BF9;&#x5E94;&#x7684;&#x540D;&#x5B57;&#x3002;&#x4F8B;&#x5982; <code>NetSyscallId</code> &#x5B9A;&#x4E49;&#x4E3A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">NetSyscallId</span></span> {
+    <span class="hljs-comment">// Socket</span>
+    SOCKET = <span class="hljs-number">198</span>,
+    BIND = <span class="hljs-number">200</span>,
+......
+</code></pre>
+<p>&#x5982;&#x679C; <code>net_syscall_id</code> &#x7684;&#x503C;&#x662F; <code>NetSyscallId::SOCKET</code>&#xFF0C;&#x90A3;&#x4E48; <code>println!(&quot;{}&quot;, net_syscall_id)</code> &#x8F93;&#x51FA; <code>198</code>&#xFF0C;&#x800C; <code>println!(&quot;{:#?}&quot;, net_syscall_id)</code> &#x8F93;&#x51FA; <code>SOCKET</code>&#x3002;</p>
+<p>&#x8FD9;&#x5BF9;&#x5B9E;&#x9645;&#x7684;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#xFF0C;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x8F93;&#x51FA; <code>syscall</code> &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x8F93;&#x51FA;&#x66F4;&#x65B9;&#x4FBF;&#x3002;</p>
+<p>&#x73B0;&#x5728; <code>make run</code> &#x540E;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x957F;&#x4E32;&#x7684; <code>syscall</code> &#x8F93;&#x51FA;&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x4FBF;&#x6211;&#x4EEC;&#x53BB;&#x6389;&#x4E86;&#x524D;&#x7F00;&#x7684;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#xFF08;&#x5C31;&#x662F;&#x50CF; <code>58.641175 0:6 syscall_entry::syscall:29</code> &#x8FD9;&#x6837;&#x7684;&#x524D;&#x7F00;&#xFF09;&#xFF0C;&#x4E14;&#x53EA;&#x622A;&#x53D6;&#x5176;&#x4E2D;&#x6709;&#x610F;&#x4E49;&#x7684;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code>...... &#x7701;&#x7565;&#x8FDB;&#x7A0B;&#x521D;&#x59CB;&#x5316;
+
+[syscall] id = FSTATAT, args = [18446744073709551516, 1230088, 1073740272, 0, 1230088, 18446744073709551516], entry
+[syscall] id = 79, args = [18446744073709551516, 1230088, 1073740272, 0, 1230088, 18446744073709551516], return 0
+[syscall] id = OPENAT, args = [18446744073709551516, 1230088, 622592, 0, 0, 0], entry
+[syscall] id = 56, args = [18446744073709551516, 1230088, 622592, 0, 0, 0], return 3
+[syscall] id = FCNTL64, args = [3, 2, 1, 0, 0, 3], entry
+[syscall] id = 25, args = [3, 2, 1, 0, 0, 3], return -22
+[syscall] id = GETDENTS64, args = [3, 4344, 2048, 0, 0, 4320], entry
+[syscall] id = 61, args = [3, 4344, 2048, 0, 0, 4320], return 2022
+[syscall] id = FSTATAT, args = [18446744073709551516, 6432, 1073740144, 256, 6432, 18446744073709551516], entry
+[syscall] id = 79, args = [18446744073709551516, 6432, 1073740144, 256, 6432, 18446744073709551516], return 0
+
+...... &#x7701;&#x7565;&#x82E5;&#x5E72;&#x6761; FSTATAT
+
+[syscall] id = MMAP, args = [0, 4096, 3, 34, 18446744073709551615, 0], entry
+[syscall] id = 222, args = [0, 4096, 3, 34, 18446744073709551615, 0], return 8192
+[syscall] id = FSTATAT, args = [18446744073709551516, 8032, 1073740144, 256, 8032, 18446744073709551516], entry
+[syscall] id = 79, args = [18446744073709551516, 8032, 1073740144, 256, 8032, 18446744073709551516], return 0
+
+...... &#x7701;&#x7565;&#x82E5;&#x5E72;&#x6761; FSTATAT
+
+[syscall] id = GETDENTS64, args = [3, 4344, 2048, 2022, 2022, 4320], entry
+[syscall] id = 61, args = [3, 4344, 2048, 2022, 2022, 4320], return 0
+[syscall] id = CLOSE, args = [3, 0, 0, 0, 0, 0], entry
+[syscall] id = 57, args = [3, 0, 0, 0, 0, 0], return 0
+[syscall] id = IOCTL, args = [1, 21523, 1073740360, 1, 1073740399, 1454544], entry
+[syscall] id = 29, args = [1, 21523, 1073740360, 1, 1073740399, 1454544], return 0
+[syscall] id = WRITEV, args = [1, 1073740272, 2, 1, 1073740399, 1461432], entry
+arithoh                 fstime                  max_min.lua
+[syscall] id = 66, args = [1, 1073740272, 2, 1, 1073740399, 1461432], return 87
+
+...... &#x7701;&#x7565;&#x82E5;&#x5E72;&#x6761; WRITEV&#xFF0C;&#x8FD9;&#x91CC;&#x662F; ls &#x5BF9;&#x7EC8;&#x7AEF;&#x7684;&#x8F93;&#x51FA;
+
+[syscall] id = EXIT_GROUP, args = [0, 0, 0, 1459768, 0, 0], entry
+</code></pre><p><a href="justrun.html#&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x4E0A;&#x4E00;&#x8282;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5F80;&#x5C4A;&#x5185;&#x6838;</a>&#x63D0;&#x5230;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x770B;&#x770B;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x7684; <code>syscall</code> &#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x5BF9;&#x62CD;&#x3002;&#x4F46;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x8C03;&#x8BD5;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x7684;&#x9519;&#x8BEF;&#x5462;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x627E; Linux &#x7684; <code>syscall</code> &#x8F93;&#x51FA;&#x5BF9;&#x62CD;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="justrun.html" class="navigation navigation-prev " aria-label="Previous page: 如何使用往届内核">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="strace.html" class="navigation navigation-next " aria-label="Next page: strace 简介">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"定位 ls 命令存在的问题","level":"4.5","depth":1,"next":{"title":"strace 简介","level":"4.6","depth":1,"path":"docs/lab3/strace.md","ref":"docs/lab3/strace.md","articles":[]},"previous":{"title":"如何使用往届内核","level":"4.4","depth":1,"path":"docs/lab3/justrun.md","ref":"docs/lab3/justrun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/lab3/ls.md","mtime":"2023-11-17T12:40:14.402Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-17T12:41:02.025Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
