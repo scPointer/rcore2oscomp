@@ -156,13 +156,13 @@ warning: Architecture rejected target-supplied description
 (gdb) c
 // 此时执行到该断点，程序暂停。看一下 gdb server 那个终端，得知是正在启动 user_shell
 (gdb) c
-// 此时没有执行到该断点。此时执行到该断点，发现终端已启动
-// 切到 gdb server 那个终端输入
+// 此时没有执行到 exec 的断点。
+// 切到 gdb server 那个终端，发现 rCore-Tutorial 内的终端已启动，此时输入
 hellostd
-// 此时执行到该断点，程序暂停。hellostd 测例准备启动，下一个断点打到 __restore
+// 此时执行到 exec 的断点，程序暂停。hellostd 测例准备启动，下一个断点打到 __restore
 (gdb) b *0xfffffffffffff060
 (gdb) c
-// 此时执行到该断点，程序暂停。删除 __restore 的断点，因为它在进入用户态后会无法访问
+// 此时执行到 __restore 的断点，程序暂停。删除 __restore 的断点，因为它在进入用户态后会无法访问
 (gdb) d 2
 (gdb) si
 // 按住回车不动，等 gdb 一直往下执行，直到切到用户地址
