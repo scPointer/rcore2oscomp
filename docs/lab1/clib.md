@@ -165,7 +165,7 @@ int main() {
 
 测例库里编译的测例都是完全符合规范的 `RISC-V` 可执行程序，所以它当然可以在其他内核上运行。
 
-如果你还记得，在 `rCore-Tutorial`的 `ch0`配环境的时候，安装了 `qemu-riscv64` 和 `qemu-system-riscv64`。后者用于运行实验，而前者实际上是一个用户态模拟器。换而言之，它可以直接运行用户态的 `RISC-V` 程序，我们可以直接把测例文件扔给它。
+如果你还记得，在 `rCore-Tutorial`的 `ch0` 配环境的时候，安装了 `qemu-riscv64` 和 `qemu-system-riscv64`。后者用于运行实验，而前者实际上是一个用户态模拟器。换而言之，它可以直接运行用户态的 `RISC-V` 程序，我们可以直接把测例文件扔给它。
 
 例如在 `testcases/` 目录下执行 `qemu-riscv64 ./build/hello`，就可以获取正确输出（可以打开 `testcases/src/hello.c` 看看正确输出长什么样）。
 
