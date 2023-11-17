@@ -8,6 +8,8 @@
 - 你可以把 `SDCARD_TESTCASES` 常量改为 `busybox sh`，然后亲自进入终端调试。
 - `Starry` 的[设计文档](https://azure-stars.github.io/Starry/)可能会对你了解这个内核有一些帮助
 
+实验比指导书中介绍的与 `busybox ls` 相关的调试要简单，看 `strace` 找原因也比较直接，最靠近报错输出的那一两个就是答案，不会要求大家分析大量 `syscall`。
+
 ## 流程提示
 
 首先，记得按实验要求修改 `SDCARD_TESTCASES`常量。
