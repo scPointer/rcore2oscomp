@@ -1,4 +1,4 @@
-## 打包进文件系统
+# 打包进文件系统
 
 现在我们已经可以统一 Rust 和 C 的测例了，但现在的 rCore-Tutorial 只支持自动编译 并打包`/user` 下的测例，怎么把其他测例也放进 `easy-fs` 呢？
 
@@ -114,7 +114,7 @@ for dir_entry in read_dir(src_path).unwrap().into_iter() {
 
 前的注释删掉以便观察最终被打包的文件有哪些。现在我们回到 `os` 目录，执行 `fs-img CHAPTER=8 BASE=2` 可以看到我们修改过的 `easy-fs-fuse` 正确打包了文件。
 
-#### 如何将 C 语言测例也包括进来呢？
+### 如何将 C 语言测例也包括进来呢？
 
 别忘了 C 的用户程序在 `testcases`里。我们像 `user` 那样也调用一次 `make build` 生成可执行文件，然后把两拨测例复制到一起，再交给 `easy-fs-fuse` 打包就可以了。现在我们再次修改 `os/Makefile` 中的 `fs-img` 命令如下
 

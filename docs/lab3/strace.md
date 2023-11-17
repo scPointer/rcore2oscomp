@@ -31,13 +31,13 @@ strace touch a
 
 在比赛中，用 `strace` 调试的好处是可以得到一个来自 Linux 的“**标准答案**”，而往届内核只能算是“优秀学生作业”。但 `strace` 只给出答案不给出解题过程，所以你还是有必要阅读往届内核的代码。由于 `riscv64` 架构和本机不同，我们可以有很多种使用 strace 的不同方式
 
-##### 在 `linux-riscv64` 中运行
+### 在 `linux-riscv64` 中运行
 
 比赛测例仓库提供了一种[编译 riscv64 架构的 linux 的方法](https://github.com/oscomp/testsuits-for-oskernel/tree/main/riscv-linux-rootfs)。你可以按照比赛文档的描述，编译一个 linux，然后把它放到 `Qemu` 中运行，就像在 `Qemu` 中运行 `rCore-Tutorial` 和 `Starry` 一样。然后在这个 `linux-riscv64` 中联网下载 `strace`，并把测例都传到里面，就可以在里面用 `strace` 调试所有测例了。
 
 这样做的好处是调试本身很方便，但是编译 Linux、配置 `qemu-riscv64` 中的环境、传数据的过程相对比较麻烦。而且 `Qemu` 里运行一个 Linux 的效率会比较低。
 
-##### 在 `qemu-riscv64` 中运行静态链接测例
+### 在 `qemu-riscv64` 中运行静态链接测例
 
 [第一章的测例库介绍一节](../lab1/clib.md)的末尾介绍过用户态的 `qemu`。我们可以直接用 `strace` 来调试它，例如对应第二章的测例可以用 `strace qemu-riscv64 hellostd`。
 
@@ -45,7 +45,7 @@ strace touch a
 
 这样做的好处是不用重新配环境去编译 Linux 了，但是输出本质上是 `qemu-riscv64` 这个程序对我们本机调用的 `syscall` ，而不是 `hellostd` 对 `qemu-riscv64` 模拟的内核调用的 `syscall`。好在 `qemu-riscv64` 会直接把绝大部分的 `syscall` 直接翻译转到本机，所以抛开前面一长串 `qemu-riscv64` 的初始化，你还是可以在输出的最后看到第二章实验中熟悉的 `syscall`。
 
-##### 在 `qemu-riscv64` 中运行动态链接测例
+### 在 `qemu-riscv64` 中运行动态链接测例
 
 如果想用这个方式运行动态链接的测例，会遇到一些小麻烦。具体来说，比赛的测例仓库的[`libc-test` 说明](https://github.com/oscomp/testsuits-for-oskernel/tree/final-2023/libc-test)会告诉你动态编译的测例需要依赖一个叫 `libc.so` 的动态库文件。所以用 `qemu-riscv64` 运行动态链接测例时，`qemu-riscv64` 会发现缺失这个动态库，然后去**本机的** `/bin/libc.so` 找这个文件。
 
@@ -65,7 +65,7 @@ strace touch a
 > 
 > 其中 `-Wl,-rpath ./` 就是告诉编译器，编译出的动态链接测例去 `./` 目录找动态库，而不是去根目录或者 `/bin`
 
-##### 在本机运行
+### 在本机运行
 
 涉及具体文件操作时，上面的方法就不一定管用了，因为 `qemu-riscv64` 只是运行一个测例文件，没有加载文件系统镜像。
 

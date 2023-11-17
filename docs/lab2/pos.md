@@ -2,7 +2,7 @@
 
 在这一小节中，我们会尝试分析 `hellostd` 测例的报错情况，并介绍三种常见的内核调试技巧。巧合的是，我们的调试过程恰好会用到每一项技巧，因此你可以跟着指导书走一遍整个流程以熟悉它们，而不只是枯燥地听课看文档。
 
-### 调试技巧：全局搜索输出
+## 调试技巧：全局搜索输出
 
 按照上一节的实验准备下载好测例后，我们来尝试在目前的内核中运行 `hellostd` 这个测例。在 `os/` 目录下 `make run`，然后在弹出的终端中输入 `hellostd`，大概率会得到下面这样一行错误输出：
 
@@ -49,7 +49,7 @@ grep -rn "Shell: Process .* exited with code" ../user/src
 ../user/src/bin/ch5b_user_shell.rs:43:                        println!("Shell: Process {} exited with code {}", pid, exit_code);
 ```
 
-#### VSCODE 的全局搜索
+### VSCODE 的全局搜索
 
 如果你在使用带 GUI 的 IDE 编程，也可以完全不用记上面的命令。例如 VSCODE 就带有一个搜索器。
 
@@ -63,7 +63,7 @@ grep -rn "Shell: Process .* exited with code" ../user/src
 
 你可以直接点击搜索结果跳转到对应的文件，不需要手动翻找目录去打开文件。
 
-### 调试技巧：别忘了 LOG 输出
+## 调试技巧：别忘了 LOG 输出
 
 找到了输出位置，我们来看看 `user_shell` 为什么会告诉我们 `Shell: Process 2 exited with code -11`。先阅览一下 `ch7b_user_shell.rs` 在这条输出附近的代码：
 
@@ -170,7 +170,7 @@ Shell: Process 2 exited with code -11
 
 虽然报错的地址可能略有不同（取决于你在上一个实验中的代码实现），但我们终于可以确认，测例 `hellostd` 运行失败就是由于触发 `LoadPageFault` 访问了错误的地址。
 
-#### LOG 输出的注意事项
+### LOG 输出的注意事项
 
 总的来说，我们建议在每次出 bug 时首先打开 LOG 输出再运行，也就是 `make run LOG=ERROR` 或者更低的 LOG 等级，比如 `make run LOG=TRACE`。但使用 LOG 也会有一些需要注意的地方：
 
@@ -180,7 +180,7 @@ Shell: Process 2 exited with code -11
 - - 最常见的情况是，LOG 或者 `println!` 尝试输出一个拥有无效地址的变量。当我们查到某个变量 `x` 的值可能不对，想用 LOG 输出时，输出语句本身可能会触发 `LoadPageFault`。通常来说，这是因为内核从用户程序拿到了一个指针(比如 `*const u8`)，然后没有检查这个指针所指的地址是否无效，就把它类型转换成了变量。此时可以用 `:p` 来输出它的地址，例如 `error!("{:p}", &x)`。
 - - 另一种常见的情况是，添加或者删除 LOG 语句影响了运行测例的结果。这通常是由于内核栈溢出导致的，下次遇到“加了 print结果居然变了”的情况请先检查堆栈是否够用。
 
-### 调试技巧：反汇编
+## 调试技巧：反汇编
 
 上面的报错信息告诉我们，用户程序在 `0x572` 访问了一个地址 `0xb000`，而这个用户对这个地址没有读取权限（事实上这一页在用户页表中没有映射，如果不记得页表机制可以回去看 `rCore-Tutorial ch4`）。我们可以用上一个实验中检查可执行文件内容的方法，去看看 `hellostd` 里 `0x572` 这个位置到底是什么。我们在 `testcases/` 目录下执行 `riscv64-linux-musl-objdump build/hellostd -ld > hellostd.S`
 

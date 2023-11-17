@@ -225,7 +225,7 @@ exit_group(0)                           = ?
 
 相比排查错误原因，具体修改代码这部分比较简单，我们会讲的简略一些。
 
-##### 检查 `sys_getdents`
+### 检查 `sys_getdents`
 
 我们在 `sys_getdents` 中插入调试输出，看第二次 `GETDENTS64` 是怎么返回 0 的
 
@@ -276,7 +276,7 @@ struct linux_dirent64 {
 
 也就是说 `d_off` 是这个缓冲区里到下一个结构的偏移。可以看 `syscall` 文档下面的解释，或者我们简单举个例子：假设目录里有三个文件 `a` `b` `c`，存进 `linux_dirent64` 里各占 21 Byte，那么 `a` 放在 `dirp[0]`，`b` 放在 `dirp[21]` ，`c` 放在 `dirp[42]`。所以 `a` 的 `d_off` 是 `21`，`b` 的 `d_off` 是 `42`。
 
-##### 修改 `DirEnt` 的实现
+### 修改 `DirEnt` 的实现
 
 现在第二次调用 `GETDENTS64` 时内核里看到的 `d_off` 为 `-1`，这个值是谁给的呢？在 `Starry` 全局搜索 `d_off`，可以找到下面这个结构定义
 
@@ -334,7 +334,7 @@ impl DirEnt {
 }
 ```
 
-##### 修改 `sys_getdents` 的语义和实现
+### 修改 `sys_getdents` 的语义和实现
 
 之前这个函数的大致流程是
 

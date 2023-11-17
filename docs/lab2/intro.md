@@ -38,12 +38,12 @@ int main() {
 
 你可以以本实验为基础，完成比赛决赛第一阶段要求的 `libc-test`，测例见[这里](https://github.com/oscomp/testsuits-for-oskernel/tree/libc-test/libc-test)。这个测例集分两个部分，分别是静态链接的测例（`gcc` 编译加 `-static`选项）和动态链接的测例。
 
-##### 支持 libc-test 中的静态链接测例
+### 支持 libc-test 中的静态链接测例
 
 支持静态链接测例的思路和实验类似。但所有测例本身都会用到 `runtest.exe`，它的[源代码](https://github.com/oscomp/testsuits-for-oskernel/blob/libc-test/libc-test/src/common/runtest.c)中包含了许多复杂的 syscall。
 
 你可以使用本实验中的分析方法想办法跳过它们，也可以尝试使用[这里](https://github.com/scPointer/maturin/blob/master/tools/libc/README.md)提到的思路，逐个击破一些小测例，最后再使用 `runtest.exe` 运行。
 
-##### 支持 libc-test 中的动态链接测例
+### 支持 libc-test 中的动态链接测例
 
 支持动态链接测例时，需要内核在ELF加载器中主动添入GOT表和PLT表项。如果觉得太难，也可以直接参考从往届代码的实现，比如本实验引用的[这个内核](https://github.com/scPointer/maturin/) 就在 `kernel/src/loaders/mod.rs` 模块中带了动态链接的实现。

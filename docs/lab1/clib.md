@@ -1,8 +1,8 @@
-## 测例库介绍
+# 测例库介绍
 
 从[这里](https://github.com/LearningOS/2023a-stage3-proj2/tree/lab1)可以获取到本次实验需要使用的用户程序。你需要把 `lab1` 分支下的 `testcases` 目录放到当前实验（也就是 `2023a-rcore-` 开头的这个项目）的根目录下，在 `testcases` 目录下运行 `make build` 即可在 `testcases/build/` 下获得 `42` `hello`两个二进制文件。
 
-#### 测例里都有什么
+## 测例里都有什么
 
 这是一个极简的测例库，可以编译不依赖于 libc 的 C 程序。事实上，它对标的是比赛初赛测例库（ https://github.com/oscomp/testsuits-for-oskernel/tree/master/riscv-syscalls-testing ）的超级简化版。
 
@@ -143,7 +143,7 @@ position            content                     size (bytes)
 
 为了支持原生的 Linux 应用，后续最好还是改用这里介绍的写法。
 
-#### 为什么使用这样一个测例项目
+## 为什么使用这样一个测例项目
 
 为什么我们要绕这么一个大弯，去手写一个测例库呢？你可能会想试试写一个最简单的 `hello world`：
 
@@ -161,7 +161,7 @@ int main() {
 
 总之，使用标准库函数（如 `printf` ）的 C 用户程序不是这次实验要处理的问题。这就是为什么我们手写了一个测例库用于实验。
 
-#### 调试技巧：使用用户态 qemu 进行对拍
+## 调试技巧：使用用户态 qemu 进行对拍
 
 测例库里编译的测例都是完全符合规范的 `RISC-V` 可执行程序，所以它当然可以在其他内核上运行。
 

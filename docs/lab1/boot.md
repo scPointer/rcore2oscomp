@@ -1,8 +1,8 @@
-## 扩展阅读：RISC-V 架构与内核启动
+# 扩展阅读：RISC-V 架构与内核启动
 
 其实 [`rCore-Tutorial` 指导书第一章](http://learningos.cn/rCore-Tutorial-Guide-2023A/chapter1/4mini-rt-baremetal.html) 已经对 `rCore-Tutorial` 的内核启动过程做了大致描述，我们仅在此简要描述流程，并且补充必要的内容。[全国大学生计算机系统能力大赛操作系统设计赛](https://os.educg.net/#/) 内核赛道要求采用 `RISC-V` 架构，所以我们在这里会简单解释 `RISC-V` 的内容。如果你希望开发 `x86_64` 或者 `arm` 的内核，可以参考支持这项架构的内核。例如 [Arceos](https://github.com/rcore-os/arceos/) 是一个支持上述这些架构的内核，感兴趣的同学可以去看看它的启动过程。
 
-### RISC-V 特权级
+## RISC-V 特权级
 
 在 RISC-V 架构上有不同的特权级（`priviledge level`），每个特权级有不同的权限。在没有虚拟化的场景下，权限从高到低分别是
 
@@ -16,7 +16,7 @@
 
 每台 RISC-V 机器并不一定需要具有所有的特权级。例如在嵌入式设备上只需要 M 态，所有的程序都直接运行在 M 态。我们这个课程讲的是操作系统，在运行时通常包含 M/S/U 三个特权级。
 
-### Qemu 启动
+## Qemu 启动
 
 `Qemu` 是一个模拟器，为了不把大家绕晕，这里不具体介绍 Qemu 的实现了，只需要假设 `Qemu` 启动后我们就有了一台 `RISC-V` 架构的机器就行。通过 `os/Makefile` 里给 Qemu 的启动参数，可以了解到我们这台“机器”都有什么：
 
@@ -33,7 +33,7 @@ qemu-system-riscv64 \
 - 其中 `-bios` 制定了一个 BootLoader，它是运行在 M 态的程序，负责初始化以及启动内核，默认加载到内存中 `0x80000000` 这个地址。默认情况下， `Qemu` 会使用 `OpenSBI` 启动，但 `rCore-Tutorial` 在这里指定了使用 [`RustSBI`](https://github.com/rustsbi/rustsbi-qemu/) 启动（ `$(BOOTLOADER)` 这个常量的值见 `os/Makefile` 开头处），它是首个使用 Rust 编写的 SBI 实现。
 - `-device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA)` 指定了内核加载的位置是 `KERNEL_ENTRY_PA`，即 `0x80200000`，内核镜像会被放置在内存的这个位置。
 
-### 启动过程
+## 启动过程
 
 在内核启动时，经历了以下步骤：
 

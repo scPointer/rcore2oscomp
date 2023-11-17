@@ -1,6 +1,6 @@
-## 练习
+# 练习
 
-#### 编程作业
+## 编程作业
 
 本实验使用 [`Starry`](https://github.com/Azure-stars/Starry) 内核。你可以 `fork` 这个代码仓库：`https://github.com/Azure-stars/Starry`，然后在 `467c73f` 建立一个新分支：
 ```bash
@@ -11,7 +11,7 @@ git checkout -b lab3
 
 随后就可以开始了。
 
-##### 事先准备
+### 事先准备
 
 
 1. 跟随指导书的[使用 strace 调试](./lsdebug.md)一节，修改位于 `ulib/axstarry/syscall_utils/src/ctypes.rs` 的 `struct DirEnt` 的定义和 `set_fixed_part` 函数。
@@ -21,7 +21,7 @@ git checkout -b lab3
 
 在 `Starry` 全局搜索 `LAB3` 可以找到要增加的 `syscall` 功能。但除了它以外，**其他文件也有需要修改的地方，但没有 LAB3 标识**。
 
-##### 实验3.1
+### 实验3.1
 
 修改 `ulib/axstarry/syscall_entry/src/test.rs` 的`SDCARD_TESTCASES` 常量为：
 
@@ -38,7 +38,7 @@ pub const SDCARD_TESTCASES: &[&str] = &[
 
 如果你觉得调试过于困难，可以看看下一页的[提示](./hint.md)。
 
-##### 实验3.2
+### 实验3.2
 
 修改 `ulib/axstarry/syscall_entry/src/test.rs` 的`SDCARD_TESTCASES` 常量为：
 
@@ -55,7 +55,7 @@ pub const SDCARD_TESTCASES: &[&str] = &[
 
 如果你觉得调试过于困难，可以看看下一页的[提示](./hint.md)。
 
-#### 问答作业
+## 问答作业
 
 本章的问答作业是藏在指导书中的几个思考题：
 
@@ -63,7 +63,7 @@ pub const SDCARD_TESTCASES: &[&str] = &[
 - **思考题2** 在[“如何使用往届内核”一节](./justrun.md)的[寻找运行测例的位置](./justrun.md#寻找运行测例的位置)段落中
 - **思考题3.1** **思考题3.2** 在[“如何使用往届内核”一节](./justrun.md)的末尾
 
-#### 报告要求
+## 报告要求
 
 - 完成编程作业，描述实现思路以及修改的代码。本章没有自动评测，我们会人工检查你的代码实现和报告。
 - 完成问答题。

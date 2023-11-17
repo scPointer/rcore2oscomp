@@ -19,7 +19,7 @@ sudo apt install busybox-static
 
 `static` 表示静态链接的版本。如果你直接安装 `sudo apt install busybox` 也是可以的，那样会得到一个动态链接的版本。在日常使用上，这两个版本没有大的区别。但后续的实验会使用 `strace` 来调试它的输出，静态的版本的输出会简洁一些，所以我们**推荐安装静态版本**。
 
-##### 工具包
+### 工具包
 
 当我们在执行像 `ls` `mv` 这样的指令的时候，实际在执行什么？可以尝试在本机上执行下面的命令
 
@@ -31,7 +31,7 @@ where ls
 
 其中的区别在于，原本的 `ls` 是一个独立的文件，但 `busybox ls`，表示运行 `busybox` 这个程序，`ls` 只是它的参数。即 `argv[0]="busybox",argv[1]="ls"`。
 
-##### Shell 实现
+### Shell 实现
 
 开一个新终端，然后敲 `busybox sh` 按回车，你就可以得到一个由 `busybox` 提供的终端。这个终端可能比本来 Linux 自带的 `bash` （`Ubuntu` 下则是 `dash`）简陋一些，但也已经比 `rCore-Tutorial` 里用 Rust 写的那个 `usershell` 强大太多了。你在 `bash` 下能做的大部分操作也可以在 `busybox sh` 下完成。
 
@@ -81,7 +81,7 @@ busybox ls
 
 所以 `busybox ls` 的问题在于它只输出了目录下的部分内容，没有输出全部文件。
 
-##### 只获取 `busybox ls` 的输出
+### 只获取 `busybox ls` 的输出
 
 接下来我们希望单独分析 `busybox ls` 的 `syscall` 输出结果。为了避免来自终端 `busybox sh` 的 `syscall` 干扰，我们再一次修改 `axstarry_syscall_entry/src/test.rs` 的`SDCARD_TESTCASES` 为
 

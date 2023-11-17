@@ -34,7 +34,7 @@
 
 具体来说，可能有以下问题
 
-##### Rust 编译器版本
+### Rust 编译器版本
 
 目前所有比赛中的 Rust 内核以及 `rCore-Tutorial` 都是用 `rust-nightly` 版本。在项目的根目录下，运行 `cargo --version` 即可查看项目使用的 Rust 版本。**`nightly` 的更新非常频繁，包含许多不稳定的特性，而这些特性随时可能改动。所以往年比赛时用的 `nightly` 版本现在可能已经不再适用**。
 
@@ -60,7 +60,7 @@ nightly-2022-04-11
 
 还有一种情况是 [`Oops`](https://gitlab.eduxiji.net/educg-group-14158-894147/oskernel2022-oops)，此时内核没有指定  `rust-toolchain.toml` 或者 `rust-toolchain` ，因此你在运行它时会默认采用最新的 `cargo`。但这个内核开发时的环境（指那一年评测机环境和队员的本地环境）其实是 `nightly-2022-04-11`，所以直接运行时可能会报错。给它加上一个和上面提到的 `NPUcore` 同样的版本文件可以规避掉这个问题。
 
-##### 评测机和离线编译
+### 评测机和离线编译
 
 平时我们联网编译内核时，包管理器兼编译器 `cargo` 会根据 `Cargo.toml` 文件在包管理平台或者指定的 `git` 仓库下载到本地的 `~/.cargo` 目录下作为缓存（除非依赖指定的是本地的路径），然后再进行编译。但在指定离线编译的情况下，包管理器只能找到找本地 `~/.cargo` 里有的库和用相对路径指定的库。
 
@@ -74,7 +74,7 @@ cargo build --offline
 
 那么把 `--offline` 删掉就可以了，这会迫使 `cargo` 联网去找这些库。比如 [ByteOS 的实现](https://github.com/yfblock/ByteOS/blob/main/Makefile#L44) 就是如此。如果内核 `Makefile` 写得比较花，也可能用其他方式传参，比如 [FTLOS 的实现](https://gitlab.eduxiji.net/DarkAngelEX/oskernel2022-ftlos/-/blob/master/makefile#L5) 就是藏在根目录下。你可以全局搜索 `--offline` 来找这个选项。
 
-##### 默认运行的文件
+### 默认运行的文件
 
 在比赛中，内核的编译使用的是每个队伍自己代码仓库里的 `Makefile`，但加载和运行会使用评测机上的脚本。
 

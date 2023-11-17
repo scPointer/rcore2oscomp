@@ -61,7 +61,7 @@ Simple syscall: 27.7772 microseconds
 
 比赛中涉及的大部分内核功能都可以以这种方式实现，只要你的进度还没有超过往届的内核，就可以借鉴它们的写法去通过同样的测例。
 
-##### 修改文件系统镜像
+### 修改文件系统镜像
 
 我们的目标是用 `Starry` 运行上一章实验的 `hellostd`。
 
@@ -84,7 +84,7 @@ sudo chmod 777 disk.img
 
 参考[第二章实验的介绍](../lab2/intro.md) 把 `hellostd` 这个测例编译出来(在 `rCore-Tutorial` 那边的 `testcases/build/`下)，然后复制到 `Starry` 的  `testcases/sdcard/` 文件夹下。然后再运行一次 `./build_img.sh sdcard` ，这个测例就在 `Starry` 的文件系统镜像里了。
 
-##### 寻找运行测例的位置
+### 寻找运行测例的位置
 
 现在我们想让 `Starry` 启动时不要运行目前的测例，而是启动 `hellostd`。
 
@@ -103,7 +103,7 @@ sudo chmod 777 disk.img
 
 **思考题2**：在[部分往届内核及运行指引](./before.md) 一节提到的内核中挑选一个，描述它在默认情况下启动后会执行哪些测例（抑或是直接启动终端）。你不一定要真的运行那个内核，读文档或搜索即可。
 
-##### 替换测例并输出 `syscall` 日志
+### 替换测例并输出 `syscall` 日志
 
 通过上面的方法，我们可以找到 `Starry` 下的 `ulib/axstarry/syscall_entry/src/test.rs` 中的 `run_testcases` 函数：
 
@@ -239,7 +239,7 @@ help: consider importing this macro
 > 
 > 通过 `syscall` 输出调试可以解决 80% 的问题，但并不是全部问题。有可能你的内核和往届内核在 `syscall` 之外的模块有不同，导致只看 `syscall` 的输出无法完成调试，例如页表和地址空间设置有误，或是没有保存用户程序的浮点寄存器等等。
 
-##### 注意事项
+### 注意事项
 
 在使用 `syscall` 输出调试时，还有其他需要注意的地方：
 
