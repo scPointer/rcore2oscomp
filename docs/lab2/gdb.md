@@ -96,21 +96,20 @@ gdb 也不支持跨地址空间的查找。换句话说，它只知道当前能�
 
 ```makefile
 debug: build
-	@tmux new-session -d \
-		"qemu-system-riscv64 -machine virt -nographic -bios $(BOOTLOADER) -device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA) -s -S" && \
-		tmux split-window -h "riscv64-unknown-elf-gdb -ex 'file $(KERNEL_ELF)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:1234'" && \
-		tmux -2 attach-session -d
+    @tmux new-session -d \
+        "qemu-system-riscv64 -machine virt -nographic -bios $(BOOTLOADER) -device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA) -s -S" && \
+        tmux split-window -h "riscv64-unknown-elf-gdb -ex 'file $(KERNEL_ELF)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:1234'" && \
+        tmux -2 attach-session -d
 
 
 gdbserver: build
-	@qemu-system-riscv64 -M 128m -machine virt -nographic -bios $(BOOTLOADER) -device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA) \
-	-drive file=$(FS_IMG),if=none,format=raw,id=x0 \
+    @qemu-system-riscv64 -M 128m -machine virt -nographic -bios $(BOOTLOADER) -device loader,file=$(KERNEL_BIN),addr=$(KERNEL_ENTRY_PA) \
+    -drive file=$(FS_IMG),if=none,format=raw,id=x0 \
         -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0 \
-	-s -S
+    -s -S
 
 gdbclient:
-	@riscv64-unknown-elf-gdb -ex 'file $(KERNEL_ELF)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:1234'
-
+    @riscv64-unknown-elf-gdb -ex 'file $(KERNEL_ELF)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:1234'
 ```
 
 下面尝试使用 `gdbserver` 和 `gdbclient` 进行调试。
@@ -151,6 +150,14 @@ warning: Architecture rejected target-supplied description
 
 由此可以设计出一种断点流程（`(gdb)`开头的内容都是在 `gdb client` 那个终端输入的）：
 
+> **注意**：演示使用的 gdb 版本是 `9.1`，如果你的版本不同，有可能在输入第一句 `b ProcessControlBlock::exec` 时找不到符号 `ProcessControlBlock::exec`。这时候可以用第一章[测例库介绍](../lab1/clib.md)中提到的反汇编方法，在 `os` 目录下输入
+> 
+> ```bash
+> rust-objdump --arch-name=riscv64 -ld ./target/riscv64gc-unknown-none-elf/release/os > debug.S 
+> ```
+> 
+> 然后在生成的 `debug.S` 中全局搜索 `exec`，找到 `ProcessControlBlock` 的 `exec` 对应的符号的地址。假设这个地址是 `0x80123456`，就把下面流程的第一句换成 `b *0x80123456` 即可。
+
 ```
 (gdb) b ProcessControlBlock::exec
 (gdb) c
@@ -175,14 +182,14 @@ hellostd
 执行上面的流程，最后会发现是在 `0x608` 这个地址跳转到 `0` 的。看一下反汇编这个地址附近的指令：
 
 ```asm6502
-     5fc:	a0878793          	addi	a5,a5,-1528
-     600:	639c                	ld	a5,0(a5)
-     602:	85b2                	mv	a1,a2
-     604:	21010113          	addi	sp,sp,528
-     608:	8782                	jr	a5
+     5fc:    a0878793              addi    a5,a5,-1528
+     600:    639c                    ld    a5,0(a5)
+     602:    85b2                    mv    a1,a2
+     604:    21010113              addi    sp,sp,528
+     608:    8782                    jr    a5
 ```
 
-`0x608` 的一条 `jr a5` 跳转到了 `0x0`。这个错误的 `a5` 是在上面 `0x600` 的一条 `ld	a5,0(a5)` 加载的。
+`0x608` 的一条 `jr a5` 跳转到了 `0x0`。这个错误的 `a5` 是在上面 `0x600` 的一条 `ld    a5,0(a5)` 加载的。
 
 这时可以按 `q` 退出 gdb，重新走一遍上面的流程，在最后一步进入 `hellostd` 的用户态时，加一个断点 `b *0x600`，就可以 `c` 跳到这一条加载指令之前。这时通过 `i reg` 查看通用寄存器的值，可以得知 `a5` 的值是 `0x7000`。
 
