@@ -15,33 +15,33 @@
 首先，记得按实验要求修改 `SDCARD_TESTCASES`常量。
 
 1. 使用[定位 `ls` 命令存在的问题](./ls.md)一节中提到的 `syscall` 输出，直接 `make run` 运行，`mv` 会给出如下报错信息
-
-```
-mv: can't stat 'bin/abc': No error information
-```
-
-看看在这条信息的前面有哪些 `syscall`。然后在你的本机随便找个地方运行 `strace` 测试类似的命令：
-
-```
-mkdir bin
-touch abc
-strace busybox mv abc bin/
-```
-
-对比一下，哪个 `syscall` 的返回值可能有问题？你只需要修改一行代码，也可以顺手把附近有相同错误的另一行也改了。
+   
+   ```
+   mv: can't stat 'bin/abc': No error information
+   ```
+   
+    看看在这条信息的前面有哪些 `syscall`。然后在你的本机随便找个地方运行 `strace` 测试类似的命令：
+   
+   ```
+   mkdir bin
+   touch abc
+   strace busybox mv abc bin/
+   ```
+   
+    对比一下，哪个 `syscall` 的返回值可能有问题？你只需要修改一行代码，也可以顺手把附近有相同错误的另一行也改了。
 
 2. 此时 mv 会报错：
-
-```
-mv: can't rename 'abc': Operation not permitted
-```
-
-这是因为位于 `ulib/axstarry/syscall_fs/src/imp/ctl.rs` 的 `syscall_renameat2` 其实只是个空壳，还没有实现。你需要参考[`syscall` 说明](https://man7.org/linux/man-pages/man2/renameat.2.html) 完成它。
-
-在我们给出的 `ctl.rs` 中已经包含了一些额外的提示信息。
+   
+   ```
+   mv: can't rename 'abc': Operation not permitted
+   ```
+   
+    这是因为位于 `ulib/axstarry/syscall_fs/src/imp/ctl.rs` 的 `syscall_renameat2` 其实只是个空壳，还没有实现。你需要参考[`syscall` 说明](https://man7.org/linux/man-pages/man2/renameat.2.html) 完成它。
+   
+    在我们给出的 `ctl.rs` 中已经包含了一些额外的提示信息。
 
 3. 在做到第二个编程任务时，可以再次用 `strace`，尝试理解它的 `syscall` 输出：
-
-Linux 下的 `busybox` 是怎么区分 `bin` 和 `bin/` 的，它怎么知道我们想要把 `def` 放到 `bin/def` 目录下，而不是重命名成一个叫 `bin` 的文件？而内核做错了哪里？
-
-只需要改一个文件的一处代码，需要 5 行左右的修改。
+   
+    Linux 下的 `busybox` 是怎么区分 `bin` 和 `bin/` 的，它怎么知道我们想要把 `def` 放到 `bin/def` 目录下，而不是重命名成一个叫 `bin` 的文件？而内核做错了哪里？
+   
+    只需要改一个文件的一处代码，需要 5 行左右的修改。
