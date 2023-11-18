@@ -221,7 +221,7 @@ help: consider importing this macro
 
 编译器提示说可以加上 `use axlog::error;`。我们在 `syscall()` 函数前面开始前、 `use syscall_utils::deal_result;` 之后加上一行声明 `use axlog::error;`。再次 `make run`，现在可以成功运行并拿到正确输出了！
 
-> `Starry` 的默认调试输出级别是 `warn!` 及以上，所以这里用 `error!` 可以看到输出。它是在根目录下 `Makefile` 的 `LOG ?= warn` 这一句设定的。
+>  **说明**：`Starry` 的默认调试输出级别是 `warn!` 及以上，所以这里用 `error!` 可以看到输出。它是在根目录下 `Makefile` 的 `LOG ?= warn` 这一句设定的。
 > 
 > 如果在运行其他内核时没有看到调试输出，可以找找它的 `Log` 设置，一般都和 `rCore-Tutorial` 差不多。也有个别内核自己写了一套调试输出方法，不过这样做的队伍一定会在 `README.md` 告诉你怎么调试的。
 
@@ -255,7 +255,7 @@ help: consider importing this macro
 - 为什么没有添加其他信息，比如调用这个 `syscall` 的进程和线程 ID？
   - 是的，完全可以增加这些信息！这一节的内容只是帮助大家以最短的时间去把往届内核用起来，如果你找到了内核里哪里存进程和线程 ID，也可以把它放进输出里。
 
-> 顺便一提，其实 `Starry` 的调试输出里有线程 ID，例如 `[ 41.956958 0:6 syscall_entry::syscall:7]` 指的是在启动后 `41.956958` 这个时间点，CPU `0` 号核心在 `TID=6` 这个线程上，运行到 `syscall_entry::syscall` 的第 `7` 行时打印了输出。
+>  **说明**：顺便一提，其实 `Starry` 的调试输出里有线程 ID，例如 `[ 41.956958 0:6 syscall_entry::syscall:7]` 指的是在启动后 `41.956958` 这个时间点，CPU `0` 号核心在 `TID=6` 这个线程上，运行到 `syscall_entry::syscall` 的第 `7` 行时打印了输出。
 > 
 > 不过 `Starry` 没说它是线程 ID，我们需要阅读 `modules/axlog/` 的代码才能知道这些信息
 
