@@ -1,6 +1,6 @@
 * [实验简介](README.md)
 
-## Lab1
+## Lab 1
 
 * [实验概述](docs/lab1/intro.md)
 * [编译到二进制代码](docs/lab1/toelf.md)
@@ -9,7 +9,7 @@
 * [扩展阅读：RISC-V 架构与内核启动](docs/lab1/boot.md)
 * [练习](docs/lab1/exercise.md)
 
-## Lab2
+## Lab 2
 
 * [实验概述](docs/lab2/intro.md)
 * [三种调试方法](docs/lab2/pos.md)
@@ -19,7 +19,7 @@
 * [规范：TID 定义问题](docs/lab2/tid.md)
 * [练习](docs/lab2/exercise.md)
 
-## Lab3
+## Lab 3
 
 * [实验概述](docs/lab3/intro.md)
 * [部分往届内核及运行指引](docs/lab3/before.md)
@@ -30,3 +30,9 @@
 * [使用 strace 调试](docs/lab3/lsdebug.md)
 * [练习](docs/lab3/exercise.md)
 * [实验提示](docs/lab3/hint.md)
+
+## Lab EX
+
+* [实验概述](docs/labex/intro.md)
+* [对模块的要求](docs/labex/module.md)
+* [练习](docs/labex/exercise.md)
