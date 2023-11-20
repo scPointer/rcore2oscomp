@@ -20,7 +20,7 @@ make run
 > `Starry` 启动 `Qemu` 时默认会给 `16G` 内存，内存不够时可能出现以下报错：
 > 
 > ```bash
-> gemu-system-riscv64: cannot set up guest memory 'riscv virt board.ram': Cannot allocate memory
+> qemu-system-riscv64: cannot set up guest memory 'riscv_virt_board.ram': Cannot allocate memory
 > ```
 > 
 > 此时可以全局搜索 `16G`，找到 `scripts/make/qemu.mk`，把其中这一行：
