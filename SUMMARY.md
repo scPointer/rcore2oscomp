@@ -34,5 +34,7 @@
 ## Lab EX
 
 * [实验概述](docs/labex/intro.md)
+* [操作系统与模块划分](docs/labex/modular.md)
 * [对模块的要求](docs/labex/module.md)
+* [编写独立的模块](docs/labex/vfs.md)
 * [练习](docs/labex/exercise.md)

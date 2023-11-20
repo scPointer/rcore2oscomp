@@ -147,7 +147,7 @@ pub const SDCARD_TESTCASES: &[&str] = &[
 
 找到系统调用的入口，也就是 `ulib/axstarry/syscall_entry/src/syscall.rs` 的函数 `syscall`，然后在开头和结尾各加一句 `println!` 输出。
 
-> 一般来说，通过文档或者全局搜索 `syscall(`、`sys_` 都能很容易找到一个内核的系统调用模块。有内核把启动过程藏得特别深的，也有把初始进程藏到配置文件的，但处理 `syscall` 的模块肯定都叫 `syscall`。
+> 一般来说，通过文档或者全局搜索 `syscall(`、`sys_` 都能很容易找到一个内核的系统调用模块。有把启动过程藏得特别深的内核，也有把初始进程藏到配置文件的内核，但处理 `syscall` 的模块肯定都叫 `syscall`。
 
 ```rust
 #[no_mangle]
