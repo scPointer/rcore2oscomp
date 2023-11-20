@@ -1,0 +1,1093 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>编写独立的模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-label/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="exercise.html" />
+    
+    
+    <link rel="prev" href="module.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    实验简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 1</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../lab1/intro.html">
+            
+                <a href="../lab1/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../lab1/toelf.html">
+            
+                <a href="../lab1/toelf.html">
+            
+                    
+                    编译到二进制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../lab1/clib.html">
+            
+                <a href="../lab1/clib.html">
+            
+                    
+                    测例库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lab1/tofs.html">
+            
+                <a href="../lab1/tofs.html">
+            
+                    
+                    打包进文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../lab1/boot.html">
+            
+                <a href="../lab1/boot.html">
+            
+                    
+                    扩展阅读：RISC-V 架构与内核启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lab1/exercise.html">
+            
+                <a href="../lab1/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 2</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../lab2/intro.html">
+            
+                <a href="../lab2/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../lab2/pos.html">
+            
+                <a href="../lab2/pos.html">
+            
+                    
+                    三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../lab2/usecode.html">
+            
+                <a href="../lab2/usecode.html">
+            
+                    
+                    引入外部代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../lab2/gdb.html">
+            
+                <a href="../lab2/gdb.html">
+            
+                    
+                    GDB 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../lab2/syscall.html">
+            
+                <a href="../lab2/syscall.html">
+            
+                    
+                    通过 Manual Page 添加 Syscall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../lab2/tid.html">
+            
+                <a href="../lab2/tid.html">
+            
+                    
+                    规范：TID 定义问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../lab2/exercise.html">
+            
+                <a href="../lab2/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 3</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../lab3/intro.html">
+            
+                <a href="../lab3/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../lab3/before.html">
+            
+                <a href="../lab3/before.html">
+            
+                    
+                    部分往届内核及运行指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../lab3/cache.html">
+            
+                <a href="../lab3/cache.html">
+            
+                    
+                    探索 cargo 的缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../lab3/justrun.html">
+            
+                <a href="../lab3/justrun.html">
+            
+                    
+                    如何使用往届内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../lab3/ls.html">
+            
+                <a href="../lab3/ls.html">
+            
+                    
+                    定位 ls 命令存在的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../lab3/strace.html">
+            
+                <a href="../lab3/strace.html">
+            
+                    
+                    strace 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../lab3/lsdebug.html">
+            
+                <a href="../lab3/lsdebug.html">
+            
+                    
+                    使用 strace 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../lab3/exercise.html">
+            
+                <a href="../lab3/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../lab3/hint.html">
+            
+                <a href="../lab3/hint.html">
+            
+                    
+                    实验提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab EX</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="modular.html">
+            
+                <a href="modular.html">
+            
+                    
+                    操作系统与模块划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    对模块的要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.4" data-path="vfs.html">
+            
+                <a href="vfs.html">
+            
+                    
+                    编写独立的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >编写独立的模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7F16;&#x5199;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;">&#x7F16;&#x5199;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;</h1>
+<p>&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7B80;&#x5355;&#x7684;&#x865A;&#x62DF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>VFS</code>&#xFF09;&#x548C;&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>RamFs</code>&#xFF09;&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x6539;&#x9020;&#x539F;&#x6709;&#x7684;<code>easy-fs</code> &#x4EE5;&#x6EE1;&#x8DB3; <code>VFS</code> &#x7684;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x8FD9;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>rCore-Tutorial</code> &#x5B9E;&#x9A8C;&#x7684;&#x4ED3;&#x5E93;&#xFF0C;&#x4F46;<strong>&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;</strong>&#x4F60;&#x5728; <code>rCore-Tutorial</code> &#x4E2D;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x4F55;&#x4F5C;&#x4E1A;&#x4EE3;&#x7801;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x8DDF;&#x7740;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x505A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;<a href="https://github.com/Godones/rCore-Tutorial-v3/tree/ch8-vfs" target="_blank">&#x6307;&#x5BFC;&#x4E66;&#x6F14;&#x793A;&#x4E2D;&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x7684;&#x4EE3;&#x7801;</a>&#x3002;</p>
+<h2 id="&#x865A;&#x62DF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;-vfs">&#x865A;&#x62DF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF; VFS</h2>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; <code>cargo new</code> &#x547D;&#x4EE4;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <code>Rust</code> &#x9879;&#x76EE;&#xFF0C;&#x5E76;&#x7528; <code>--lib</code> &#x6307;&#x5B9A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x7684;&#x5E93;&#xFF08;<code>lib</code>&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x5C31;&#x4E0D;&#x4F1A;&#x5305;&#x542B; <code>main</code> &#x51FD;&#x6570;&#x4E86;&#x3002;</p>
+<pre><code class="lang-bash">cargo new libvfs --lib
+</code></pre>
+<p>&#x5728; <code>Rust</code> &#x4E2D;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x88AB;&#x79F0;&#x4E3A; <code>Crate</code>&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x65B0;&#x7684; <code>Crate</code>&#xFF0C;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x81EA;&#x5E26;&#x7684;&#x521D;&#x59CB;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x5728;<code>lib.rs</code>&#x7684;&#x5F00;&#x5934;&#x52A0;&#x4E0A;</p>
+<pre><code>#![cfg_attr(not(test), no_std)]
+</code></pre><p>&#x8FD9;&#x4E00;&#x884C;&#x5BF9;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x72EC;&#x7ACB;&#x7684;<strong>&#x5185;&#x6838;</strong>&#x6A21;&#x5757;&#x662F;&#x5FC5;&#x8981;&#x3002;&#x8FD9;&#x6837;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5E93; <code>std</code>&#xFF1B;&#x800C;&#x5728;&#x975E;&#x6D4B;&#x8BD5;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6A21;&#x5757;&#x4E0D;&#x4F7F;&#x7528; <code>std</code>&#xFF0C;&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x7684;&#x5E93;&#x662F;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x5185;&#x6838;&#x8981;&#x6C42;&#x7684; <code>no_std</code> &#x5E93;&#x3002;</p>
+<blockquote>
+<p>&#x201C;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x201D;&#x662F;&#x7531; <code>Rust</code> &#x7F16;&#x8BD1;&#x5668;&#x5B9A;&#x4E49;&#x7684;&#x3002;&#x5F53;&#x8FD0;&#x884C; <code>cargo test</code> &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x52A0;&#x4E0A; <code>test</code> &#x5C5E;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x8FD0;&#x884C;&#x6240;&#x6709;&#x5E26;&#x6709; <code>#[test]</code> &#x6807;&#x8BB0;&#x7684;&#x4EE3;&#x7801;</p>
+<p><code>cfg_attr(not(test), no_std)</code> &#x662F;&#x4E00;&#x79CD;&#x5B8F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7C7B;&#x4F3C;&#x7406;&#x89E3;&#x4E3A; C &#x8BED;&#x8A00;&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1; <code>#ifdef...#define...</code>&#xFF0C;&#x5B83;&#x7684;&#x610F;&#x601D;&#x662F;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x4E2D;&#x5305;&#x542B; <code>not(test)</code>&#xFF0C;&#x4E5F;&#x5373;&#x4E0D;&#x5305;&#x542B; <code>test</code>&#xFF0C;&#x90A3;&#x4E48;&#x7ED9;&#x540E;&#x7EED;&#x7684;&#x4EE3;&#x7801;&#x52A0;&#x4E0A; <code>no_std</code> &#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x5373;&#x4E0D;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5E93;&#x3002;</p>
+<p>&#x5F00;&#x5934;&#x7684; <code>#!</code> &#x8868;&#x793A;&#x5B83;&#x5BF9;&#x6574;&#x4E2A; <code>Crate</code> &#x90FD;&#x751F;&#x6548;&#x3002;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x611F;&#x53F9;&#x53F7; <code>!</code> &#x5219;&#x8868;&#x793A;&#x8FD9;&#x4E00;&#x884C;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x53EA;&#x5BF9;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E00;&#x884C;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x751F;&#x6548;</p>
+</blockquote>
+<p>&#x5728; <code>rCore-Tutorial ch7</code>&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5BF9; <code>easy-fs</code> &#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x4E86;&#x89E3;&#xFF0C;&#x5E76;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A; <code>Inode</code> &#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x62BD;&#x8C61;&#x4EE3;&#x8868;&#x4E86;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#xFF0C;&#x516C;&#x5F00;&#x4E86;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x63A5;&#x53E3;:</p>
+<pre><code class="lang-rust"><span class="hljs-comment">/// Inode struct in memory</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Inode</span></span>{...};
+<span class="hljs-keyword">impl</span> Inode{
+     <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(
+        block_id: <span class="hljs-keyword">u32</span>,
+        block_offset: usize,
+        fs: Arc&lt;Mutex&lt;EasyFileSystem&gt;&gt;,
+        block_device: Arc&lt;dyn BlockDevice&gt;,
+    ) -&gt; <span class="hljs-keyword">Self</span>;
+    <span class="hljs-comment">/// find the disk inode of the file with &apos;name&apos;</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;Inode&gt;&gt;;
+    <span class="hljs-comment">/// create a file with &apos;name&apos; in the root directory</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;Inode&gt;&gt; ;
+    <span class="hljs-comment">/// create a directory with &apos;name&apos; in the root directory</span>
+    <span class="hljs-comment">///</span>
+    <span class="hljs-comment">/// list the file names in the root directory</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ls</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">String</span>&gt;;
+    <span class="hljs-comment">/// Read the content in offset position of the file into &apos;buf&apos;</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">read_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;<span class="hljs-keyword">mut</span> [<span class="hljs-keyword">u8</span>]) -&gt; usize;
+    <span class="hljs-comment">/// Write the content in &apos;buf&apos; into offset position of the file</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">write_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;[<span class="hljs-keyword">u8</span>]) -&gt; usize;
+    <span class="hljs-comment">/// Set the file(disk inode) length to zero, delloc all data blocks of the file.</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">clear</span></span>(&amp;<span class="hljs-keyword">self</span>)
+}
+</code></pre>
+<p>&#x5728;&#x5185;&#x6838;&#x4E2D;&#xFF0C;<code>rCore-Tutorial</code> &#x628A; <code>Inode</code> &#x8FDB;&#x4E00;&#x6B65;&#x5C01;&#x88C5;&#x6210; <code>OSInode</code> &#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5185;&#x6838;&#x4E2D;&#x7684; <code>OSInode</code> &#x5FC5;&#x987B;&#x548C;&#x4E0A;&#x8FF0; <code>Inode</code> &#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5417;&#xFF1F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x81EA;&#x5DF1;&#x7684; <code>Inode</code> &#x7ED3;&#x6784;&#x5E76;&#x5B9E;&#x73B0;&#x4E86;&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#xFF0C;&#x5185;&#x6838;&#x80FD;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5462;&#xFF1F;</p>
+<p>&#x6700;&#x9760;&#x6CA1;&#x6253;&#x6EE1;&#x7C97;&#x66B4;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728; <code>OSInode</code> &#x589E;&#x52A0;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x63A5;&#x53E3;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">OSInode</span></span> {
+    ....
+    inner: UPSafeCell&lt;OSInodeInner&gt;,
+}
+<span class="hljs-comment">/// inner of inode in memory</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">OSInodeInner</span></span> {
+    offset: usize,
+    inode: Arc&lt;InodeType&gt;,
+}
+
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">InodeType</span></span>{
+    Easyfs(easy_fs::Inode),
+    Otherfs(otherfs::Inode),
+}
+
+<span class="hljs-keyword">impl</span> OSInode{
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(readable: <span class="hljs-keyword">bool</span>, writable: <span class="hljs-keyword">bool</span>, inode: Arc&lt;InodeType&gt;) -&gt; <span class="hljs-keyword">Self</span>
+}
+</code></pre>
+<p>&#x4F46;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5728;<code>OSInode</code>&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6BCF;&#x6B21;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x6216;&#x5176;&#x5B83;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <code>match</code> &#x8BED;&#x53E5;&#x6765;&#x533A;&#x5206;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x65E2;&#x5F71;&#x54CD;&#x6548;&#x7387;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4EE3;&#x7801;&#x4E5F;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x4F18;&#x96C5;&#x3002;</p>
+<p>Linux &#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x865A;&#x62DF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>VFS</code>&#xFF09;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x638C;&#x7BA1;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x89C4;&#x5B9A;&#x4E86;&#x903B;&#x8F91;&#x4E0A;&#x76EE;&#x5F55;&#x6811;&#x7ED3;&#x6784;&#x7684;&#x901A;&#x7528;&#x683C;&#x5F0F;&#x53CA;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x7684;&#x62BD;&#x8C61;&#x63A5;&#x53E3;&#x3002;&#x4E0D;&#x7BA1;&#x662F;&#x4EC0;&#x4E48;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;&#x865A;&#x62DF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8981;&#x6C42;&#x7684;&#x90A3;&#x4E9B;&#x62BD;&#x8C61;&#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6302;&#x8F7D; (<code>mount</code>) &#x7B49;&#x65B9;&#x5F0F;&#x63A5;&#x5165;&#x5185;&#x6838;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5185;&#x6838;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x903B;&#x8F91;&#x76EE;&#x5F55;&#x6811;&#x7ED3;&#x6784;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x6301;&#x4E45;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x5728; Linux &#x7684; <code>VFS</code> &#x4E2D;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x4ECB;&#x7ECD;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x5728;<a href="https://docs.kernel.org/filesystems/vfs.html" target="_blank">VFS &#x6587;&#x6863;</a> &#x67E5;&#x9605;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> super_operations {
+        <span class="hljs-keyword">struct</span> inode *(*alloc_inode)(<span class="hljs-keyword">struct</span> super_block *sb);
+        <span class="hljs-keyword">void</span> (*destroy_inode)(<span class="hljs-keyword">struct</span> inode *);
+        <span class="hljs-keyword">void</span> (*free_inode)(<span class="hljs-keyword">struct</span> inode *);
+        <span class="hljs-keyword">void</span> (*dirty_inode) (<span class="hljs-keyword">struct</span> inode *, <span class="hljs-keyword">int</span> flags);
+        <span class="hljs-keyword">int</span> (*write_inode) (<span class="hljs-keyword">struct</span> inode *, <span class="hljs-keyword">struct</span> writeback_control *wbc);
+        <span class="hljs-keyword">int</span> (*drop_inode) (<span class="hljs-keyword">struct</span> inode *);
+        <span class="hljs-keyword">void</span> (*evict_inode) (<span class="hljs-keyword">struct</span> inode *);
+        <span class="hljs-keyword">void</span> (*put_super) (<span class="hljs-keyword">struct</span> super_block *);
+        .....
+}
+<span class="hljs-keyword">struct</span> file_operations {
+        <span class="hljs-keyword">struct</span> module *owner;
+        <span class="hljs-keyword">loff_t</span> (*llseek) (<span class="hljs-keyword">struct</span> file *, <span class="hljs-keyword">loff_t</span>, <span class="hljs-keyword">int</span>);
+        <span class="hljs-keyword">ssize_t</span> (*read) (<span class="hljs-keyword">struct</span> file *, <span class="hljs-keyword">char</span> __user *, <span class="hljs-keyword">size_t</span>, <span class="hljs-keyword">loff_t</span> *);
+        <span class="hljs-keyword">ssize_t</span> (*write) (<span class="hljs-keyword">struct</span> file *, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> __user *, <span class="hljs-keyword">size_t</span>, <span class="hljs-keyword">loff_t</span> *);
+        ......
+}
+<span class="hljs-keyword">struct</span> inode_operations {
+        <span class="hljs-keyword">int</span> (*create) (<span class="hljs-keyword">struct</span> mnt_idmap *, <span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *, <span class="hljs-keyword">umode_t</span>, <span class="hljs-keyword">bool</span>);
+        <span class="hljs-keyword">struct</span> dentry * (*lookup) (<span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>);
+        <span class="hljs-keyword">int</span> (*link) (<span class="hljs-keyword">struct</span> dentry *,<span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *);
+        <span class="hljs-keyword">int</span> (*unlink) (<span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *);
+        <span class="hljs-keyword">int</span> (*symlink) (<span class="hljs-keyword">struct</span> mnt_idmap *, <span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *,<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *);
+        <span class="hljs-keyword">int</span> (*mkdir) (<span class="hljs-keyword">struct</span> mnt_idmap *, <span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *,<span class="hljs-keyword">umode_t</span>);
+        <span class="hljs-keyword">int</span> (*rmdir) (<span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *);
+        <span class="hljs-keyword">int</span> (*mknod) (<span class="hljs-keyword">struct</span> mnt_idmap *, <span class="hljs-keyword">struct</span> inode *,<span class="hljs-keyword">struct</span> dentry *,<span class="hljs-keyword">umode_t</span>,<span class="hljs-keyword">dev_t</span>);
+        <span class="hljs-keyword">int</span> (*rename) (<span class="hljs-keyword">struct</span> mnt_idmap *, <span class="hljs-keyword">struct</span> inode *, <span class="hljs-keyword">struct</span> dentry *,
+                       <span class="hljs-keyword">struct</span> inode *, <span class="hljs-keyword">struct</span> dentry *, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>);
+        ......
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7ED9;&#x51FA;&#x4E86;&#x8D85;&#x7EA7;&#x5757;&#x3001;&#x6587;&#x4EF6;&#x3001;<code>Inode</code> &#x7684;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x3002;&#x5176;&#x4E2D; <code>file_operations</code> &#x7C7B;&#x4F3C; <code>rCore-Tutorial</code> &#x7684; <code>trait File</code>&#xFF0C; <code>inode_operations</code> &#x7C7B;&#x4F3C; <code>easy-fs</code> &#x7684; <code>Inode</code> &#x63A5;&#x53E3;&#x3002;</p>
+<blockquote>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C; <code>easy-fs</code> &#x53C2;&#x8003;&#x4E86;&#x8BB8;&#x591A; <code>Linux vfs</code> &#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#x5728;&#x53C2;&#x8003;Linux&#x7684;&#x5B9E;&#x73B0;&#x65F6;&#xFF0C;&#x5207;&#x52FF;&#x76F4;&#x63A5;&#x4EFF;&#x7167;&#xFF0C;&#x4EE5;&#x7B14;&#x8005;&#x7684;&#x7ECF;&#x9A8C;&#x6765;&#x770B;&#xFF0C;&#x76F4;&#x63A5;&#x5C06; Linux&#x7684; C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7FFB;&#x8BD1;&#x5230; <code>Rust</code> &#x662F;&#x4E0D;&#x597D;&#x7684;&#xFF0C;&#x8FD9;&#x4E24;&#x95E8;&#x8BED;&#x8A00;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7279;&#x70B9;&#x3002;&#x5728; C &#x8BED;&#x8A00;&#x4E2D;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5408;&#x7406;&#x7684;&#x4E1C;&#x897F;&#xFF08;&#x5982;&#x6307;&#x9488;&#xFF09;&#x653E;&#x5230; <code>Rust</code> &#x4E2D;&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5728;&#x53C2;&#x8003; Linux &#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x5229;&#x7528; <code>Rust</code> &#x8BED;&#x8A00;&#x7279;&#x6027;&#x4E14;&#x7B26;&#x5408; <code>Rust</code> &#x89C4;&#x8303;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+</blockquote>
+<p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x6837;&#x7684; <code>Inode</code> &#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x6837;&#x5185;&#x6838;&#x5C31;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x590D;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x7EC4;&#x7EC7;&#x6210; <code>Rust</code> &#x7684; <code>trait</code>&#xFF0C;&#x5E76;&#x653E;&#x5728;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684; <code>libvfs</code> &#x4E2D;&#x3002;&#x73B0;&#x5728;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x672C;&#x8EAB;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x53EF;&#x590D;&#x7528;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x4F9D;&#x8D56;&#x3002;</p>
+<pre><code class="lang-rust"><span class="hljs-comment">/// The VfsInode trait</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">VfsInode</span></span>:<span class="hljs-built_in">Send</span>+<span class="hljs-built_in">Sync</span> {
+    <span class="hljs-comment">/// find the disk inode of the file with &apos;name&apos;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt;;
+    <span class="hljs-comment">/// create a file with &apos;name&apos; in the directory</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt;;
+    <span class="hljs-comment">/// list the file names in the root directory</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ls</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">String</span>&gt;;
+    <span class="hljs-comment">/// Read the content in offset position of the file into &apos;buf&apos;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">read_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;<span class="hljs-keyword">mut</span> [<span class="hljs-keyword">u8</span>]) -&gt; usize;
+    <span class="hljs-comment">/// Write the content in &apos;buf&apos; into offset position of the file</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">write_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;[<span class="hljs-keyword">u8</span>]) -&gt; usize;
+    <span class="hljs-comment">/// Set the file(disk inode) length to zero, delloc all data blocks of the file.</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">clear</span></span>(&amp;<span class="hljs-keyword">self</span>);
+}
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x4E86;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x53D8;&#x5316;&#xFF0C;&#x4E4B;&#x524D;&#x7684; <code>Arc&lt;Inode&gt;</code> &#x53D8;&#x6210;&#x4E86; <code>Arc&lt;dyn VfsInode&gt;</code>, &#x53BB;&#x6389;&#x4E86;&#x5BF9;&#x5177;&#x4F53;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5728;&#x4F60;&#x65B0;&#x5B9E;&#x73B0;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x4F60;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x518D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8DDF;<code>easy-fs</code> &#x4E00;&#x6837;&#x7684;<code>Inode</code>&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49; <code>RamFsInode</code> &#x3001; <code>MyInode</code> &#x7B49;&#x7B49;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x901A;&#x7528;&#x7684; <code>trait</code> &#x5C31;&#x884C;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x505A;&#x592A;&#x5927;&#x7684;&#x53D8;&#x66F4;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x589E;&#x52A0;&#x8BF8;&#x5982; <code>mkdir</code> &#x3001; <code>unlink</code> &#x8FD9;&#x4E9B;&#x60F3;&#x8981;&#x517C;&#x5BB9;&#x66F4;&#x591A;Linux&#x5E94;&#x7528;&#x5C31;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x907F;&#x514D;&#x5BF9;&#x5DF2;&#x6709;&#x7684;<code>easy-fs</code>&#x505A;&#x51FA;&#x5927;&#x91CF;&#x4FEE;&#x6539;&#x3002;&#x5BF9;&#x4E8E;&#x521D;&#x8D5B;&#x6765;&#x8BF4;&#xFF0C;&#x76EE;&#x524D;&#x5DF2;&#x6709;&#x7684;&#x63A5;&#x53E3;&#x662F;&#x591F;&#x7528;&#x7684;&#x3002;&#x53CD;&#x4E4B;&#xFF0C;&#x5728;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;&#x4F60;&#x81EA;&#x5DF1;&#x7684; <code>VFS</code> &#x6216;&#x8005;&#x6269;&#x5C55;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x5B9E;&#x73B0;&#x7684; <code>VFS</code> &#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x5730;&#x8BBE;&#x8BA1;&#x548C;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x5728;&#x6709;&#x4E86;&#x4E0A;&#x9762;&#x7684;<code>VfsInode</code> &#x5B9A;&#x4E49;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9; <code>easy-fs</code> &#x8FDB;&#x884C;&#x6539;&#x9020;&#x5E76;&#x5B9E;&#x73B0;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x9996;&#x5148;&#x5728; <code>easy-fs</code>  &#x7684; <code>Cargo.toml</code>&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;<code>libvfs</code> &#x4F9D;&#x8D56;:</p>
+<pre><code class="lang-rust">[dependencies]
+libvfs = { path = <span class="hljs-string">&quot;../libvfs&quot;</span> }
+</code></pre>
+<p>&#x5728;&#x539F;&#x6765;&#x7684; <code>vfs.rs</code> &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x539F;&#x6765;&#x7684;&#x5B9E;&#x73B0;&#x79FB;&#x5165;&#x5230; <code>VfsInode</code> &#x7684;&#x5B9E;&#x73B0;&#x5F53;&#x4E2D;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">impl</span> VfsInode <span class="hljs-keyword">for</span> Inode {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt;{
+        ......
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x90FD;&#x5F88;&#x57FA;&#x7840;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x5728;&#x642D;&#x5EFA;&#x4E00;&#x4E2A; <code>VFS</code> &#x7684;&#x6846;&#x67B6;&#xFF0C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x5F88;&#x591A;&#x5B9E;&#x9645;&#x529F;&#x80FD;&#x3002;&#x4F46;&#x662F;&#x5F53;&#x6A21;&#x5757;&#x56E0;&#x4E3A;&#x6269;&#x5C55;&#x9010;&#x6E10;&#x53D8;&#x5F97;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x4F1A;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5927;&#x91CF;&#x7684;&#x4EE3;&#x7801;&#x4EE5;&#x6EE1;&#x8DB3;&#x5E94;&#x7528;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x80FD;&#x66F4;&#x597D;&#x5730;&#x5229;&#x7528;&#x597D;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;<code>VfsInode</code> &#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x4E3A;&#x4E86;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x786E;&#x5B9E;&#x6709;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>RamFs</code>&#xFF09;&#xFF0C;&#x4E5F;&#x5373;&#x5B8C;&#x5168;&#x4E0D;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x8BBE;&#x5907;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x5728; Linux &#x4E0A;&#x901A;&#x8FC7; <code>ls /</code>&#x67E5;&#x770B;&#x6839;&#x76EE;&#x5F55;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6CE8;&#x610F;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;:</p>
+<pre><code>boot
+dev
+home
+proc
+sys
+tmp
+.....
+</code></pre><p>&#x800C;&#x5176;&#x4E2D; <code>tmp</code> &#x76EE;&#x5F55;&#x4E0A;&#x6302;&#x8F7D;&#x7684;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>tmpfs</code>&#xFF09;&#x5C31;&#x7C7B;&#x4F3C;&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x5B83;&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>swap</code>&#x533A;&#x57DF;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x53E6;&#x5916;&#x521B;&#x5EFA;&#x5B8C;&#x5168;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684; <code>ramfs</code> &#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6302;&#x8F7D;&#x5230; Linux &#x4E0A;&#x3002;&#x5176;&#x5B83;&#x76EE;&#x5F55;&#x4E0A;&#x5176;&#x5B9E;&#x8FD8;&#x6302;&#x8F7D;&#x4E86;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;<code>sys-&gt; sysfs</code> &#x3001; <code>proc-&gt;procfs</code>&#x7B49;&#xFF0C;&#x5E7F;&#x4E49;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5176;&#x5B9E;&#x4E5F;&#x7B97;&#x662F;&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x5728;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x52A8;&#x6001;&#x4EA7;&#x751F;&#x7684;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4F4D;&#x4E8E;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; <code>ramfs</code>&#x3002;</p>
+<h2 id="&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;-ramfs">&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF; ramfs</h2>
+<p>&#x7C7B;&#x4F3C; <code>libvfs</code>&#xFF0C;&#x518D;&#x6B21;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;<code>Crate</code>:</p>
+<pre><code class="lang-rust">cargo new ramfs --lib
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x65B0;&#x6A21;&#x5757;&#x7684; <code>Cargo.toml</code> &#x4E2D;&#x52A0;&#x5165;&#x5BF9; <code>libvfs</code> &#x4F9D;&#x8D56;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x5B9E;&#x73B0; <code>libvfs</code> &#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;<code>RamFs</code>&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x5C31;&#x50CF;<code>EasyFileSystem</code>&#x4E00;&#x6837;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">RamFs</span></span>&lt;T&gt; {
+    inode_index: AtomicUsize,
+    inode_count: AtomicUsize,
+    root: Mutex&lt;<span class="hljs-built_in">Option</span>&lt;Arc&lt;RamFsDirInode&lt;T&gt;&gt;&gt;&gt;,
+    _provider: PhantomData&lt;T&gt;,
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x591A;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x53C2;&#x6570; <code>&lt;T&gt;</code>&#xFF0C;&#x540E;&#x9762;&#x518D;&#x89E3;&#x91CA;&#x5B83;&#x7684;&#x7528;&#x6CD5;&#x3002;<code>ramfs</code> &#x5B8C;&#x5168;&#x4F4D;&#x4E8E;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x6BD4;&#x78C1;&#x76D8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7B80;&#x5355;&#x8BB8;&#x591A;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x4F7F;&#x7528;&#x4E86;&#x51E0;&#x4E2A;&#x5FC5;&#x987B;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x4E9B;&#x5143;&#x6570;&#x636E;</p>
+<ol>
+<li><code>inode_index</code>&#xFF1A;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x65F6;&#x5206;&#x914D;inode&#x53F7;&#x7801;</li>
+<li><code>inode_count</code>&#xFF1A; &#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x91CF;&#xFF0C;&#x5728;&#x76EE;&#x524D;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x4E2D;&#x5176;&#x5B9E;&#x548C;inode_index&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x7684;&#x63A5;&#x53E3;</li>
+<li><code>root</code>&#xFF1A;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x7684;&#x6839;&#x76EE;&#x5F55;</li>
+<li><code>_provider</code>: &#x662F;&#x4E00;&#x4E2A;&#x5E7D;&#x7075;&#x6210;&#x5458;&#xFF0C;&#x201C;&#x5047;&#x88C5;&#x201D;&#x8FD9;&#x4E2A;&#x7C7B;&#x5305;&#x542B;&#x4E00;&#x4E2A; <code>T</code> &#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4EE5;&#x6B64;&#x7ED5;&#x8FC7;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x68C0;&#x67E5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://zhuanlan.zhihu.com/p/533695108" target="_blank">&#x8FD9;&#x7BC7;&#x4E13;&#x680F;</a>&#x4E2D;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x5173;&#x4E8E; <code>Rust</code> &#x7684;&#x5E7D;&#x7075;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x7684;&#x7EC6;&#x8282;&#x3002;</li>
+</ol>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5728; <code>RamFs</code> &#x4E2D;&#x5B9E;&#x73B0;&#x4E0E; <code>EasyFileSystem</code> &#x7C7B;&#x4F3C;&#x7684;&#x63A5;&#x53E3;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>() -&gt; Arc&lt;<span class="hljs-keyword">Self</span>&gt; {
+        <span class="hljs-keyword">let</span> fs = Arc::new(<span class="hljs-keyword">Self</span> {
+            inode_index: AtomicUsize::new(<span class="hljs-number">0</span>),
+            inode_count: AtomicUsize::new(<span class="hljs-number">0</span>),
+            root: Mutex::new(<span class="hljs-literal">None</span>),
+            _provider: PhantomData,
+        });
+        fs
+    }
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">root</span></span>(<span class="hljs-keyword">self</span>: &amp;Arc&lt;<span class="hljs-keyword">Self</span>&gt;) -&gt; Arc&lt;RamFsDirInode&lt;T&gt;&gt; {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> root = <span class="hljs-keyword">self</span>.root.lock();
+    <span class="hljs-keyword">if</span> root.is_none() {
+        <span class="hljs-keyword">let</span> inode = Arc::new(RamFsDirInode::new(<span class="hljs-number">0</span>, <span class="hljs-built_in">String</span>::from(<span class="hljs-string">&quot;/&quot;</span>), <span class="hljs-keyword">self</span>.clone()));
+        *root = <span class="hljs-literal">Some</span>(inode.clone());
+        <span class="hljs-keyword">self</span>.inode_count.fetch_add(<span class="hljs-number">1</span>, Ordering::SeqCst);
+        <span class="hljs-keyword">self</span>.inode_index.fetch_add(<span class="hljs-number">1</span>, Ordering::SeqCst);
+    }
+    root.clone().unwrap()
+}
+</code></pre>
+<p>&#x518D;&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">TimeSpec</span></span> {
+    <span class="hljs-keyword">pub</span> sec: usize,
+    <span class="hljs-keyword">pub</span> nsec: usize,
+}
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">RamFsDirInode</span></span>&lt;T&gt; {
+    id: usize,
+    name: <span class="hljs-built_in">String</span>,
+    children: Mutex&lt;<span class="hljs-built_in">Vec</span>&lt;Arc&lt;RamFsFileInode&gt;&gt;&gt;,
+    fs: Arc&lt;RamFs&lt;T&gt;&gt;,
+    ctime: TimeSpec,
+}
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">RamFsFileInode</span></span> {
+    id: usize,
+    name: <span class="hljs-built_in">String</span>,
+    content: Mutex&lt;<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">u8</span>&gt;&gt;,
+    ctime: TimeSpec,
+}
+</code></pre>
+<p>&#x4E0E; <code>easy-fs</code> &#x4E0D;&#x540C;&#xFF0C;&#x5728; <code>ramfs</code> &#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684; <code>Inode</code>&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x9664;&#x4E86;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x5916;&#x8FD8;&#x6709;&#x76EE;&#x5F55;&#x3001;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x3001;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7B49;&#x3002;&#x800C;&#x5728;&#x5B9A;&#x4E49; <code>VfsInode</code> &#x65F6;&#xFF0C; &#x6211;&#x4EEC;&#x8BF4;&#x8FD9;&#x4E2A; <code>trait</code> &#x62BD;&#x8C61;&#x4E86;&#x201C;&#x6587;&#x4EF6;&#x201D;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x201C;&#x6587;&#x4EF6;&#x201D;&#x5176;&#x5B9E;&#x5305;&#x542B;&#x4E86;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6240;&#x6709;&#x79CD;&#x7C7B;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x4E9B;&#x201C;&#x6587;&#x4EF6;&#x201D;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x9700;&#x8981;&#x7684;&#x63A5;&#x53E3;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4F8B;&#x5982;&#x76EE;&#x5F55;&#x4E0D;&#x9700;&#x8981; <code>write_at</code> &#x6216;&#x8005; <code>read_at</code>&#xFF0C;&#x800C;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x4E0D;&#x9700;&#x8981; <code>create</code> &#x6216;&#x8005; <code>ls</code>&#x3002;&#x6240;&#x4EE5;&#x867D;&#x7136; <code>VfsInode</code> &#x62BD;&#x8C61;&#x4E86;&#x6240;&#x6709;&#x79CD;&#x7C7B;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x8981;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x505A;&#x533A;&#x5206;&#x3002;&#x7B80;&#x5355;&#x8D77;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x76EE;&#x5F55;&#x548C;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x3002;</p>
+<blockquote>
+<p>&#x5728; <code>easy-fs</code> &#x4E2D;&#x5BF9;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x7B80;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x6CA1;&#x6709;&#x533A;&#x5206;&#x76EE;&#x5F55;&#x548C;&#x5B9E;&#x9645;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x9519;&#x8BEF;&#x8BFB;&#x53D6;&#x4E86;&#x76EE;&#x5F55;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x76F4;&#x63A5;&#x5BF9;&#x6839;&#x76EE;&#x5F55;&#x8C03;&#x7528;<code>read_at</code> &#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x3002;</p>
+</blockquote>
+<p>&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4E86;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7684;<code>Inode</code>&#x7ED3;&#x6784;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x53EA;&#x9700;&#x8981;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#x5B9E;&#x73B0; <code>libvfs</code> &#x4E2D;&#x5B9A;&#x4E49;&#x7684;<code>trait</code>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x4E0D;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x4FEE;&#x6539;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">impl</span> VfsInode <span class="hljs-keyword">for</span> RamFsFileInode {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find</span></span>(&amp;<span class="hljs-keyword">self</span>, _name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt; {
+        <span class="hljs-literal">None</span>
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>, _name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt; {
+        <span class="hljs-literal">None</span>
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ls</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">String</span>&gt; {
+        <span class="hljs-built_in">Vec</span>::new()
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">read_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;<span class="hljs-keyword">mut</span> [<span class="hljs-keyword">u8</span>]) -&gt; usize {
+        <span class="hljs-keyword">let</span> content = <span class="hljs-keyword">self</span>.content.lock();
+        <span class="hljs-keyword">let</span> len = content.len();
+        <span class="hljs-keyword">let</span> buf_len = buf.len();
+        <span class="hljs-keyword">let</span> copy_start = offset.min(len);
+        <span class="hljs-keyword">let</span> copy_end = (offset + buf_len).min(len);
+        buf[..(copy_end - copy_start)].copy_from_slice(&amp;content[copy_start..copy_end]);
+        copy_end - copy_start
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">write_at</span></span>(&amp;<span class="hljs-keyword">self</span>, offset: usize, buf: &amp;[<span class="hljs-keyword">u8</span>]) -&gt; usize {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> content = <span class="hljs-keyword">self</span>.content.lock();
+        <span class="hljs-keyword">let</span> len = content.len();
+        <span class="hljs-keyword">let</span> buf_len = buf.len();
+        <span class="hljs-keyword">if</span> len &lt; offset + buf_len {
+            content.resize(offset + buf_len, <span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword">let</span> copy_end = offset + buf_len;
+        content[offset..copy_end].copy_from_slice(buf);
+        buf_len
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">clear</span></span>(&amp;<span class="hljs-keyword">self</span>) {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> content = <span class="hljs-keyword">self</span>.content.lock();
+        content.clear();
+    }
+}
+</code></pre>
+<pre><code class="lang-rust"><span class="hljs-keyword">impl</span>&lt;T: RamFsProvider&gt; VfsInode <span class="hljs-keyword">for</span> RamFsDirInode&lt;T&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">find</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt; {
+        <span class="hljs-keyword">let</span> children = <span class="hljs-keyword">self</span>.children.lock();
+        <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> children.iter() {
+            <span class="hljs-keyword">if</span> child.name() == name {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">Some</span>(child.clone());
+            }
+        }
+        <span class="hljs-literal">None</span>
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt; {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> children = <span class="hljs-keyword">self</span>.children.lock();
+        <span class="hljs-keyword">let</span> inode = Arc::new(RamFsFileInode::new(
+            <span class="hljs-keyword">self</span>.fs.alloc_inode(),
+            <span class="hljs-built_in">String</span>::from(name),
+            T::current_time(),
+        ));
+        children.push(inode.clone());
+        <span class="hljs-literal">Some</span>(inode)
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ls</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">String</span>&gt; {
+        <span class="hljs-keyword">let</span> children = <span class="hljs-keyword">self</span>.children.lock();
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> names = <span class="hljs-built_in">Vec</span>::new();
+        <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> children.iter() {
+            names.push(child.name().to_string());
+        }
+        names
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">read_at</span></span>(&amp;<span class="hljs-keyword">self</span>, _offset: usize, _buf: &amp;<span class="hljs-keyword">mut</span> [<span class="hljs-keyword">u8</span>]) -&gt; usize {<span class="hljs-number">0</span>}
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">write_at</span></span>(&amp;<span class="hljs-keyword">self</span>, _offset: usize, _buf: &amp;[<span class="hljs-keyword">u8</span>]) -&gt; usize {<span class="hljs-number">0</span>}
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">clear</span></span>(&amp;<span class="hljs-keyword">self</span>) {}
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;<code>RamFsFileInode</code> &#x6CA1;&#x6709;&#x5B9E;&#x73B0;<code>create</code> <code>ls</code> <code>find</code>, <code>RamFsDirInode</code> &#x6CA1;&#x6709;&#x5B9E;&#x73B0; <code>read_at</code> <code>write_at</code> <code>clear</code>&#xFF0C;&#x8FD9;&#x7B26;&#x5408;&#x666E;&#x901A;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x4E0A;&#x9762;&#x7ED9;&#x51FA;&#x7684;&#x8FD9;&#x4E00;&#x5957;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;&#x5E76;&#x4E0D;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;&#x53E6;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#x662F;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;&#x65F6;&#xFF08;&#x4F8B;&#x5982;&#x5BF9; <code>RamFsFileInode</code> &#x8C03;&#x7528; <code>create</code> &#xFF09;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x800C;&#x4E0D;&#x662F;&#x4E0A;&#x8FF0;&#x5B9E;&#x73B0;&#x4E2D;&#x7684;&#x7A7A;&#x503C; <code>None</code>&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E3A;<code>Result&lt;Arc&lt;dyn VfsInode&gt;,VfsError&gt;</code>, &#x8FD9;&#x9700;&#x8981;&#x5728; <code>libvfs</code> &#x4E2D;&#x989D;&#x5916;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x9519;&#x8BEF; <code>VfsError</code>&#x3002;</p>
+<blockquote>
+<p>&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7C7B;&#x4F3C; <code>VfsError</code> &#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x7ED9;&#x51FA;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x4E5F;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8005;&#x82B1;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x53BB;&#x4E86;&#x89E3;&#x4EC0;&#x4E48;&#x662F; <code>VfsError</code>&#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>None</code> &#x7ED9;&#x51FA;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x542B;&#x7CCA;&#x7684;&#xFF0C;&#x4F46;&#x4F7F;&#x7528;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x5F15;&#x5165;&#x989D;&#x5916;&#x7684;&#x7C7B;&#x5C31;&#x53EF;&#x4EE5;&#x5927;&#x81F4;&#x4E86;&#x89E3;&#x5B83;&#x7684;&#x610F;&#x601D;&#x662F;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x201C;&#x4E0D;&#x652F;&#x6301;&#x201D;&#x6216;&#x8005;&#x201C;&#x51FA;&#x9519;&#x4E86;&#x201D;&#x3002;</p>
+<p>&#x603B;&#x4E4B;&#xFF0C;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x8FD8;&#x662F;&#x66F4;&#x901A;&#x7528;&#x7684; <code>None</code> <code>Err</code>&#x7B49;&#x7B49;&#x662F;&#x7F16;&#x5199;&#x6A21;&#x5757;&#x65F6;&#x7684;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#xFF0C;&#x6CA1;&#x6709;&#x7EDD;&#x5BF9;&#x7684;&#x5BF9;&#x9519;&#x4E4B;&#x5206;&#x3002;</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5C31;&#x5DF2;&#x7ECF;&#x6839;&#x636E; <code>VfsInode</code> &#x7684;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x5728;&#x7EE7;&#x7EED;&#x4FEE;&#x6539;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x4F7F;&#x5F97;&#x5185;&#x6838;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x591A;&#x79CD;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x529F;&#x80FD;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x7ED9;&#x51FA; <code>Ramfs</code> &#x4E2D;&#x6CDB;&#x578B;&#x53C2;&#x6570; <code>&lt;T&gt;</code> &#x7684;&#x89E3;&#x91CA;&#x3002;</p>
+<h3 id="ramfs-&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;"><code>ramfs</code> &#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;</h3>
+<p>&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5728;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x8981;&#x4FDD;&#x5B58;&#x7684;&#x54EA;&#x4E9B;&#x5143;&#x6570;&#x636E;&#xFF1F;&#x53EF;&#x4EE5;&#x5728; Linux &#x4E0A;&#x4F7F;&#x7528; <code>stat</code> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x7C7B;&#x4F3C;&#x4E0B;&#x9762;&#x7684;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">stat</span> ./Cargo.toml
+  File: ./Cargo.toml
+  Size: 272             Blocks: 8          IO Block: 4096   regular file
+Device: 820h/2080d      Inode: 824376      Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/ godones)   Gid: ( 1000/ godones)
+Access: 2023-11-19 20:34:20.269529331 +0800
+Modify: 2023-11-19 20:34:20.259529332 +0800
+Change: 2023-11-19 20:34:20.259529332 +0800
+ Birth: 2023-11-19 19:56:29.299676521 +0800
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x5E95;&#x90E8;&#x7684;&#x56DB;&#x884C;&#x663E;&#x793A;&#x4E86;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4FDD;&#x5B58;&#x7684;&#x5173;&#x4E8E;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x5173;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x3001;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x3001;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x7B49;&#x3002;&#x5728;&#x6BD4;&#x8D5B;&#x4E2D;&#xFF0C;&#x786E;&#x5B9E;&#x4E5F;&#x4F1A;&#x6D89;&#x53CA;&#x4E00;&#x4E9B;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x3001;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x7684; <code>syscall</code>&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x53EF;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5B83;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x3002;&#x800C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#xFF0C;&#x5B83;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x76F4;&#x63A5;&#x4ECE;&#x65F6;&#x949F;&#x8BBE;&#x5907;&#x4E2D;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x65F6;&#x5019;&#x201C;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x201D;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4E0E;&#x5185;&#x6838;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#x90A3;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x60F3;&#x8981;&#x72EC;&#x7ACB;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8BA9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C; <code>../crates/time</code> &#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x6765;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x5173;&#x4E8E; <code>rust</code> &#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x4E0A;&#x641C;&#x5230;&#x8BB8;&#x591A;&#x4ECB;&#x7ECD;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;&#x76F4;&#x63A5;&#x6765;&#x770B;&#x8FD9;&#x4E2A;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7EA6;&#x675F;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">RamFsProvider</span></span>: <span class="hljs-built_in">Send</span> + <span class="hljs-built_in">Sync</span> {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">current_time</span></span>() -&gt; TimeSpec;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; <code>RamFsProvider</code> &#x6765;&#x8868;&#x8FBE;&#x521B;&#x5EFA; <code>RamFs</code> &#x9700;&#x8981;&#x7684;&#x5916;&#x90E8;&#x8F93;&#x5165;&#xFF0C;&#x5373;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x7EA6;&#x675F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x5185;&#x6838;&#x521B;&#x5EFA;<code>RamFs</code>&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5FC5;&#x987B;&#x4E3A;&#x5176;&#x63D0;&#x4F9B;&#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x800C; <code>RamFs</code> &#x4E5F;&#x5C31;&#x6210;&#x529F;&#x5730;&#x4ECE;&#x5185;&#x6838;&#x83B7;&#x5F97;&#x4E86;&#x989D;&#x5916;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Provider</span></span>;
+<span class="hljs-keyword">impl</span> ramfs::RamFsProvider <span class="hljs-keyword">for</span> Provider {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">current_time</span></span>() -&gt; ramfs::TimeSpec {
+        TimeSpec { sec: <span class="hljs-number">0</span>, nsec: <span class="hljs-number">0</span> }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> ramfs = RamFs::&lt;Provider&gt;::new();
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5BF9;&#x4E8E;&#x5F88;&#x591A;&#x53EF;&#x80FD;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#x5F88;&#x6709;&#x7528;&#x3002;&#x901A;&#x8FC7; <code>trait</code> &#x548C;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x9694;&#x79BB;&#x6A21;&#x5757;&#x548C;&#x5185;&#x6838;&#x964D;&#x4F4E;&#x8026;&#x5408;&#x3002;&#x4E0D;&#x8FC7;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;&#x5B83;&#x5177;&#x6709;&#x4F20;&#x67D3;&#x6027;&#xFF0C;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x5F88;&#x591A;&#x66F4;&#x4E0A;&#x5C42;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x90FD;&#x4E0D;&#x5F97;&#x4E0D;&#x5E26;&#x4E0A;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x548C;&#x7EA6;&#x675F;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x592A;&#x5B89;&#x5168;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x4F5C;&#x4ECB;&#x7ECD;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x5927;&#x5BB6;&#x4F7F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x7528; <code>rust</code> &#x7684; <code>FFI</code> &#x5C06;&#x51FD;&#x6570;&#x8F6C;&#x6362;&#x4E3A; C &#x8BED;&#x8A00;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">extern</span> <span class="hljs-string">&quot;C&quot;</span> {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">current_time</span></span>() -&gt; TimeSpec;
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>extern &quot;C&quot;</code>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7701;&#x53BB;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x4E9B;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x548C;&#x76F8;&#x5173;&#x5B9A;&#x4E49;&#xFF0C;&#x5728;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x8C03;&#x7528;<strong>&#x5168;&#x5C40;&#x53EF;&#x89C1;</strong>&#x7684;&#x7B26;&#x53F7; <code>current_time</code>&#x3002;&#x5728; <code>Rust</code> &#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x4E0A; <code>unsafe</code> &#x5757;&#xFF0C;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x6570;&#x636E;&#x6240;&#x6709;&#x6743;&#x662F;&#x5426;&#x7B26;&#x5408; <code>Rust</code> &#x89C4;&#x8303;&#x3002;&#x8FD9;&#x5176;&#x5B9E;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;<strong>&#x5168;&#x5C40;&#x53EF;&#x89C1;</strong>&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5728;&#x5185;&#x6838;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4EE5;&#x4FBF;&#x5728;&#x7F16;&#x8BD1;&#x94FE;&#x63A5;&#x65F6;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-meta">#[no_mangle]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">current_time</span></span>() -&gt; TimeSpec{
+
+}
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#xFF0C;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x4E0D;&#x80FD;&#x51FA;&#x73B0; <code>not FFI-safe</code> &#x7684;&#x53C2;&#x6570;&#x6216;&#x8FD4;&#x56DE;&#x503C;&#xFF08;&#x5F53;&#x7136;&#x5F3A;&#x5236;&#x51FA;&#x73B0;&#x4E5F;&#x4E0D;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#xFF0C;&#x4E0D;&#x8FC7;&#x51FA;&#x73B0;bug&#x65F6;&#x53EF;&#x80FD;&#x6BD4;&#x8F83;&#x96BE;&#x8C03;&#x8BD5;&#xFF09;&#x3002;&#x800C;&#x4E14;&#x6211;&#x4EEC;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x5F97;&#x4E0D;&#x51FA;&#x73B0; <code>unsafe</code> &#x4EE3;&#x7801;&#x3002;<code>#[no_mangle]</code> &#x7684;&#x51FA;&#x73B0;&#x4E5F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5B9E;&#x73B0;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4F60;&#x5F15;&#x5165;&#x7684;&#x5E93;&#x4E2D;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<blockquote>
+<p><code>unsafe</code> &#x7684;&#x76F4;&#x89C2;&#x89E3;&#x91CA;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3; <code>Rust</code> &#x7F16;&#x8BD1;&#x5668;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x63A7;&#x5236;&#x89C4;&#x8303;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x7A0B;&#x5E8F;&#x5458;&#x81EA;&#x5DF1;&#x4FDD;&#x8BC1;&#x5B83;&#x7B26;&#x5408;&#x89C4;&#x8303;&#x3002;&#x4ECE;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x6709;&#x70B9;&#x50CF;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x65F6;&#x4F60;&#x6309;&#x4E0B;&#x7684;&#x201C;&#x540C;&#x610F;&#x6B64;&#x670D;&#x52A1;&#x6761;&#x6B3E;&#x201D;&#x3002;&#x6240;&#x4EE5;&#x4F7F;&#x7528; <code>unsafe</code> &#x5173;&#x952E;&#x5B57;&#x65F6;&#x5FC5;&#x987B;&#x4ED4;&#x7EC6;&#x68C0;&#x67E5;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x6709;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x8FD9;&#x4E00;&#x8282;</a>&#x627E;&#x5230;&#x66F4;&#x591A;&#x7684;&#x8BF4;&#x660E;&#x548C;&#x8BA8;&#x8BBA;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x518D;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;: &#x76F4;&#x63A5;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x3002;&#x5BF9;&#x4E8E; <code>ramfs</code> &#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x80FD;&#x7684;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-rust"><span class="hljs-comment">/// create a file with &apos;name&apos; in the directory</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create</span></span>(&amp;<span class="hljs-keyword">self</span>, name: &amp;<span class="hljs-keyword">str</span>,ctime: TimeSpec) -&gt; <span class="hljs-built_in">Option</span>&lt;Arc&lt;dyn VfsInode&gt;&gt;;
+</code></pre>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5728; <code>create</code> &#x51FD;&#x6570;&#x4E2D;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A; <code>ctime</code> &#x53C2;&#x6570;, &#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#x5C06;&#x65F6;&#x95F4;&#x503C;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5F88;&#x591A;&#x63A5;&#x53E3;&#x90FD;&#x4E0D;&#x5F97;&#x4E0D;&#x5E26;&#x4E0A;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x964D;&#x4F4E;&#x6548;&#x7387;&#xFF0C;&#x5E76;&#x62AC;&#x9AD8;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x6210;&#x672C;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x662F;&#x5728;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x4E0B;&#x9002;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4EE3;&#x66FF;&#x6CDB;&#x578B;&#x5B9E;&#x73B0;&#xFF0C;&#x8BA9;&#x5185;&#x6838;&#x4EE3;&#x7801;&#x66F4;&#x7B80;&#x6D01;&#x3002;</p>
+<h2 id="&#x4FEE;&#x6539;&#x5185;&#x6838;&#x4EE5;&#x63A5;&#x5165;-ramfs-&#x548C;-vfs">&#x4FEE;&#x6539;&#x5185;&#x6838;&#x4EE5;&#x63A5;&#x5165; <code>ramfs</code> &#x548C; <code>VFS</code></h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5BF9;&#x5185;&#x6838;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F15;&#x5165;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;<code>libvfs</code>&#x548C;<code>ramfs</code>&#x3002;&#x5728; <code>os</code> &#x7684; <code>Cargo.toml</code> &#x4E2D;&#x63D2;&#x5165;</p>
+<pre><code class="lang-rust">libvfs= {path = <span class="hljs-string">&quot;../libvfs&quot;</span>}
+ramfs = {path = <span class="hljs-string">&quot;../ramfs&quot;</span>}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x5185;&#x6838;&#x7684; <code>os/src/fs/inode.rs</code> &#x4FEE;&#x6539;&#x4E24;&#x4E2A;&#x5B9A;&#x4E49;:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">OSInodeInner</span></span> {
+    offset: usize,
+    inode: Arc&lt;dyn VfsInode&gt;,
+}
+
+<span class="hljs-keyword">impl</span> OSInode {
+    <span class="hljs-comment">/// create a new inode in memory</span>
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(readable: <span class="hljs-keyword">bool</span>, writable: <span class="hljs-keyword">bool</span>, inode: Arc&lt;dyn VfsInode&gt;) -&gt; <span class="hljs-keyword">Self</span> {
+    }
+}
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x8FD8;&#x9700;&#x8981;&#x5728; <code>easy-fs-fuse</code> &#x4E2D;&#x5F15;&#x5165;&#x4F9D;&#x8D56;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x4E86; <code>write_at</code> &#x529F;&#x80FD;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x73B0;&#x5728;&#x88AB;&#x5B9A;&#x4E49;&#x5728;<code>VfsInode</code>&#x4E2D;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x524D;&#x9762;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x6211;&#x4EEC;&#x5728; <code>easy-fs</code> &#x6216;&#x8005; <code>ramfs</code>&#x4E2D;&#x5B9E;&#x73B0;<code>VfsInode</code>&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5728;&#x9876;&#x5C42;&#x6A21;&#x5757;&#x4E2D;<strong>&#x5BFC;&#x51FA;</strong>&#x8FD9;&#x4E2A;<code>trait</code>&#x5B9A;&#x4E49;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">use</span> libvfs::*;
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x60F3;&#x5F15;&#x5165; <code>libvfs</code> &#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;, &#x6211;&#x4EEC;&#x5C3D;&#x91CF;&#x505A;&#x5230;&#x81EA;&#x5305;&#x542B;&#x6765;&#x907F;&#x514D;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x65F6;&#x7ED9;&#x4E88;&#x4F7F;&#x7528;&#x8005;&#x6700;&#x5927;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x7684; <code>rCore-Tutorial</code> &#x8FD8;&#x7528;&#x4E0D;&#x5230; <code>ramfs</code>&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5185;&#x6838;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F60;&#x57FA;&#x4E8E; <code>rCore-Tutorial</code> &#x5F00;&#x53D1;&#xFF0C;&#x4F1A;&#x5728;&#x6BD4;&#x8D5B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7528;&#x5230;&#x5B83;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x770B;<a href="https://github.com/Godones/rCore-Tutorial-v3/tree/ch8-vfs" target="_blank">&#x4E0A;&#x8FF0;&#x4FEE;&#x6539;&#x7684;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;</a>&#xFF0C;&#x628A;&#x672C;&#x8282;&#x5B66;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x7528;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x6838;&#x4E2D;&#x3002;&#x53EA;&#x8981;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x6389;<code>easy-fs</code>&#x3002;</p>
+<p>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x6A21;&#x5757;&#x90FD;&#x662F;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x73B0;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6A21;&#x5757;&#xFF0C;&#x522B;&#x4EBA;&#x4E5F;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x4F60;&#x7684; VFS &#x5B9A;&#x4E49;&#x53BB;&#x6269;&#x5C55;&#x548C;&#x5B9E;&#x73B0;&#x4ED6;&#x4EEC;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4F60;&#x5B9E;&#x73B0;&#x7684;<code>easy-fs</code> &#x548C;<code>ramfs</code> &#xFF0C;&#x8FD9;&#x51E0;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x5185;&#x6838;&#xFF0C;&#x5E76;&#x4E14;&#x4E92;&#x76F8;&#x4E4B;&#x95F4;&#x4E5F;&#x4E0D;&#x662F;&#x5F3A;&#x4F9D;&#x8D56;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;&#x6D88;&#x9664;&#x3002;</p>
+<p>&#x5230;&#x73B0;&#x5728;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BB2;&#x89E3;&#x4E86;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#x3002;</p>
+<h2 id="&#x53EF;&#x9009;&#x5B9E;&#x73B0;&#xFF1A;fat32-&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">&#x53EF;&#x9009;&#x5B9E;&#x73B0;&#xFF1A;FAT32 &#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h2>
+<p>&#x5230;&#x76EE;&#x524D;&#x4F4D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x63A5;&#x89E6;&#x4E86;&#x4E09;&#x4E2A;&#x4E0E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6709;&#x5173;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5206;&#x522B;&#x662F; <code>libvfs</code> <code>ramfs</code> <code>easy-fs</code>&#x3002;&#x4EE5;&#x6B64;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6BD4;&#x8D5B;&#x521D;&#x8D5B;&#x6240;&#x8981;&#x6C42;&#x7684; <code>FAT32</code> &#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x6211;&#x4EEC;&#x5728;<a href="../lab1/intro.html#&#x5728;&#x5B9E;&#x9A8C;&#x4E4B;&#x540E;">&#x7B2C;&#x4E00;&#x7AE0;&#x5B9E;&#x9A8C;&#x7684;&#x4ECB;&#x7ECD;</a>&#x63D0;&#x5230;&#x8FC7;&#x5B83;&#x3002;</p>
+<p><code>FAT32</code> &#x7684;&#x683C;&#x5F0F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x4ECE;&#x96F6;&#x5199;&#x8D77;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5DF2;&#x6709;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/rafalh/rust-fatfs" target="_blank"><code>rust-fatfs</code></a>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x81EA;&#x5DF1;&#x7684; <code>rCore-Tutorial</code> &#x9879;&#x76EE;&#x4E2D;&#x652F;&#x6301;&#x5B83;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4F8B;&#x5982; <a href="https://github.com/Azure-stars/Starry/tree/main/modules/axfs" target="_blank"><code>Starry</code> &#x7684; <code>axfs</code></a>&#x3002;</p>
+<p>&#x8FD9;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x672C;&#x7AE0;&#x7684;&#x4F5C;&#x4E1A;&#xFF0C;&#x4F46;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x628A;&#x672C;&#x7AE0;<a href="modular.html">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x6A21;&#x5757;&#x5212;&#x5206;&#x4E00;&#x8282;</a>&#x548C;<a href="module.html">&#x5BF9;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x7684;&#x8981;&#x6C42;&#x4E00;&#x8282;</a>&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x5206;&#x79BB;&#x51FA;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x5F53;&#x4F5C;&#x672C;&#x7AE0;&#x7684;&#x4F5C;&#x4E1A;&#x3002;&#x9009;&#x62E9;&#x5176;&#x4E2D;&#x4E00;&#x9879;&#x5373;&#x53EF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="module.html" class="navigation navigation-prev " aria-label="Previous page: 对模块的要求">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="exercise.html" class="navigation navigation-next " aria-label="Next page: 练习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"编写独立的模块","level":"5.4","depth":1,"next":{"title":"练习","level":"5.5","depth":1,"path":"docs/labex/exercise.md","ref":"docs/labex/exercise.md","articles":[]},"previous":{"title":"对模块的要求","level":"5.3","depth":1,"path":"docs/labex/module.md","ref":"docs/labex/module.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/labex/vfs.md","mtime":"2023-11-20T11:25:18.364Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-20T11:25:55.498Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

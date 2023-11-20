@@ -479,7 +479,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../labex/module.html">
+        <li class="chapter " data-level="5.2" data-path="../labex/modular.html">
+            
+                <a href="../labex/modular.html">
+            
+                    
+                    操作系统与模块划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../labex/module.html">
             
                 <a href="../labex/module.html">
             
@@ -492,7 +505,20 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../labex/exercise.html">
+        <li class="chapter " data-level="5.4" data-path="../labex/vfs.html">
+            
+                <a href="../labex/vfs.html">
+            
+                    
+                    编写独立的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../labex/exercise.html">
             
                 <a href="../labex/exercise.html">
             
@@ -675,7 +701,7 @@ sudo chmod 777 disk.img
 <p>&#x518D;&#x6B21; <code>make run</code> &#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x585E;&#x8FDB;&#x53BB;&#x7684;&#x6D4B;&#x4F8B;&#x4E86;&#x3002;&#x4E0D;&#x8FC7; <code>Starry</code> &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6BD4;&#x8D5B;&#x8981;&#x6C42;&#x7684;&#x6240;&#x6709;&#x51B3;&#x8D5B;&#x6D4B;&#x4F8B;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x53EF;&#x4EE5;&#x8FD0;&#x884C; <code>hellostd</code> &#x8FD9;&#x4EF6;&#x4E8B;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x771F;&#x6B63;&#x60F3;&#x8981;&#x77E5;&#x9053;&#x7684;&#x662F;&#x5B83;&#x8C03;&#x7528;&#x4E86;&#x4EC0;&#x4E48; <code>syscall</code>&#x3002;</p>
 <p>&#x627E;&#x5230;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>ulib/axstarry/syscall_entry/src/syscall.rs</code> &#x7684;&#x51FD;&#x6570; <code>syscall</code>&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5F00;&#x5934;&#x548C;&#x7ED3;&#x5C3E;&#x5404;&#x52A0;&#x4E00;&#x53E5; <code>println!</code> &#x8F93;&#x51FA;&#x3002;</p>
 <blockquote>
-<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x901A;&#x8FC7;&#x6587;&#x6863;&#x6216;&#x8005;&#x5168;&#x5C40;&#x641C;&#x7D22; <code>syscall(</code>&#x3001;<code>sys_</code> &#x90FD;&#x80FD;&#x5F88;&#x5BB9;&#x6613;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x5185;&#x6838;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x6A21;&#x5757;&#x3002;&#x6709;&#x5185;&#x6838;&#x628A;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x85CF;&#x5F97;&#x7279;&#x522B;&#x6DF1;&#x7684;&#xFF0C;&#x4E5F;&#x6709;&#x628A;&#x521D;&#x59CB;&#x8FDB;&#x7A0B;&#x85CF;&#x5230;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#xFF0C;&#x4F46;&#x5904;&#x7406; <code>syscall</code> &#x7684;&#x6A21;&#x5757;&#x80AF;&#x5B9A;&#x90FD;&#x53EB; <code>syscall</code>&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x901A;&#x8FC7;&#x6587;&#x6863;&#x6216;&#x8005;&#x5168;&#x5C40;&#x641C;&#x7D22; <code>syscall(</code>&#x3001;<code>sys_</code> &#x90FD;&#x80FD;&#x5F88;&#x5BB9;&#x6613;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x5185;&#x6838;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x6A21;&#x5757;&#x3002;&#x6709;&#x628A;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x85CF;&#x5F97;&#x7279;&#x522B;&#x6DF1;&#x7684;&#x5185;&#x6838;&#xFF0C;&#x4E5F;&#x6709;&#x628A;&#x521D;&#x59CB;&#x8FDB;&#x7A0B;&#x85CF;&#x5230;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x6838;&#xFF0C;&#x4F46;&#x5904;&#x7406; <code>syscall</code> &#x7684;&#x6A21;&#x5757;&#x80AF;&#x5B9A;&#x90FD;&#x53EB; <code>syscall</code>&#x3002;</p>
 </blockquote>
 <pre><code class="lang-rust"><span class="hljs-meta">#[no_mangle]</span>
 <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">syscall</span></span>(syscall_id: usize, args: [usize; <span class="hljs-number">6</span>]) -&gt; isize {
@@ -836,7 +862,7 @@ help: consider importing this macro
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"如何使用往届内核","level":"4.4","depth":1,"next":{"title":"定位 ls 命令存在的问题","level":"4.5","depth":1,"path":"docs/lab3/ls.md","ref":"docs/lab3/ls.md","articles":[]},"previous":{"title":"探索 cargo 的缓存","level":"4.3","depth":1,"path":"docs/lab3/cache.md","ref":"docs/lab3/cache.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/lab3/justrun.md","mtime":"2023-11-19T17:00:11.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-19T17:00:52.210Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"如何使用往届内核","level":"4.4","depth":1,"next":{"title":"定位 ls 命令存在的问题","level":"4.5","depth":1,"path":"docs/lab3/ls.md","ref":"docs/lab3/ls.md","articles":[]},"previous":{"title":"探索 cargo 的缓存","level":"4.3","depth":1,"path":"docs/lab3/cache.md","ref":"docs/lab3/cache.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/lab3/justrun.md","mtime":"2023-11-20T11:25:18.364Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-20T11:25:55.498Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

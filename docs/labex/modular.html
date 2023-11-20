@@ -1,0 +1,923 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>操作系统与模块划分 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-label/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="module.html" />
+    
+    
+    <link rel="prev" href="intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    实验简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 1</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../lab1/intro.html">
+            
+                <a href="../lab1/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../lab1/toelf.html">
+            
+                <a href="../lab1/toelf.html">
+            
+                    
+                    编译到二进制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../lab1/clib.html">
+            
+                <a href="../lab1/clib.html">
+            
+                    
+                    测例库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lab1/tofs.html">
+            
+                <a href="../lab1/tofs.html">
+            
+                    
+                    打包进文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../lab1/boot.html">
+            
+                <a href="../lab1/boot.html">
+            
+                    
+                    扩展阅读：RISC-V 架构与内核启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../lab1/exercise.html">
+            
+                <a href="../lab1/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 2</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../lab2/intro.html">
+            
+                <a href="../lab2/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../lab2/pos.html">
+            
+                <a href="../lab2/pos.html">
+            
+                    
+                    三种调试方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../lab2/usecode.html">
+            
+                <a href="../lab2/usecode.html">
+            
+                    
+                    引入外部代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../lab2/gdb.html">
+            
+                <a href="../lab2/gdb.html">
+            
+                    
+                    GDB 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../lab2/syscall.html">
+            
+                <a href="../lab2/syscall.html">
+            
+                    
+                    通过 Manual Page 添加 Syscall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../lab2/tid.html">
+            
+                <a href="../lab2/tid.html">
+            
+                    
+                    规范：TID 定义问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../lab2/exercise.html">
+            
+                <a href="../lab2/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab 3</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../lab3/intro.html">
+            
+                <a href="../lab3/intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../lab3/before.html">
+            
+                <a href="../lab3/before.html">
+            
+                    
+                    部分往届内核及运行指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../lab3/cache.html">
+            
+                <a href="../lab3/cache.html">
+            
+                    
+                    探索 cargo 的缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../lab3/justrun.html">
+            
+                <a href="../lab3/justrun.html">
+            
+                    
+                    如何使用往届内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../lab3/ls.html">
+            
+                <a href="../lab3/ls.html">
+            
+                    
+                    定位 ls 命令存在的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../lab3/strace.html">
+            
+                <a href="../lab3/strace.html">
+            
+                    
+                    strace 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../lab3/lsdebug.html">
+            
+                <a href="../lab3/lsdebug.html">
+            
+                    
+                    使用 strace 调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../lab3/exercise.html">
+            
+                <a href="../lab3/exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../lab3/hint.html">
+            
+                <a href="../lab3/hint.html">
+            
+                    
+                    实验提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Lab EX</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    实验概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="modular.html">
+            
+                <a href="modular.html">
+            
+                    
+                    操作系统与模块划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="module.html">
+            
+                <a href="module.html">
+            
+                    
+                    对模块的要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="vfs.html">
+            
+                <a href="vfs.html">
+            
+                    
+                    编写独立的模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >操作系统与模块划分</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x6A21;&#x5757;&#x5212;&#x5206;">&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x6A21;&#x5757;&#x5212;&#x5206;</h1>
+<p>&#x5728;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x770B;&#x4EC0;&#x4E48;&#x662F;&#x6A21;&#x5757;&#x5316;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x6A21;&#x5757;&#x5316;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x6280;&#x672F;&#x662F;20&#x4E16;&#x7EAA;60&#x5E74;&#x4EE3;&#x51FA;&#x73B0;&#x7684;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x5316;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x6280;&#x672F;&#x3002;&#x8BE5;&#x6280;&#x672F;&#x662F;&#x57FA;&#x4E8E;&#x201C;&#x5206;&#x89E3;&#x201D;&#x548C;&#x201C;&#x6A21;&#x5757;&#x5316;&#x201D;&#x539F;&#x5219;&#x6765;&#x63A7;&#x5236;&#x5927;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x6A21;&#x5757;&#x5316;&#x7ED3;&#x6784;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x57FA;&#x4E8E;&#x7A0B;&#x5E8F;&#x6A21;&#x5757;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x6309;&#x7167;&#x529F;&#x80FD;&#x5212;&#x5206;&#x4E86;&#x591A;&#x4E2A;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x72EC;&#x7ACB;&#x6027;&#x548C;&#x5927;&#x5C0F;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x6A21;&#x5757;&#x3001;&#x5B58;&#x50A8;&#x5668;&#x7BA1;&#x7406;&#x6A21;&#x5757;&#x3001;<code>I/O</code> &#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x6A21;&#x5757;&#x7B49;&#xFF0C;&#x5E76;&#x4ED4;&#x7EC6;&#x5730;&#x89C4;&#x5B9A;&#x597D;&#x5404;&#x6A21;&#x5757;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x5404;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x80FD;&#x901A;&#x8FC7;&#x8BE5;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x4EA4;&#x4E92;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x518D;&#x8FDB;&#x4E00;&#x6B65;&#x5C06;&#x5404;&#x6A21;&#x5757;&#x7EC6;&#x5206;&#x4E3A;&#x82E5;&#x5E72;&#x4E2A;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x82E5;&#x5B50;&#x6A21;&#x5757;&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x53EF;&#x518D;&#x8FDB;&#x4E00;&#x6B65;&#x5C06;&#x5B83;&#x7EC6;&#x5206;&#xFF0C;&#x6B64;&#x6784;&#x6210;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C31;&#x662F;&#x5177;&#x6709;&#x6A21;&#x5757;&#x5316;&#x7ED3;&#x6784;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p><img src="pics/arc2.gif" alt="arc2"></p>
+<p>Linux&#x7CFB;&#x7EDF;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x6A21;&#x5757;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x7684;&#x7CFB;&#x7EDF;&#x5728;&#x4E0D;&#x65AD;&#x53D1;&#x5C55;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E22;&#x5931;&#x4E86;&#x4E00;&#x4E9B;&#x6A21;&#x5757;&#x5316;&#x7279;&#x5F81;&#x3002;&#x5728;&#x8C08;&#x8BBA;&#x6A21;&#x5757;&#x5316;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x4E24;&#x4E2A;&#x7279;&#x5F81;</p>
+<ol>
+<li>&#x5185;&#x805A;&#x6027;&#xFF1A;&#x6307;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5404;&#x90E8;&#x5206;&#x95F4;&#x8054;&#x7CFB;&#x7684;&#x7D27;&#x5BC6;&#x7A0B;&#x5EA6;&#x3002;&#x6A21;&#x5757;&#x5185;&#x8054;&#x7CFB;&#x8D8A;&#x7D27;&#x5BC6;&#xFF0C;&#x6A21;&#x5757;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x8D8A;&#x597D;</li>
+<li>&#x8026;&#x5408;&#x6027;&#xFF1A;&#x6307;&#x6A21;&#x5757;&#x95F4;&#x76F8;&#x4E92;&#x8054;&#x7CFB;&#x548C;&#x76F8;&#x4E92;&#x5F71;&#x54CD;&#x7684;&#x7A0B;&#x5EA6;&#x3002;&#x6A21;&#x5757;&#x95F4;&#x8054;&#x7CFB;&#x8D8A;&#x5C11;&#xFF0C;&#x6A21;&#x5757;&#x7684;&#x72EC;&#x7ACB;&#x6027;&#x8D8A;&#x597D;</li>
+</ol>
+<p>&#x7406;&#x8BBA;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5E94;&#x8BE5;&#x540C;&#x65F6;&#x5177;&#x5907;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x7279;&#x5F81;&#x3002;&#x4F46;Linux&#x5185;&#x6838;&#x4E2D;&#x7684;&#x6A21;&#x5757;&#x5373;&#x4F7F;&#x7ECF;&#x8FC7;&#x4E86;&#x5F88;&#x7EC6;&#x81F4;&#x7684;&#x5212;&#x5206;&#xFF0C;&#x4ECD;&#x7136;&#x4F1A;&#x51FA;&#x73B0;&#x5F88;&#x591A;&#x8026;&#x5408;&#x3002;&#x6BD4;&#x5982;&#x4F19;&#x4F34;&#x5206;&#x914D;&#x5668;&#xFF08;<code>buddy_system_allocator</code>&#xFF09;&#x5728; <code>rCore-Tutorial</code> &#x5185;&#x6838;&#x88AB;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x5185;&#x6838;&#x5806;&#x7684;&#x5206;&#x914D;&#x3002;&#x800C;&#x5728;Linux&#x5185;&#x6838;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x4E0D;&#x4EC5;&#x4EC5;&#x8D1F;&#x8D23;&#x5206;&#x914D;&#x7269;&#x7406;&#x9875;&#xFF0C;&#x8FD8;&#x548C;&#x5176;&#x5B83;&#x7684;&#x6A21;&#x5757;&#x6709;&#x7740;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x5F88;&#x591A;&#x6A21;&#x5757;&#x4F1A;&#x4F9D;&#x8D56;&#x4F19;&#x4F34;&#x5206;&#x914D;&#x5668;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#x505A;&#x51FA;&#x51B3;&#x7B56;&#x3002;&#x867D;&#x7136;&#x8FD9;&#x6837;&#x7684;&#x6A21;&#x5757;&#x95F4;&#x4E92;&#x52A8;&#x5BF9;&#x6027;&#x80FD;&#x63D0;&#x5347;&#x6709;&#x5E2E;&#x52A9;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x5185;&#x6838;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x53EA;&#x505A;&#x597D;&#x5B83;&#x672C;&#x8EAB;&#x7684;&#x4E8B;&#x60C5;&#x5E76;&#x4E14;&#x907F;&#x514D;&#x4FB5;&#x5165;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E4B;&#x6240;&#x4EE5;&#x5728;Linux&#x5185;&#x6838;&#x4E2D;&#x666E;&#x904D;&#x5B58;&#x5728;&#xFF0C;&#x4E0E;&#x5185;&#x6838;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E0D;&#x65E0;&#x5173;&#x7CFB;&#x3002;C&#x8BED;&#x8A00;&#x6CA1;&#x6709; <code>Rust</code> &#x6216;&#x8005; <code>Python</code> &#x8FD9;&#x6837;&#x65B9;&#x4FBF;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x5E73;&#x53F0;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x6A21;&#x5757;&#x7684;&#x62C6;&#x5206;&#x548C;&#x590D;&#x7528;&#x90FD;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#x3002;</p>
+<p>&#x6A21;&#x5757;&#x7684;&#x5212;&#x5206;&#x4E00;&#x76F4;&#x662F;&#x6A21;&#x5757;&#x5316;&#x7CFB;&#x7EDF;&#x7684;&#x96BE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x524D;&#x89C4;&#x5212;&#x548C;&#x89C4;&#x8303;&#xFF0C;&#x624D;&#x80FD;&#x51CF;&#x5C11;&#x540E;&#x7EED;&#x5F00;&#x53D1;&#x65F6;&#x63A5;&#x53E3;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5728;&#x53C2;&#x52A0;&#x6BD4;&#x8D5B;&#x7684;&#x524D;&#x671F;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x642D;&#x5EFA;&#x597D;&#x5185;&#x6838;&#x6846;&#x67B6;&#xFF0C;&#x628A;&#x5185;&#x6838;&#x529F;&#x80FD;&#x5206;&#x914D;&#x5230;&#x4E0D;&#x540C;&#x7684; <code>Crate</code> &#x4E2D;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x5BF9;&#x5DF2;&#x6709;&#x7684;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x5B8C;&#x5584;&#x5B83;&#x4EEC;&#x7684;&#x529F;&#x80FD;&#x548C;&#x63A5;&#x53E3;&#xFF0C;&#x5F62;&#x6210;&#x6700;&#x7EC8;&#x7684;&#x6A21;&#x5757;&#x3002;<code>rCore-Tutorial</code> &#x4E2D;&#x7684;&#x6A21;&#x5757; <code>easy-fs</code> &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4E0D;&#x8FC7;&#x5982;&#x679C;&#x8981;&#x4EE5; <code>rCore-Tutorial</code> &#x4E3A;&#x57FA;&#x7840;&#x53C2;&#x8D5B;&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x7528; <code>FAT32</code> &#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x628A;&#x5B83;&#x66FF;&#x6362;&#x6389;&#x3002;</p>
+<h2 id="&#x4ECE;&#x5185;&#x6838;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;">&#x4ECE;&#x5185;&#x6838;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;</h2>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x529F;&#x80FD;&#x4E0E;&#x5185;&#x6838;&#x7684;&#x529F;&#x80FD;&#x8FC7;&#x4E8E;&#x8026;&#x5408;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x5C31;&#x9002;&#x5408;&#x4F5C;&#x4E3A;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x653E;&#x5728;&#x5185;&#x6838;&#x4E4B;&#x5916;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x5185;&#x90E8;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x7D22;&#xFF0C;&#x5BFB;&#x627E;&#x5176;&#x4E2D;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#x7684;&#x90E8;&#x5206;&#x3002;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x8026;&#x5408;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>Rust</code> &#x7684; <code>Trait</code> &#x673A;&#x5236;&#x6765;&#x62C6;&#x5206;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x4F1A;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;<code>Ramfs</code>&#xFF09;&#x7684;&#x5177;&#x4F53;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x5728;&#x5F00;&#x59CB;&#x8BB2;&#x89E3;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x7684;&#x6A21;&#x5757;&#x5212;&#x5206;&#x60C5;&#x51B5;&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x7ED9;&#x51FA;&#x90E8;&#x5206;&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="../lab3/before.html">&#x7B2C;&#x4E09;&#x7AE0;&#x7684;&#x90E8;&#x5206;&#x5F80;&#x5C4A;&#x5185;&#x6838;&#x53CA;&#x8FD0;&#x884C;&#x6307;&#x5F15;
+&#x4E00;&#x8282;</a> &#x627E;&#x5230;&#x66F4;&#x591A;&#x7684;&#x5185;&#x6838;&#x3002;</p>
+<h3 id="starry"><a href="https://github.com/Azure-stars/Starry" target="_blank">Starry</a></h3>
+<p><code>Starry</code> &#x7531; <code>Arceos</code> &#x53D1;&#x5C55;&#x800C;&#x6765;&#xFF0C;&#x7EE7;&#x627F;&#x4E86; <code>Arceos</code> &#x7684;&#x6A21;&#x5757;&#x5316;&#x7279;&#x6027;&#x3002;&#x5728;&#x76EE;&#x5F55; <code>crates/</code> &#x4E0B;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x6A21;&#x5757;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;&#x540D;&#x79F0;</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allocator</td>
+<td>&#x7269;&#x7406;&#x9875;&#x5206;&#x914D;&#x5668;/&#x5185;&#x5B58;&#x5757;&#x5206;&#x914D;&#x5668;</td>
+</tr>
+<tr>
+<td>axfs_vfs</td>
+<td>VFS<code>trait</code>&#x5B9A;&#x4E49;</td>
+</tr>
+<tr>
+<td>axfs_ramfs</td>
+<td>ramfs&#x5B9E;&#x73B0;</td>
+</tr>
+<tr>
+<td>driver_display</td>
+<td>&#x56FE;&#x5F62;&#x8BBE;&#x5907;&#x9A71;&#x52A8;</td>
+</tr>
+<tr>
+<td>page-table</td>
+<td>&#x9875;&#x8868;&#x5B9E;&#x73B0;</td>
+</tr>
+<tr>
+<td>scheduler</td>
+<td>&#x8C03;&#x5EA6;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</td>
+</tr>
+<tr>
+<td>....</td>
+<td>......</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5176;&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x5B9E;&#x7528;&#x7684;&#x529F;&#x80FD;&#x6A21;&#x5757;&#xFF0C;&#x4E14;&#x652F;&#x6301; <code>x86_64</code> <code>arm64</code> <code>riscv64</code> &#x4E09;&#x79CD;&#x67B6;&#x6784;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x6838;&#x65F6;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x91CC;&#x7684;&#x6A21;&#x5757;&#x3002;&#x5982;&#x679C;&#x540E;&#x7EED;&#x6211;&#x4EEC;&#x8981;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#xFF0C;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x4E5F;&#x662F;&#x53EF;&#x5B66;&#x4E60;&#x8303;&#x4F8B;&#x3002;&#x800C; <code>modules/</code> &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6A21;&#x5757;&#x6709;&#x8BB8;&#x591A;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4E0D;&#x9002;&#x5408;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#x3002;</p>
+<h3 id="byteos"><a href="https://github.com/yfblock/ByteOS" target="_blank">ByteOS</a></h3>
+<p><code>ByteOS</code> &#x7684;&#x7ED3;&#x6784;&#x4E5F;&#x7C7B;&#x4F3C; <code>Arceos</code> &#xFF0C;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x76EE;&#x5F55; <code>crates</code> <code>modules</code> <code>drivers</code> &#x5B58;&#x653E;&#x5185;&#x6838;&#x4E4B;&#x5916;&#x7684;&#x6A21;&#x5757;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backtrace</td>
+<td style="text-align:left">&#x6253;&#x5370;&#x5185;&#x6838;&#x8C03;&#x7528;&#x6808;(&#x57FA;&#x4E8E;fp)</td>
+</tr>
+<tr>
+<td>cv1811-sd</td>
+<td style="text-align:left">cv1811&#x5F00;&#x53D1;&#x677F;&#x7684;sd&#x5361;&#x9A71;&#x52A8;</td>
+</tr>
+<tr>
+<td>vfscore</td>
+<td style="text-align:left">VFS&#x7684;<code>trait</code>&#x5B9A;&#x4E49;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td style="text-align:left">DateTime&#x7ED3;&#x6784;&#x5B9A;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728; <code>modules</code> &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4E5F;&#x6709;&#x5C11;&#x6570;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x88AB;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x66F4;&#x591A;&#x7684;&#x6A21;&#x5757;&#x4F1A;&#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A; <code>ByteOS</code> &#x81EA;&#x5DF1;&#x7684; <code>arch</code> &#x6A21;&#x5757; <code>arch</code> &#x6A21;&#x5757;&#x6DB5;&#x76D6;&#x4E86;&#x5F88;&#x591A;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x5F15;&#x7528;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#xFF0C;&#x8981;&#x4E48;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x590D;&#x6742;&#x7684; <code>arch</code> &#x6A21;&#x5757;&#xFF0C;&#x8981;&#x4E48;&#x9700;&#x8981;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5E76;&#x5220;&#x9664;&#x6A21;&#x5757;&#x4E2D;&#x5BF9; <code>arch</code> &#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x628A;&#x5B83;&#x4EEC;&#x53D8;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<h3 id="alien"><a href="https://github.com/Godones/Alien" target="_blank">Alien</a></h3>
+<p><code>Alien</code> &#x5728;&#x5B9E;&#x73B0;&#x65F6;&#x5C06;&#x90E8;&#x5206;&#x5185;&#x6838;&#x6A21;&#x5757;&#x79FB;&#x51FA;&#x4E86;&#x5185;&#x6838;&#xFF0C;&#x5F62;&#x6210;&#x4E86;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5B83;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x627E;&#x5230;<a href="https://github.com/kern-crates/docs/blob/main/docs/alien.md" target="_blank">&#x6A21;&#x5757;&#x5217;&#x8868;&#x53CA;&#x8BF4;&#x660E;</a>&#x3002;&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x6A21;&#x5757;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;&#x540D;&#x79F0;</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>syscall-table</td>
+<td>&#x7EDF;&#x4E00;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</td>
+</tr>
+<tr>
+<td>PLIC</td>
+<td>riscv plic</td>
+</tr>
+<tr>
+<td>kernel-sync</td>
+<td>&#x5185;&#x6838;&#x9501;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x517C;&#x5BB9;lock-api</td>
+</tr>
+<tr>
+<td>pager</td>
+<td>&#x7269;&#x7406;&#x9875;&#x5206;&#x914D;&#x5668;</td>
+</tr>
+<tr>
+<td>rslab</td>
+<td>&#x5185;&#x5B58;&#x5206;&#x914D;&#x5668;</td>
+</tr>
+<tr>
+<td>vfscore</td>
+<td>vfs <code>trait</code>&#x5B9A;&#x4E49;</td>
+</tr>
+<tr>
+<td>devfs/ramfs/fatfs</td>
+<td>&#x6839;&#x636E;vfscore&#x5B9E;&#x73B0;&#x7684;&#x5177;&#x4F53;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</td>
+</tr>
+<tr>
+<td>visionfive2-sd</td>
+<td>VF2&#x5F00;&#x53D1;&#x677F;&#x7684;sd&#x5361;&#x9A71;&#x52A8;</td>
+</tr>
+<tr>
+<td>.....</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728;Alien&#x4E2D;&#xFF0C;&#x5F88;&#x591A;&#x6A21;&#x5757;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x88AB;&#x590D;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8005;&#x989D;&#x5916;&#x518D;&#x4F9D;&#x8D56;&#x522B;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<h3 id="umi"><a href="https://github.com/js2xxx/umi/" target="_blank">Umi</a></h3>
+<p><code>Umi</code>&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x5F02;&#x6B65;&#x7684;&#x5185;&#x6838;&#xFF0C;&#x4E0E;&#x5176;&#x5B83;&#x5185;&#x6838;&#x4E0D;&#x540C;&#xFF0C;&#x8FD9;&#x4E2A;&#x5185;&#x6838;&#x4E2D;&#x7684;&#x8BB8;&#x591A;&#x6A21;&#x5757;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;&#x5BF9;&#x4E8E;&#x60F3;&#x8981;&#x7F16;&#x5199;&#x5F02;&#x6B65;&#x5185;&#x6838;&#x7684;&#x540C;&#x5B66;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x5F88;&#x503C;&#x5F97;&#x53C2;&#x8003;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x975E;&#x5F02;&#x6B65;&#x5185;&#x6838;&#xFF0C;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x53EF;&#x80FD;&#x8F83;&#x96BE;&#x590D;&#x7528;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;&#x540D;&#x79F0;</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paging</td>
+<td>&#x9875;&#x8868;&#x62BD;&#x8C61;</td>
+</tr>
+<tr>
+<td>rand-riscv</td>
+<td>&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;</td>
+</tr>
+<tr>
+<td>hart-id</td>
+<td>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;hart id</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;&#x540D;&#x79F0;</th>
+<th>&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>afat32</td>
+<td>&#x5F02;&#x6B65;fat32</td>
+</tr>
+<tr>
+<td>art</td>
+<td>rust&#x7684;async&#x8FD0;&#x884C;&#x65F6;</td>
+</tr>
+<tr>
+<td>co-trap</td>
+<td>&#x5185;&#x6838;&#x9677;&#x5165;&#x9677;&#x51FA;</td>
+</tr>
+<tr>
+<td>kalloc</td>
+<td>&#x5185;&#x5B58;&#x5206;&#x914D;</td>
+</tr>
+<tr>
+<td>ksync</td>
+<td>&#x5F02;&#x6B65;&#x540C;&#x6B65;&#x539F;&#x8BED;</td>
+</tr>
+<tr>
+<td>....</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0E;<code>ByteOS</code>&#x7C7B;&#x4F3C;&#xFF0C; <code>Umi</code>&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x6A21;&#x5757;&#x662F;&#x7D27;&#x8026;&#x5408;&#x7684;&#xFF0C;&#x6A21;&#x5757;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5F88;&#x591A;&#x3002;&#x4E0D;&#x8FC7;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x4F9D;&#x8D56;&#x662F;&#x5F02;&#x6B65; <code>async</code> &#x6807;&#x8BB0;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x53BB;&#x6389;&#x5F02;&#x6B65;&#x7279;&#x6027;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x5F88;&#x591A;&#x6A21;&#x5757;&#x53D8;&#x6210;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x3002;</p>
+<h2 id="&#x53EF;&#x9009;&#x5B9E;&#x73B0;&#xFF1A;&#x62BD;&#x8C61;&#x51FA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;">&#x53EF;&#x9009;&#x5B9E;&#x73B0;&#xFF1A;&#x62BD;&#x8C61;&#x51FA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;</h2>
+<p>&#x5982;&#x679C;&#x5BF9;&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x9605;&#x8BFB;&#x8FD9;&#x4E9B;&#x5185;&#x6838;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x548C;&#x6587;&#x6863;&#xFF08;&#x4E0D;&#x53EA;&#x662F;&#x6A21;&#x5757;&#x672C;&#x8EAB;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x4E0D;&#x5C11;&#x6BD4;&#x8D5B;&#x53C2;&#x8D5B;&#x5185;&#x6838;&#x4F1A;&#x63D0;&#x4F9B;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x7684;&#x6587;&#x6863;&#xFF09;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3;&#x4ED6;&#x4EEC;&#x5728;&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x5316;&#x65F6;&#x8003;&#x8651;&#x4E86;&#x4EC0;&#x4E48;&#x56E0;&#x7D20;&#xFF0C;&#x53C8;&#x662F;&#x5982;&#x4F55;&#x5904;&#x7406;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x7684;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x91CC;&#x9762;&#x4E0E;&#x5185;&#x6838;&#x8054;&#x7CFB;&#x8F83;&#x6DF1;&#x3001;&#x4E0D;&#x591F;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#x5206;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x53D8;&#x6210;&#x80FD;&#x5728;&#x5404;&#x4E2A;&#x5185;&#x6838;&#x95F4;&#x901A;&#x7528;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x4EE5;&#x6B64;&#x4F5C;&#x4E3A;&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5BF9;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x7684;&#x8BBE;&#x8BA1;&#x7ED9;&#x51FA;&#x5177;&#x4F53;&#x7684;&#x8981;&#x6C42;&#x548C;&#x5EFA;&#x8BAE;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page: 实验概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="module.html" class="navigation navigation-next " aria-label="Next page: 对模块的要求">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"操作系统与模块划分","level":"5.2","depth":1,"next":{"title":"对模块的要求","level":"5.3","depth":1,"path":"docs/labex/module.md","ref":"docs/labex/module.md","articles":[]},"previous":{"title":"实验概述","level":"5.1","depth":1,"path":"docs/labex/intro.md","ref":"docs/labex/intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","katex","alerts","emphasize","mermaid-gb3","codeblock-label","code","search-pro","click-reveal","expandable-chapters-interactive","localized-footer","intopic-toc"],"pluginsConfig":{"chapter-fold":{},"emphasize":{},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"codeblock-label":{},"search-pro":{},"search":{},"localized-footer":{"filename":"gitalk.html","hline":"true"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":1},"click-reveal":{},"highlight":{},"mermaid-gb3":{},"expandable-chapters-interactive":{},"alerts":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/labex/modular.md","mtime":"2023-11-20T11:25:18.364Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-20T11:25:55.498Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
