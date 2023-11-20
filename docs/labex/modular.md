@@ -28,8 +28,8 @@ Linux系统本身就是一个具有模块化的操作系统，但这个模块化
 | 模块名称           | 功能            |
 | -------------- | ------------- |
 | allocator      | 物理页分配器/内存块分配器 |
-| axfs_vfs       | VFS`trait `定义 |
-| axfs_ramfs     | ramfs实现       |
+| axfs_vfs       | `VFS` `Trait` 定义 |
+| axfs_ramfs     | `RamFs` 实现       |
 | driver_display | 图形设备驱动        |
 | page-table     | 页表实现          |
 | scheduler      | 调度算法实现        |
@@ -44,9 +44,9 @@ Linux系统本身就是一个具有模块化的操作系统，但这个模块化
 | 模块名称      | 功能              |
 | --------- |:--------------- |
 | backtrace | 打印内核调用栈(基于fp)   |
-| cv1811-sd | cv1811开发板的sd卡驱动 |
-| vfscore   | VFS的`trait`定义   |
-| timestamp | DateTime结构定义    |
+| cv1811-sd | `cv1811` 开发板的SD卡驱动 |
+| vfscore   | `VFS` `Trait` 定义   |
+| timestamp | `DateTime` 结构定义    |
 
 在 `modules` 目录下，也有少数模块可以被直接使用，但更多的模块会直接依赖一个 `ByteOS` 自己的 `arch` 模块 `arch` 模块涵盖了很多功能，因此，如果我们想引用这些模块，要么需要直接使用复杂的 `arch` 模块，要么需要手动修改代码并删除模块中对 `arch` 的依赖，把它们变成独立的模块。
 
@@ -57,13 +57,13 @@ Linux系统本身就是一个具有模块化的操作系统，但这个模块化
 | 模块名称              | 功能                 |
 | ----------------- | ------------------ |
 | syscall-table     | 统一的系统调用            |
-| PLIC              | riscv plic         |
-| kernel-sync       | 内核锁的实现，兼容lock-api  |
+| PLIC              | `RISC-V` 的中断控制器        |
+| kernel-sync       | 内核锁的实现，兼容 `lock-api` |
 | pager             | 物理页分配器             |
 | rslab             | 内存分配器              |
-| vfscore           | vfs `trait`定义      |
-| devfs/ramfs/fatfs | 根据vfscore实现的具体文件系统 |
-| visionfive2-sd    | VF2开发板的sd卡驱动       |
+| vfscore           | `VFS` `Trait` 定义      |
+| devfs/ramfs/fatfs | 根据 `vfscore` 实现的具体文件系统 |
+| visionfive2-sd    | VF2开发板的SD卡驱动       |
 | .....             |                    |
 
 在Alien中，很多模块是可以直接被复用的，不需要使用者额外再依赖别的模块。
@@ -76,12 +76,12 @@ Linux系统本身就是一个具有模块化的操作系统，但这个模块化
 | ---------- | ------------ |
 | paging     | 页表抽象         |
 | rand-riscv | 随机数生成器       |
-| hart-id    | 获取当前的hart id |
+| hart-id    | 获取当前的`hart id` |
 
 | 模块名称    | 功能            |
 | ------- | ------------- |
-| afat32  | 异步fat32       |
-| art     | rust的async运行时 |
+| afat32  | 异步 `FAT32` 文件系统       |
+| art     | Rust的 `async` 运行时 |
 | co-trap | 内核陷入陷出        |
 | kalloc  | 内存分配          |
 | ksync   | 异步同步原语        |
