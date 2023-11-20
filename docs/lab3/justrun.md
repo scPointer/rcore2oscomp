@@ -17,6 +17,20 @@
 make run
 ```
 
+> `Starry` 启动 `Qemu` 时默认会给 `16G` 内存，内存不够时可能出现以下报错：
+> 
+> ```bash
+> gemu-system-riscv64: cannot set up guest memory 'riscv virt board.ram': Cannot allocate memory
+> ```
+> 
+> 此时可以全局搜索 `16G`，找到 `scripts/make/qemu.mk`，把其中这一行：
+> 
+> ```makefile
+> qemu_args-y := -m 16G -smp $(SMP) $(qemu_args-$(ARCH))
+> ```
+> 
+> 里的 `-m 16G` 改小即可。对于我们的实验来说，**`-m 1G` 的内存大小是足够的**。
+
 如果顺利的话，会先看到 `OpenSBI` 的 logo 和一堆参数，接下来是 `Arceos` 的内核输出：
 
 ```
