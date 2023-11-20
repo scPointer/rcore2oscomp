@@ -4,7 +4,7 @@
 
 这需要使用 `rCore-Tutorial` 实验的仓库，但**不依赖于**你在 `rCore-Tutorial` 中完成的任何作业代码。你可以跟着这个例子做，也可以直接看[指导书演示中新增和修改的代码](https://github.com/Godones/rCore-Tutorial-v3/tree/ch8-vfs)。
 
-## 虚拟文件系统 VFS
+## 虚拟文件系统 `VFS`
 
 我们可以用 `cargo new` 命令生成一个新的 `Rust` 项目，并用 `--lib` 指定它是一个会被其他程序调用的库（`lib`），这样这个模块就不会包含 `main` 函数了。
 
@@ -84,7 +84,7 @@ impl OSInode{
 
 Linux 的解决方法是使用一种虚拟文件系统（`VFS`）的框架，掌管所有的文件系统，规定了逻辑上目录树结构的通用格式及相关操作的抽象接口。不管是什么文件系统，只要实现了虚拟文件系统要求的那些抽象接口，就可以通过挂载 (`mount`) 等方式接入内核。这样一来，内核就可以用一个统一的逻辑目录树结构管理所有这些持久存储设备上的不同文件系统。
 
-在 Linux 的 `VFS` 中，有几个很重要的数据结构和接口定义。这里我们只介绍一小部分，更多的定义可以在[VFS 文档](https://docs.kernel.org/filesystems/vfs.html) 查阅。
+在 Linux 的 `VFS` 中，有几个很重要的数据结构和接口定义。这里我们只介绍一小部分，更多的定义可以在[`VFS` 文档](https://docs.kernel.org/filesystems/vfs.html) 查阅。
 
 ```c
 struct super_operations {
@@ -96,7 +96,7 @@ struct super_operations {
         int (*drop_inode) (struct inode *);
         void (*evict_inode) (struct inode *);
         void (*put_super) (struct super_block *);
-        .....
+        ......
 }
 struct file_operations {
         struct module *owner;
@@ -122,7 +122,7 @@ struct inode_operations {
 
 这里给出了超级块、文件、`Inode` 的接口定义。其中 `file_operations` 类似 `rCore-Tutorial` 的 `trait File`， `inode_operations` 类似 `easy-fs` 的 `Inode` 接口。
 
-> 事实上， `easy-fs` 参考了许多 `Linux vfs` 的设计。
+> 事实上， `easy-fs` 参考了许多 `Linus VFS` 的设计。
 > 
 > 不过在参考Linux的实现时，切勿直接仿照，以笔者的经验来看，直接将 Linux的 C语言实现翻译到 `Rust` 是不好的，这两门语言有自己的特点。在 C 语言中看起来很合理的东西（如指针）放到 `Rust` 中就不那么容易一一对应了，我们应该在参考 Linux 的设计思路前提下，设计一个利用 `Rust` 语言特性且符合 `Rust` 规范的结构。
 
@@ -178,14 +178,14 @@ home
 proc
 sys
 tmp
-.....
+......
 ```
 
-而其中 `tmp` 目录上挂载的临时文件系统（`tmpfs`）就类似内存文件系统。它除了使用系统内存外，还可以使用`swap`区域。我们还可以另外创建完全在内存中的 `ramfs` ，也可以挂载到 Linux 上。其它目录上其实还挂载了其它文件系统，比如`sys-> sysfs` 、 `proc->procfs`等，广义上来说，这些文件系统其实也算是内存文件系统的一种，因为这些文件系统的信息是在系统运行过程中动态产生的，而这些信息位于内存中。
+而其中 `tmp` 目录上挂载的临时文件系统（`TmpFs`）就类似内存文件系统。它除了使用系统内存外，还可以使用 `swap` 区域。我们还可以另外创建完全在内存中的 `RamFs` ，也可以挂载到 Linux 上。其它目录上其实还挂载了其它文件系统，比如 `sys` 对应 ` sysfs` 、`proc` 对应 `procfs` 等。广义上来说，这些文件系统其实也算是内存文件系统的一种，因为这些文件系统的信息是在系统运行过程中动态产生的，而这些信息位于内存中。
 
-下面主要介绍如何从头开始实现一个简单的 `ramfs`。
+下面主要介绍如何从头开始实现一个简单的 `RamFs`。
 
-## 内存文件系统 ramfs
+## 内存文件系统 `RamFs`
 
 类似 `libvfs`，再次新建一个`Crate`:
 
@@ -195,7 +195,7 @@ cargo new ramfs --lib
 
 然后在这个新模块的 `Cargo.toml` 中加入对 `libvfs` 依赖，因为我们将要在这里实现 `libvfs` 定义的接口。
 
-接下来我们定义`RamFs`的结构，就像`EasyFileSystem`一样:
+接下来我们定义 `RamFs` 的结构，就像 `EasyFileSystem` 一样:
 
 ```rust
 pub struct RamFs<T> {
@@ -206,7 +206,7 @@ pub struct RamFs<T> {
 }
 ```
 
-这里多出了一个泛型参数 `<T>`，后面再解释它的用法。`ramfs` 完全位于内存中，所以它的结构可以比磁盘文件系统简单许多。这里我们只使用了几个必须的变量来记录文件系统的一些元数据
+这里多出了一个泛型参数 `<T>`，后面再解释它的用法。`RamFs` 完全位于内存中，所以它的结构可以比磁盘文件系统简单许多。这里我们只使用了几个必须的变量来记录文件系统的一些元数据
 
 1. `inode_index`：用来创建文件时分配inode号码
 2. `inode_count`： 记录当前的文件数量，在目前的文件系统实现中其实和inode_index一样，因为我们没有提供删除文件的接口
@@ -259,7 +259,7 @@ pub struct RamFsFileInode {
 }
 ```
 
-与 `easy-fs` 不同，在 `ramfs` 中定义了两种类型的 `Inode`。这是因为在文件系统中除了普通文件外还有目录、设备文件、链接文件等。而在定义 `VfsInode` 时， 我们说这个 `trait` 抽象了“文件”的操作，这里的“文件”其实包含了前面提到的所有种类的文件。但实际上这些“文件”的属性和需要的接口是不一样，例如目录不需要 `write_at` 或者 `read_at`，而普通文件不需要 `create` 或者 `ls`。所以虽然 `VfsInode` 抽象了所有种类的文件的操作，但还是要根据具体的文件类型做区分。简单起见，我们只定义了目录和普通文件两种类型。
+与 `easy-fs` 不同，在 `RamFs` 中定义了两种类型的 `Inode`。这是因为在文件系统中除了普通文件外还有目录、设备文件、链接文件等。而在定义 `VfsInode` 时， 我们说这个 `trait` 抽象了“文件”的操作，这里的“文件”其实包含了前面提到的所有种类的文件。但实际上这些“文件”的属性和需要的接口是不一样，例如目录不需要 `write_at` 或者 `read_at`，而普通文件不需要 `create` 或者 `ls`。所以虽然 `VfsInode` 抽象了所有种类的文件的操作，但还是要根据具体的文件类型做区分。简单起见，我们只定义了目录和普通文件两种类型。
 
 > 在 `easy-fs` 中对文件类型进行了进一步的简化，从而没有区分目录和实际保存数据的文件。如果用户程序错误读取了目录文件，例如直接对根目录调用`read_at` ，就可能会导致文件系统崩溃。
 
@@ -348,9 +348,9 @@ impl<T: RamFsProvider> VfsInode for RamFsDirInode<T> {
 > 
 > 总之，使用自定义的结构体还是更通用的 `None` `Err`等等是编写模块时的一种选择，没有绝对的对错之分。
 
-现在我们就已经根据 `VfsInode` 的定义实现了一个新的文件系统。在继续修改内核代码使得内核可以支持多种文件系统的功能前，我们先给出 `Ramfs` 中泛型参数 `<T>` 的解释。
+现在我们就已经根据 `VfsInode` 的定义实现了一个新的文件系统。在继续修改内核代码使得内核可以支持多种文件系统的功能前，我们先给出 `RamFs` 中泛型参数 `<T>` 的解释。
 
-### `ramfs` 的泛型参数
+### `RamFs` 的泛型参数
 
 一个文件系统在创建文件的时候要保存的哪些元数据？可以在 Linux 上使用 `stat` 命令查看一个文件，可以得到类似下面的信息：
 
@@ -414,7 +414,7 @@ fn current_time() -> TimeSpec{
 
 > `unsafe` 的直观解释是，这个函数或者这段代码不能满足 `Rust` 编译器提供的内存安全控制规范，因此需要程序员自己保证它符合规范。从某种程度上来说，它有点像安装软件时你按下的“同意此服务条款”。所以使用 `unsafe` 关键字时必须仔细检查内部的代码是否有内存安全问题。你可以在[官方文档的这一节](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)找到更多的说明和讨论。
 
-这里我们可以再提供一种方法: 直接参数传递。对于 `ramfs` 来说，可能的形式如下:
+这里我们可以再提供一种方法: 直接参数传递。对于 `RamFs` 来说，可能的形式如下:
 
 ```rust
 /// create a file with 'name' in the directory
@@ -425,7 +425,7 @@ fn create(&self, name: &str,ctime: TimeSpec) -> Option<Arc<dyn VfsInode>>;
 
 ## 修改内核以接入 `ramfs` 和 `VFS`
 
-现在我们对内核进行修改，以便引入我们实现的`libvfs`和`ramfs`。在 `os` 的 `Cargo.toml` 中插入
+现在我们对内核进行修改，以便引入我们实现的 `libvfs` 和 `RamFs`。在 `os` 的 `Cargo.toml` 中插入
 
 ```rust
 libvfs= {path = "../libvfs"}
@@ -447,9 +447,9 @@ impl OSInode {
 }
 ```
 
-为了正常运行，你可能还需要在 `easy-fs-fuse` 中引入依赖。因为这个程序使用了 `write_at` 功能，而这个功能现在被定义在`VfsInode`中了。
+为了正常运行，你可能还需要在 `easy-fs-fuse` 中引入依赖。因为这个程序使用了 `write_at` 功能，而这个功能现在被定义在`VfsInode` 中了。
 
-这里还有一个前面没有提到的问题：我们在 `easy-fs` 或者 `ramfs`中实现`VfsInode`时，我们应该在顶层模块中**导出**这个`trait`定义，例如
+这里还有一个前面没有提到的问题：我们在 `easy-fs` 或者 `RamFs` 中实现 `VfsInode` 时，我们应该在顶层模块中**导出**这个`trait`定义，例如
 
 ```rust
 pub use libvfs::*;
@@ -457,15 +457,15 @@ pub use libvfs::*;
 
 因为对于使用这些模块的人来说，它可能并不想引入 `libvfs` 这个依赖, 我们尽量做到自包含来避免这样的问题，同时给予使用者最大的灵活性。
 
-现在的 `rCore-Tutorial` 还用不到 `ramfs`，这是因为内核目前不支持挂载文件系统的功能。如果你基于 `rCore-Tutorial` 开发，会在比赛过程中用到它，当然也可以只看[上述修改的一个示例](https://github.com/Godones/rCore-Tutorial-v3/tree/ch8-vfs)，把本节学到的内容用在自己的内核中。只要文件系统实现了类似本节介绍的接口，就可以替换掉`easy-fs`。
+现在的 `rCore-Tutorial` 还用不到 `RamFs`，这是因为内核目前不支持挂载文件系统的功能。如果你基于 `rCore-Tutorial` 开发，会在比赛过程中用到它，当然也可以只看[上述修改的一个示例](https://github.com/Godones/rCore-Tutorial-v3/tree/ch8-vfs)，把本节学到的内容用在自己的内核中。只要文件系统实现了类似本节介绍的接口，就可以替换掉 `easy-fs`。
 
-文件系统这部分的模块都是相对独立的。你可以使用现有的文件系统模块，别人也可以基于你的 VFS 定义去扩展和实现他们的文件系统，或者直接使用你实现的`easy-fs` 和`ramfs` ，这几个模块都不依赖于内核，并且互相之间也不是强依赖，可以用简单的办法消除。
+文件系统这部分的模块都是相对独立的。你可以使用现有的文件系统模块，别人也可以基于你的 `VFS` 定义去扩展和实现他们的文件系统，或者直接使用你实现的`easy-fs` 和 `RamFs` ，这几个模块都不依赖于内核，并且互相之间也不是强依赖，可以用简单的办法消除。
 
 到现在为止，我们已经讲解了编写一个独立模块所需要的所有步骤。
 
 ## 可选实现：FAT32 格式的文件系统
 
-到目前位置，我们已经接触了三个与文件系统有关的模块，分别是 `libvfs` `ramfs` `easy-fs`。以此为基础，可以实现比赛初赛所要求的 `FAT32` 格式的文件系统。我们在[第一章实验的介绍](../lab1/intro.md#在实验之后)提到过它。
+到目前位置，我们已经接触了三个与文件系统有关的模块，分别是 `libvfs` `RamFs` `easy-fs`。以此为基础，可以实现比赛初赛所要求的 `FAT32` 格式的文件系统。我们在[第一章实验的介绍](../lab1/intro.md#在实验之后)提到过它。
 
 `FAT32` 的格式比较复杂，但不需要从零写起，可以利用已有的开源项目，例如[`rust-fatfs`](https://github.com/rafalh/rust-fatfs)，然后在自己的 `rCore-Tutorial` 项目中支持它。也可以参考往届内核的实现，例如 [`Starry` 的 `axfs`](https://github.com/Azure-stars/Starry/tree/main/modules/axfs)。
 

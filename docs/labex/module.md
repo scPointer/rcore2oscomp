@@ -37,7 +37,7 @@ easy-fs = { path = "../easy-fs" }
 
 ### 在发布之前
 
-在实现并打磨好一个模块之后，你需要把它[发布到`crates.io`上](https://rustwiki.org/zh-CN/cargo/reference/publishing.html)。不过在发布前，请确保你的模块的所有依赖都来自 `crates.io` 上，不能依赖像上面所述的 `virtio-drivers` 这样来自代码仓库的模块。另外，你可以在 `cargo.toml` 中的 `keywords` 属性中简要阐述模块的功能，这能使别人更方便地搜索到这个模块。
+在实现并打磨好一个模块之后，你需要把它[发布到`crates.io`上](https://rustwiki.org/zh-CN/cargo/reference/publishing.html)。不过在发布前，请确保你的模块的所有依赖都来自 `crates.io` 上，不能依赖像上面所述的 `virtio-drivers` 这样来自代码仓库的模块。另外，你可以在 `Cargo.toml` 中的 `keywords` 属性中简要阐述模块的功能，这能使别人更方便地搜索到这个模块。
 
 ### 模块的版本号
 
@@ -160,7 +160,7 @@ impl Hal for VirtioHal {
 
 `Hal` 是外部模块 `virtio_drivers` 中定义的 `Trait`，或者简单理解为“规范”。内核通过定义上述代码中的 `impl Hal for VirtioHal` 来帮驱动分配物理页、转换物理地址与虚拟地址。这些都是内存管理模块中才有的操作， `virtio_drivers` 需要这些操作，但不会直接依赖 `rCore-Tutorial` 的内存管理的代码，而是通过定义 `Trait Hal` 的方式告诉内核“你得帮我实现需要这些功能，我才能正常运作”。
 
-当然，这些 `Trait` 和回调的接口设计需要非常小心。即使是在其他内核中，这些接口也需要很方便就能填上。
+当然，这些 `Trait` 和回调的接口设计需要非常小心。即使是在其他内核中，这些接口也需要很方便就能填上。[下一节](./vfs.md) 还会更详细地介绍这一技巧。
 
 ### 基于现有的规范
 
