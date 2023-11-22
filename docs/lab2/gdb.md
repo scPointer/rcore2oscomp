@@ -76,6 +76,19 @@ Shell: Process 2 exited with code -4
 
 不过，查看内核的源代码是可以的。在 `os/Makefile` 下把第 2 行的 `MODE := release` 改为 `MODE := debug` 就可以了。
 
+> 如果运行出错，可以找到 `os/Makefile` 的这一项：
+>
+> ```makefile
+> kernel:
+>	@make -C ../user build TEST=$(TEST) CHAPTER=$(CHAPTER) BASE=$(BASE)
+>	@echo Platform: $(BOARD)
+>	@cargo build --release
+> ```
+> 
+> 把最后一行的 `--release` 删掉或者改为 `$(MODE_ARG)` 即可。
+> 
+> 这是因为新版的 `rCore-Tutorial` 仓库中会直接指定使用 `--release` 模式编译，忽略了 `MODE` 常量。
+
 gdb 也不支持跨地址空间的查找。换句话说，它只知道当前能不能访问某个地址（虚拟地址），不会管现在的页表在哪，所以内核调试时经常会遇到因为地址当前无法访问而打不上断点的情况。这时可分为以下情况处理：
 
 1. 把断点打在内核入口，也即 `0x80200000` 处，然后使用 `c` 命令跳过去。之后就可以打大部分内核符号的断点了。
